@@ -1,4 +1,4 @@
-import { Sora, Play, Playfair, Inter } from "next/font/google";
+import { Sora, Play, Playfair, Inter} from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
@@ -27,6 +27,7 @@ const inter = Inter({
   weight: ['800'],
   subsets: ['latin'],
 });
+
 
 export const metadata = {
   icons: {
@@ -76,7 +77,7 @@ export default function RootLayout({ children }) {
         .comon-heading-sub,{
           font-family: ${inter.style.fontFamily};
         }
-         
+        
         
       `}
     </style>

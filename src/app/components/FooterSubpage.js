@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import Image from "next/image";
 
-function Footer(){
+function FooterSubpage(){
     const mianmenu = [
         { id: 1, title: 'Why us' , link: '/whyus'  },
         { id: 2, title: 'Blog' , link: 'https://blog.icontrove.com/'  },
@@ -52,26 +52,26 @@ function Footer(){
     
     return(
         <>
-        <footer className="float-start  comon-short-parts w-100">
+        <footer className="float-start footer-lights015-mains comon-short-parts w-100">
             <div className="container">
                 <div className="row row-cols-1 row-cols-lg-5">
                     <div className="col">
                         <div className="comon-footers-div01">
                             <Link href='/'>
-                                <Image loading="lazy" src="/footer-logo.svg"
+                                <Image loading="lazy" src="/icons_guru_logo.svg"
                                         alt="iconsguru"
-                                        width={114}
-                                        height={18} />
+                                        width={160}
+                                        height={34} />
                             </Link>
 
-                            <p className="text-white ft-paras mt-4"> Join millions of designers, developers, and content creators using Iconguru — a comprehensive icon library and toolkit built for creativity and efficiency. .</p>
+                            <p className="ft-paras mt-4"> Join millions of designers, developers, and content creators using Iconguru — a comprehensive icon library and toolkit built for creativity and efficiency. .</p>
 
                             
                         </div>
                     </div>
                     <div className="col d-grid justify-content-center">
                         <div className="comon-footers-div01">
-                           <h5 className="text-white"> Help & Support </h5>
+                           <h5> Help & Support </h5>
                            <ul className="comon-links mt-4 ms-0 p-0">
                                 {supports.map((page) => (
                                     <li key={page.id}>
@@ -83,7 +83,7 @@ function Footer(){
                     </div>
                     <div className="col d-grid justify-content-center">
                         <div className="comon-footers-div01">
-                           <h5 className="text-white"> Company </h5>
+                           <h5> Company </h5>
                             
                             <ul className="comon-links mt-4 ms-0 p-0">
                                 {mianmenu.map((page) => (
@@ -96,7 +96,7 @@ function Footer(){
                     </div>
                     <div className="col d-grid justify-content-center">
                         <div className="comon-footers-div01">
-                           <h5 className="text-white"> Top Icons </h5>
+                           <h5> Top Icons </h5>
                            
                             <ul className="comon-links mt-4 ms-0 p-0">
                                 {topicons.map((page) => (
@@ -109,7 +109,7 @@ function Footer(){
                     </div>
                     <div className="col d-grid justify-content-end">
                         <div className="comon-footers-div01">
-                           <h5 className="text-white"> Social media </h5>
+                           <h5> Social media </h5>
                            
                             <ul className="solic-list d-flex align-items-center">
                                 <li>
@@ -133,7 +133,7 @@ function Footer(){
                                     </Link>
                                 </li>
                             </ul>
-                           <p className="mt-3 text-white"> Receive premium resources directly in your inbox. </p>
+                           <p className="mt-3"> Receive premium resources directly in your inbox. </p>
                            
                         </div>
                     </div>
@@ -144,7 +144,7 @@ function Footer(){
                     <div className="col"></div>
                     <div className="col d-grid justify-content-center">
                         <div className="comon-footers-div01">
-                           <h5 className="text-white"> For developers </h5>
+                           <h5> For developers </h5>
                            <ul className="comon-links mt-4 ms-0 p-0">
                                 {developmenrs.map((page) => (
                                     <li key={page.id}>
@@ -225,4 +225,4 @@ function Footer(){
     )
    };
    
-   export default Footer;
+   export default FooterSubpage;

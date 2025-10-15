@@ -1,6 +1,6 @@
 'use client';
 import Head from "next/head";
-import NavicationHome from "../components/NavicationHome";
+import NavicationHomeSubpage from "../components/NavicationHomeSubpage";
 import { useEffect, useState } from "react";
 import SidebarFilter from "../components/SidebarFilter";
 import Footer from "../components/Footer";
@@ -11,9 +11,12 @@ import { useSearchParams } from "next/navigation";
 import Searchlisting from "../components/Searchlisting";
 import Script from 'next/script';
 
+
 export default function Page() {
+  
   return (
     <>
+   
     <Head>
         <title>Free Icons, Vector Icons - SVG, PNG, WEBP</title>
         <meta name="description" content="Download free, high-quality SVG icons for your website or app. IconsGuru provides a comprehensive library of free and premium icons that you can instantly download and customize to any size. Perfect for designers, developers, and creatives looking for high-quality, scalable icons to enhance their projects. Discover icons that fit your design needs seamlessly." />
@@ -36,11 +39,13 @@ export default function Page() {
           gtag('config', 'G-172NZPGYKZ');
         `}
       </Script>
-    <NavicationHome/>
-      <Suspense fallback={<div>Loading...</div>}>
-        
-        <Searchlisting />
-      </Suspense>
+     
+         <body className="tags-filters">
+          <Suspense fallback={<div>Loading...</div>}>
+            
+            <Searchlisting />
+          </Suspense>
+        </body>
     </>
   );
 }
