@@ -1361,16 +1361,32 @@ footer hr{
     margin-bottom: 0 !important;
 }
 .new-filter-05 .cmout .form-check-label{
-  border-radius: 10px;
+  border-radius: 50px;
   border: 1px solid #e5e5e5;
   margin-right: 0;
   cursor: pointer;
   transition: all .5s;
-  padding: 4px 12px 6px 12px !important;
+  padding: 4px 17px 6px !important;
   margin-bottom: 0 !important;
   font-weight: 400;
   position: relative;
   font-size: 15px;
+  color: #070707;
+}
+.filters-btn{
+  display: flex;
+  align-items: center;
+  margin-top: 25px !important;
+}
+.filters-btn h4{
+    font-size: 15px;
+    font-weight: 700;
+    color: #070707;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    text-transform: uppercase;
 }
 .new-filter-05 .cmout .form-check-label::before{
   position: absolute;
@@ -1528,6 +1544,30 @@ footer hr{
 }
 .cololi-list li:last-child{
   display: none;
+}
+.comon_heading01:focus{
+  box-shadow: none !important;
+}
+.swowpactive .sidebars-subpages{
+  width: 90px;
+}
+.swowpactive .sidebars-subpages{
+  width: 70px;
+}
+.swowpactive .text-loghos{
+  display: none !important;
+}
+.swowpactive .comon_heading01{
+  padding: 0;
+}
+.swowpactive .comon_heading01 h4{
+  display: none !important;
+}
+.swowpactive .sidebarsd_div{
+  display: none !important;
+}
+.swowpactive .rights-sections-sub{
+  width: calc(100% - 70px);
 }
 @media(min-width:1400px){
   .right-details-lis01{
@@ -1762,6 +1802,7 @@ footer hr{
 .rights-sections-sub{
   width: calc(100% - 233px);
   margin-left: auto;
+  transition: all 0.5s;
 }
 .sidebars-subpages{
   width: 233px;
@@ -1770,6 +1811,7 @@ footer hr{
   position: fixed;
   left: 0;
   top:0;
+  transition: all 0.5s;
 
 }
 .signup-btn10{
@@ -1841,6 +1883,14 @@ footer hr{
 }
 .totals-sections-mains01 .new-icons-bm{
   grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px;
+  gap: 10px 8px;
+}
+.totals-sections-mains01 .new-icons-bm .svg-item{
+  height: 114px;
+  width: 105px;
+}
+.totals-sections-mains01 .new-icons-bm .svg-item::before{
+  height: 100%;
 }
 .totals-sections-mains01 .svg-item{
   box-shadow: none !important;
@@ -1851,9 +1901,10 @@ footer hr{
     height:70px;
 }
 .sidebars-subpages h5{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     color: #000;
+    text-transform: uppercase;
 }
 
 .tags-filters .p-autocomplete-panel {
