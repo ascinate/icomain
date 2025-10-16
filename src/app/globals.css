@@ -224,7 +224,7 @@ a {
   top:0;
   left: 0;
   right: 0;
-  background-color: #F2F2F2;
+  background-color: #f7f7f7;
   content: "";
   width: 100%;
   opacity: 0;
@@ -232,6 +232,25 @@ a {
   transition: all 0.5s;
   height: 74px;
   border-radius: 3px;
+}
+
+.tags-frees{
+  text-transform: uppercase;
+  color: #8ca1b4;
+  font-size: 12px;
+  font-weight: 500;
+  visibility: hidden;
+  transition: all 0.5s;
+  position: absolute;
+  top:5px;
+  left: 10px;
+  z-index: 2;
+  opacity: 0;
+
+}
+.totals-sections-mains01 .new-icons-bm .svg-item:hover .tags-frees{
+   visibility: visible;
+   opacity: 1;
 }
 .svg-item:hover::before{
    transform: scale(1);
@@ -322,6 +341,33 @@ a {
 .main-divs .nav-tabs .active::before{
   opacity: 1;
 }
+.related-iconstext ul{
+  list-style-type: none !important;
+}
+.related-iconstext .btn-mores-tex{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border: 1px solid #e1e6ec;
+    border-radius: 50px;
+    margin: 0 5px;
+    text-decoration: none;    font-size: 2rem;
+    font-weight: 700;
+    color: #3c4c5b !important;
+    padding: 4px 10px 6px 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.related-iconstext .btn-mores-tex:hover{
+  background: #e1e6ec;
+}
+.search-listings01 span{
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
 
 .home-menus .navbar-nav .nav-link{ padding-left: 16px !important; padding-right: 16px !important; position: relative;}
 /* .home-menus .navbar-nav .nav-link::before{
@@ -771,7 +817,7 @@ tbody, td, tfoot, th, thead, tr{
 
 footer{
   background: var(--tabs-active-color);
-  padding: 85px 0 0;
+  padding: 85px 0 30px 0;
 }
 .solic-list{
   list-style: none;
@@ -1074,7 +1120,9 @@ footer hr{
 }
 .serch-data{
   color: var(--head-color);
-  font-weight: 700;
+  font-weight: 700 !important;
+  font-size: 2rem !important;
+  margin-left: 8px !important;
 }
 .register-pages-crm{
   padding-top: 120px;
@@ -1287,6 +1335,16 @@ footer hr{
 .totals-sections-mains01 .main-divs{
   padding-left: 20px;
   padding-right: 25px;
+}
+
+.footer-lights015-mains.comon-short-parts .copy-text1 a{
+  color: var(--foreground) !important;
+}
+footer.footer-lights015-mains.comon-short-parts hr{
+  background: #cfcfcf !important;
+}
+.listing-pages .tabsd_divs {
+  width: 99% !important;
 }
 @media (width >= 1200px) {
   .comon-rows .row > div.col {
@@ -1877,9 +1935,10 @@ footer hr{
 .serchings-div-filets01 .nav-link{
   padding: 15px 20px 12px 20px !important;
 }
-.listing-pages .search-listings01{
-  font-size: 1.5rem;
-  font-weight: 600;
+.listing-pages .search-listings01,
+.serch-data{
+  font-size: 2rem;
+  font-weight: 700;
 }
 .totals-sections-mains01 .new-icons-bm{
   grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px;

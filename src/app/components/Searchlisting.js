@@ -133,20 +133,52 @@ const searchKeyword = searchParams.get("search");
                      </ul>
                     </div>
 
-                    <h2 className="search-listings01">{searchKeyword ? `${searchKeyword} Icons` : "All Icons"}</h2>
-                    <p>
-                      Showing <strong className="serch-data">{totalIcons}</strong> Icons
-                    </p>
+                    <h2 className="search-listings01 d-flex align-items-center mb-4"> <span> 
+                      Showing <strong className="serch-data">{totalIcons}</strong>
+                     </span>
+                      {searchKeyword ? `${searchKeyword}` : "All Icons"}</h2>
+                    
 
 
 
                     
-
-                    <div className="tabsd_divs d-inline-block w-100 mt-2">
+                    <div className="related-iconstext">
+                      <div className="d-flex align-items-center">
+                         <p className="m-0"> Related: </p>
+                         <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Design </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Building </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Architecture </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Furniture </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Construction </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Construction </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Property </Link>
+                           </li>
+                           <li>
+                             <Link href='/' className="btn-mores-tex">  Estate </Link>
+                           </li>
+                         </ul>
+                      </div>  
+                    </div>
+                    <div className="tabsd_divs d-inline-block w-100 mt-4">
                         
                     <div className="new-icons-bm w-100 mt-0 position-relative">
                             {isLoading ? (
                               <div className="loading-animations">
+                                
                               <Image
                                 loading="lazy"
                                 src="/ser-loader.svg"
@@ -158,6 +190,7 @@ const searchKeyword = searchParams.get("search");
                             ) : Array.isArray(icons) && icons.length > 0 ? (
                               icons.map((icon) => (
                                 <article key={icon.Id} className="svg-item  position-relative">
+                                  <span className="tags-frees">Free</span>
                                   <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
                                     <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
                                   </Link>
@@ -168,6 +201,7 @@ const searchKeyword = searchParams.get("search");
                               <div className="col no-found-div w-100">
                                   <div className="not-imgs text-center">
                                       <figure className="m-0">
+                                        
                                           <Image
                                               loading="lazy"
                                               src="/nofound.png"

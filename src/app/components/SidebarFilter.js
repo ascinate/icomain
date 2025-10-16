@@ -84,7 +84,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
               <h5 className="ms-2 mb-0"> Colors </h5>
             </div>
 
-            <ul className="options_names cololi-list new-filter-05 p-0 m-0 d-flex flex-wrap align-items-center mt-4">
+            <ul className="options_names cololi-list new-filter-05 p-0 m-0 d-flex flex-wrap align-items-center mt-3">
               {filters.colors.map((color, i) => {
                 const id = `color-${i}`
                 return (
@@ -111,7 +111,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                 <h5 className="ms-2 mb-0"> Types </h5>
               </div>
 
-              <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-4">
+              <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-3">
                 {filters.types.map((type, i) => {
                   const id = `type-${i}`
                   return (
@@ -137,7 +137,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                  
                   <h5 className="ms-2 mb-0"> Categories </h5>
             </div>
-                <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-4">
+                <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-3">
                   {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => (
                     <li className="cmout form-check position-relative" key={i}>
                       <input

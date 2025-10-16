@@ -140,63 +140,7 @@ function FooterSubpage(){
 
                     
                 </div>
-                <div className="row row-cols-1 row-cols-lg-5 mt-5">
-                    <div className="col"></div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5> For developers </h5>
-                           <ul className="comon-links mt-4 ms-0 p-0">
-                                {developmenrs.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Online tools </h5>
-                            
-                            <ul className="comon-links mt-4 ms-0 p-0">
-                                {onlinetools.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Licenses </h5>
-                           
-                            <ul className="comon-links mt-4 ms-0 p-0">
-                                {lincesn.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Request </h5>
-                           
-
-                           
-                           <ul className="comon-links mt-4 ms-0 p-0">
-                                {request.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                           
-                        </div>
-                    </div>
-                </div>
+                
                 <hr/>
                 <div className="row row-cols-1 row-cols-lg-2 g-lg-0">
                    <div className="col">
@@ -212,7 +156,7 @@ function FooterSubpage(){
                         </li>
                       </ul>
                    </div>
-                   <div className="col d-grid justify-content-lg-end"> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved </p> </div>
+                   <div className="col d-grid justify-content-lg-end"> <p className="copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved </p> </div>
                 </div>
             </div>
         </footer>
