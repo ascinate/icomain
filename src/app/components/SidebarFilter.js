@@ -97,6 +97,15 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                       checked={selectedFilters.colors.includes(color)}
                     />
                     <label className="form-check-label" htmlFor={id}>
+                      <span className='imgs01'>
+                            <Image
+                              loading="lazy"
+                              src="/Filled.svg"
+                              alt="iconsguru"
+                              width={28}
+                              height={28}
+                            />
+                        </span>
                       {color.trim()}
                     </label>
                   </li>
@@ -124,6 +133,15 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                         checked={selectedFilters.types.includes(type)}
                       />
                       <label className="form-check-label" htmlFor={id}>
+                        <span className='imgs01'>
+                            <Image
+                              loading="lazy"
+                              src="/3D.webp"
+                              alt="iconsguru"
+                              width={28}
+                              height={28}
+                            />
+                        </span>
                         {type.trim()}
                       </label>
                     </li>
@@ -148,6 +166,15 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                         checked={selectedFilters.categories.includes(cat)}
                       />
                       <label className="form-check-label" htmlFor={`cat-${i}`}>
+                        <span className='imgs01'>
+                            <Image
+                              loading="lazy"
+                              src="/3D.webp"
+                              alt="iconsguru"
+                              width={28}
+                              height={28}
+                            />
+                        </span>
                         {cat.trim()}
                       </label>
                     </li>

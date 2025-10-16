@@ -1424,13 +1424,26 @@ footer.footer-lights015-mains.comon-short-parts hr{
   margin-right: 0;
   cursor: pointer;
   transition: all .5s;
-  padding: 4px 17px 6px !important;
+  padding: 4px 10px 6px !important;
   margin-bottom: 0 !important;
   font-weight: 400;
   position: relative;
   font-size: 15px;
   color: #070707;
 }
+span.imgs01 {
+    width: 10px !important;
+    display: inline-block;
+    height: 18px !important;
+    margin-right: 8px !important;
+}
+span.imgs01 img{
+   width: auto !important;
+   height: auto !important;
+   position: relative;
+   top:1px;
+}
+
 .filters-btn{
   display: flex;
   align-items: center;
