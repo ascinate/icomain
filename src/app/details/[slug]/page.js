@@ -573,7 +573,7 @@ const id = slug?.split('_').pop();
             
               
         </main>
-       <Footer/>
+       
        
     </>
    
