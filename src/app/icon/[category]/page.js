@@ -173,7 +173,7 @@ export default function CategorySearchPage() {
 
                   <div className="tabsd_divs d-inline-block w-100 mt-4">
                     
-                        <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                        <div className="">
                           {isLoading ? (
                             <div className="loading-animations">
                                 <Image
@@ -186,6 +186,7 @@ export default function CategorySearchPage() {
                           </div>
                           ) : Array.isArray(icons) && icons.length > 0 ? (
                             icons.map((icon) => (
+                            <div className="new-icons-bm gy-2 g-lg-2 mt-0">
                               <article key={icon.Id} className="svg-item position-relative">
                                 <span className="tags-frees">Free</span>
                                 <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
@@ -214,6 +215,7 @@ export default function CategorySearchPage() {
                                   </button>
                                 </div>
                               </article>
+                            </div>
                             ))
                           ) : (
                             <div className="col no-found-div w-100">

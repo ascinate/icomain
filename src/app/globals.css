@@ -1966,6 +1966,7 @@ span.imgs01 img{
 .totals-sections-mains01 .new-icons-bm{
   grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px;
   gap: 10px 8px;
+  min-height: 290px;
 }
 .totals-sections-mains01 .new-icons-bm .svg-item{
   height: 114px;
