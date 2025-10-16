@@ -817,7 +817,7 @@ tbody, td, tfoot, th, thead, tr{
 
 footer{
   background: var(--tabs-active-color);
-  padding: 85px 0 30px 0;
+  padding: 85px 0 5px 0;
 }
 .solic-list{
   list-style: none;
@@ -1430,6 +1430,9 @@ footer.footer-lights015-mains.comon-short-parts hr{
   position: relative;
   font-size: 15px;
   color: #070707;
+}
+.text-loghos img{
+  width: 90%;
 }
 span.imgs01 {
     width: 10px !important;

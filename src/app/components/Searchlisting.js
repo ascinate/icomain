@@ -85,7 +85,7 @@ const searchKeyword = searchParams.get("search");
       
     <div className={`totals-sections-mains01 ${isToggled ? 'swowpactive' : ''}`}>
         <aside className="sidebars-subpages pe-4 ps-3 pt-3">
-            <div className="looso-shape d-flex align-items-center">
+            <Link href="/" className="looso-shape d-flex align-items-center">
               <div className="isons">
                <Image loading="lazy" src="/shape-icons015.svg"
                                   alt="iconsguru"
@@ -98,7 +98,7 @@ const searchKeyword = searchParams.get("search");
                   width={170}
                   height={25} />
                 </div>
-            </div>
+            </Link>
             
             <div className="slider-filtersr-div">
                 <button onClick={handleToggle} className="btn w-100 comon_heading01 d-flex align-items-center filters-btn">
