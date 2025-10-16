@@ -10,6 +10,7 @@ const sorasans = Sora({
   subsets: ['latin'],
 });
 
+
 const play = Play({
   variable: "--font-play-sans",
   weight: ['700'],

@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import NavicationHome from "@/app/components/NavicationHome";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
+import NavicationHomeDetails from "@/app/components/NavicationHomeDetails";
+
 export default function IconDetailPage() {
 
 
@@ -16,6 +18,8 @@ const id = slug?.split('_').pop();
   const [relatedIcons, setRelatedIcons] = useState([]);
   const [showToast, setShowToast] = useState(false);
   const [showCustom, setShowCustom] = useState(false);
+
+  const [scrolled, setScrolled] = useState(false);
  
 
 
@@ -135,6 +139,9 @@ const id = slug?.split('_').pop();
 
  
   useEffect(() => {
+
+   
+
     const fetchRelatedIcons = async () => {
       try {
         const res = await fetch(`https://iconsguru.ascinatetech.com/api/related-icons/${id}`);
@@ -150,6 +157,9 @@ const id = slug?.split('_').pop();
       fetchRelatedIcons();
     }
   }, [id]);
+  
+
+  
 
   
 
@@ -269,23 +279,30 @@ const id = slug?.split('_').pop();
 
   const renderedSvg = applyColorAndSize(icon.icon_svg);
 
+
+
+
+
   return (
     <>
-       <NavicationHome/>
+       <NavicationHomeDetails/>
         <main className="details-body-parts lisu-lisn-div01 float-start w-100">
-            <div className="container">
-              <aside className="bercrums">
-                    <nav aria-label="breadcrumb">
-                      <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link href="/">Home</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page">{icon.icon_name}</li>
-                      </ol>
-                    </nav>
-                    <h2 className="icon-headings">{icon.icon_name}</h2>
-               </aside>
-               <div className="top-sections01 mt-4  details-coderyt">
-                   <div className="row">
-                       <div className="col-lg-6 col-xl-7 position-relative p-0">
+            
+              
+               <div className="top-sections01 mt-0  details-coderyt">
+                   <div className="main-details-pages01">
+
+                    <aside className="bercrums">
+                        <nav aria-label="breadcrumb">
+                          <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link href="/">Home</Link></li>
+                            <li className="breadcrumb-item active" aria-current="page">{icon.icon_name}</li>
+                          </ol>
+                        </nav>
+                        <h2 className="icon-headings">{icon.icon_name}</h2>
+                    </aside>
+
+                       <div className="col-lg-12 position-relative p-0">
                             <div className="blox-icons-div01" style={{ backgroundColor: isLightColor(color) ? "#000000" : "transparent",}}>
                               <div
                                 className="d-table mx-auto"
@@ -329,7 +346,61 @@ const id = slug?.split('_').pop();
 
                             </div>
                        </div>
-                       <div className="col-lg-6 col-xl-5 buttons-group01 d-grid justify-content-end">
+
+
+                       <div className="styles-icons-div  comon-rows d-block w-100">
+                      <h4 className="sub-titels-h1">Related Icons with the same style</h4>
+                      <div className="relatesd t-ind-icons d-block w-100">
+                        <div className="row row-cols-1 row-cols-lg-6 gy-2 gy-lg-3">
+                          {relatedIcons.map((icon) => (
+                            <article key={icon.Id} className="col">
+                              <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0 position-relative">
+                                  {icon.type === "Animated" ? (
+                                  <img
+                                    src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(icon.icon_svg)}`}
+                                    alt={icon.icon_name}
+                                    width={60}
+                                    height={60}
+                                  />
+                                ) : (
+                                  <div
+                                  className="svg-img d-grid"
+                                  dangerouslySetInnerHTML={{ __html: icon.icon_svg }}
+                                />
+                                )}
+                                
+                              </Link>
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+
+                      <div className="styles-icons-div comon-rows d-block w-100 mb-5 pb-5">
+                          <h4 className="sub-titels-h1"> Related Tags </h4>
+                          <ul className="crm-tagsd d-flex align-items-center flex-wrap m-0 p-0">
+                          {icon.tags?.split(",").map((tag, index) => {
+                            const trimmedTag = tag.trim();
+                            if (!trimmedTag) return null;
+
+                            return (
+                              <li key={index} className="me-2 mb-2 list-unstyled">
+                                <Link
+                                   href={`/icons/${encodeURIComponent(icon.icon_category)}?tag=${encodeURIComponent(trimmedTag)}`}
+                                  className="btn"
+                                >
+                                  {trimmedTag}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                          </ul>
+                      </div>
+                       
+                   </div>
+
+                       <div className={`buttons-group01 ${scrolled ? 'scrolled-class' : ''}`}>
                               <div className="right-details-lis01">
                                   <div className="groups-list-btn">
                                       <div className="comon-groups-div01 d-flex align-items-center justify-content-between">
@@ -494,61 +565,12 @@ const id = slug?.split('_').pop();
                                   </div>
                               </div>
                        </div>
-                   </div>
 
-                   <div className="styles-icons-div  comon-rows d-block w-100">
-                      <h4 className="sub-titels-h1">Related Icons with the same style</h4>
-                      <div className="relatesd t-ind-icons d-block w-100">
-                        <div className="row row-cols-1 row-cols-lg-6 gy-2 gy-lg-3">
-                          {relatedIcons.map((icon) => (
-                            <article key={icon.Id} className="col">
-                              <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0 position-relative">
-                                  {icon.type === "Animated" ? (
-                                  <img
-                                    src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(icon.icon_svg)}`}
-                                    alt={icon.icon_name}
-                                    width={60}
-                                    height={60}
-                                  />
-                                ) : (
-                                  <div
-                                  className="svg-img d-grid"
-                                  dangerouslySetInnerHTML={{ __html: icon.icon_svg }}
-                                />
-                                )}
-                                
-                              </Link>
-                            </article>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-
-                      <div className="styles-icons-div comon-rows d-block w-100 mb-5 pb-5">
-                          <h4 className="sub-titels-h1"> Related Tags </h4>
-                          <ul className="crm-tagsd d-flex align-items-center flex-wrap m-0 p-0">
-                          {icon.tags?.split(",").map((tag, index) => {
-                            const trimmedTag = tag.trim();
-                            if (!trimmedTag) return null;
-
-                            return (
-                              <li key={index} className="me-2 mb-2 list-unstyled">
-                                <Link
-                                   href={`/icons/${encodeURIComponent(icon.icon_category)}?tag=${encodeURIComponent(trimmedTag)}`}
-                                  className="btn"
-                                >
-                                  {trimmedTag}
-                                </Link>
-                              </li>
-                            );
-                          })}
-                          </ul>
-                      </div>
+                   
 
                </div>
               
-            </div>
+            
               
         </main>
        <Footer/>

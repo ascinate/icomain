@@ -30,6 +30,14 @@ export default function CategorySearchPage() {
   const [filters, setFilters] = useState({ categories: [category], colors: [], types: [] });
   const [totalIcons, setTotalIcons] = useState(0);
 
+    const mianmenu = [
+        { id: 1, title: 'Icons' , link: '/icons'  },
+        { id: 2, title: 'Interface Icons' , link: '/interface'  },
+        { id: 3, title: 'Stickers' , link: '/interface'  },
+        { id: 5, title: 'Animated icons' , link: '/interface'  },
+  ];
+  
+
   useEffect(() => {
     const fetchIcons = async () => {
       setIsLoading(true);
@@ -116,6 +124,16 @@ export default function CategorySearchPage() {
             <main className="listing-pages floate-start w-100 mb-5 mt-0 pt-0">
                <NavicationHomeSubpage/>
                 <div className="main-divs g-col-6">
+                 
+                    <div className="serchings-div-filets01">
+                     <ul className="d-flex align-items-center menus-list01">
+                       {mianmenu.map((page) => (
+                            <li className="nav-item" key={page.id}>
+                               <Link href={page.link} className="nav-link"> {page.title} </Link>
+                            </li>
+                        ))}
+                     </ul>
+                    </div>
                   <h2 className="search-listings01"> </h2>
                   <p>
                     Showing <strong className="serch-data">{totalIcons} {category}</strong> 
@@ -162,7 +180,7 @@ export default function CategorySearchPage() {
                                   loading="lazy"
                                   src="/ser-loader.svg"
                                   alt="iconsguru"
-                                  width={825}
+                                  width={1500}
                                   height={364}
                                 />
                           </div>

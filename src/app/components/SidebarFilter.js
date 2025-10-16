@@ -149,6 +149,57 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                 })}
               </ul>
             </div>
+
+            <div className="mb-4">
+              <div className="d-flex align-items-center mt-4">
+             
+                <h5 className="ms-2 mb-0">  Sort by </h5>
+              </div>
+
+              <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-3">
+               
+                    <li className="cmout form-check position-relative" >
+                      <input
+                        id="name"
+                        type="checkbox"
+                        className="form-check-input"
+                      />
+                      <label className="form-check-label">
+                        <span className='imgs01'>
+                            <Image
+                              loading="lazy"
+                              src="/3D.webp"
+                              alt="iconsguru"
+                              width={28}
+                              height={28}
+                            />
+                        </span>
+                        Recent
+                      </label>
+                    </li>
+                    <li className="cmout form-check position-relative" >
+                      <input
+                        id="name"
+                        type="checkbox"
+                        className="form-check-input"
+                      />
+                      <label className="form-check-label">
+                        <span className='imgs01'>
+                            <Image
+                              loading="lazy"
+                              src="/3D.webp"
+                              alt="iconsguru"
+                              width={28}
+                              height={28}
+                            />
+                        </span>
+                        Trending
+                      </label>
+                    </li>
+              </ul>
+            </div>
+
+           
           {showCategoryFilter && (
               <>
             <div className="d-flex align-items-center">

@@ -183,7 +183,7 @@ const searchKeyword = searchParams.get("search");
                                 loading="lazy"
                                 src="/ser-loader.svg"
                                 alt="iconsguru"
-                                width={825}
+                                width={1500}
                                 height={364}
                               />
                             </div>
