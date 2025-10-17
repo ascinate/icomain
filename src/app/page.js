@@ -111,16 +111,24 @@ export default async function Home() {
                                               width={260}
                                               height={178} /> </Link>
                                       </figure>
-                                      <span className="d-flex icon-list-name col-lg-10 mx-auto align-items-center justify-content-between">
+                                      <span className="icon-list-name w-100 mt-2 ms-2 d-inline-block">
                                           <h5 className="mb-0"> 
                                             <Link href={type.link}> 
                                               {type.title}
                                             </Link>
                                           </h5>
-                                          <Link className="coun-text" href={type.link}> 
-                                              
-                                          <strong> {type.counting}</strong> icons
-                                          </Link>
+                                          <p className="coun-text mt-2 d-block"> 
+                                               {type.counting} Icons with source files
+                                          </p>
+
+                                           <Link className="videw-btn btn d-flex align-items-center" href={type.link}> 
+                                               View Collections 
+                                              <span className="ms-2">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,255,255,1)"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg>
+                                               </span>
+                                           </Link>
+
+
                                           
                                       </span>
                                     </article>
@@ -130,6 +138,51 @@ export default async function Home() {
                       </div>
 
                 </div>
+            </section>
+
+            <section className="float-start w-100 categorise-sections">
+               <div className="container">
+                  <div className="row align-content-center">
+                     <div className="col-lg-7">
+                            <h2 className="comon-head m-0"> Popular Categories </h2>
+                     </div>
+                     <div className="col-lg-5 d-grid justify-content-end">
+                        <Link href="/" className="vides-btn d-table">View All <span> 
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg> </span> </Link>
+                     </div>
+                  </div>
+
+                  <div className="row row-cols-1 row-cols-lg-5 gy-4 g-lg-4 mt-0">
+
+                        {icontypes.map((type) => (
+                                  <div className="col" key={type.id}>
+                                    <article className="d-inline-block text-center w-100 comon-categorisg position-relative">
+                                    <span className="tagsd">{type.tag}</span>
+                                      <figure className="text-center mx-auto d-block mb-1">
+                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(255,255,255,1)"><path d="M9 2.4578V4.58152C6.06817 5.76829 4 8.64262 4 12C4 16.4183 7.58172 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15H21.5422C20.2679 19.0571 16.4776 22 12 22C6.47715 22 2 17.5228 2 12C2 7.52236 4.94289 3.73207 9 2.4578ZM12 2C17.5228 2 22 6.47715 22 12C22 12.3375 21.9833 12.6711 21.9506 13H11V2.04938C11.3289 2.01672 11.6625 2 12 2ZM13 4.06189V11H19.9381C19.4869 7.38128 16.6187 4.51314 13 4.06189Z"></path></svg>
+                                      </figure>
+                                      <span className="icon-list-name w-100 mt-2 ms-0 d-inline-block">
+                                          <h5 className="mb-0"> 
+                                            <Link href={type.link}> 
+                                              {type.title}
+                                            </Link>
+                                          </h5>
+                                          <p className="coun-text mt-2 d-block"> 
+                                               {type.counting} Icons
+                                          </p>
+
+
+
+                                          
+                                      </span>
+                                    </article>
+                                  </div>
+                              ))}
+                          
+                      </div>
+
+               </div>
+                
             </section>
 
             <section className="float-start about-sections comon-short-parts w-100">
