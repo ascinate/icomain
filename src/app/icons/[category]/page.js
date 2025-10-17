@@ -147,18 +147,7 @@ export default function CategorySearchPage() {
                                 )}
                                 
                               </Link>
-                              <div className="hover-divs">
-                                <button type="button" className="btn btn-adds">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(67,67,67,1)">
-                                    <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
-                                  </svg>
-                                </button>
-                                <button type="button" className="btn btn-downloads">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(255,255,255,1)">
-                                    <path d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z"></path>
-                                  </svg>
-                                </button>
-                              </div>
+                              
                             </article>
                           </div>
                           ))
