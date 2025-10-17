@@ -64,7 +64,7 @@ function FooterSubpage(){
                                         height={34} />
                             </Link>
 
-                            <p className="ft-paras mt-4"> Join millions of designers, developers, and content creators using Iconguru — a comprehensive icon library and toolkit built for creativity and efficiency. .</p>
+                            <p className="ft-paras mt-2"> Join millions of designers, developers, and content creators using Iconguru — a comprehensive icon library and toolkit built for creativity and efficiency. .</p>
 
                             
                         </div>

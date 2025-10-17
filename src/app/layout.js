@@ -1,4 +1,4 @@
-import { Sora, Play, Playfair, Inter} from "next/font/google";
+import { Sora, Play, Playfair, Inter, Figtree} from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
@@ -6,6 +6,12 @@ import ImportBsJS from "../app/components/ImportBsJS";
 
 const sorasans = Sora({
   variable: "--font-sora-sans",
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+});
+
+const figtreesans = Figtree({
+  variable: "--font-figtree-sans",
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
 });
@@ -47,7 +53,7 @@ export default function RootLayout({ children }) {
       <body>
       <style>{`
         html {
-          font-family: ${sorasans.style.fontFamily};
+          font-family: ${figtreesans.style.fontFamily};
         }
         .banner-parts01 h2, .form-select{
          font-family: ${sorasans.style.fontFamily};
@@ -56,9 +62,31 @@ export default function RootLayout({ children }) {
         .p-autocomplete-item,
         .comon-cont-head,
         .comon-content-div h3,
-        .privacy-page h5{
-         font-family: ${inter.style.fontFamily};
+        .privacy-page h5,{
+         font-family: ${figtreesans.style.fontFamily};
         } 
+         .signup-btn10,
+         .why-menu-btn,
+         .serchings-div-filets01 .nav-link,
+         .related-iconstext .btn-mores-tex,
+         .comon-footers-div01 h5,
+         .comon-links li a,
+         .comon-footers-div01,
+         .ft-paras,
+         .navbar-light .navbar-nav .nav-link,
+         .rights-text-div015 .btn-coun-downalod,
+         .btn-addtocollections,
+         .details-list-modals-lis ul li,
+         .rights-text-div015 h4,
+         .styleigs-list,
+         .main-details-pages01 .styles-icons-div,
+         .cions-titels,
+         .home-banner-sections .btn-search,
+         .favi-icons p,
+         .favi-icons li .btn,
+         .comon-head{
+           font-family: ${figtreesans.style.fontFamily};
+         }
         input{
          font-family: ${sorasans.style.fontFamily};
         }

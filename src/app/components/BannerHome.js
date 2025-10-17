@@ -4,6 +4,7 @@ import { AutoComplete } from 'primereact/autocomplete';
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import SerchInputes from "./SerchInputes";
+import Image from "next/image";
 
 
 
@@ -39,26 +40,44 @@ function BannerHome({ totalIcons }) {
   return (
    
 
-     <section className="float-start w-100 banner-parts01 d-grid align-content-center">
+     <section className="float-start w-100 banner-parts01 home-banner-sections d-grid align-content-center">
      <div className="container">
-         <h5 className="text-center sub-headings">  {totalIcons.toLocaleString()} FREE ICONS </h5>
-         <h2 className="text-center">We Deliver the World’s Best Icons</h2>
-         <p className="text-center text-para1"> Download the perfection and largest unique icons drawn by hand. </p>
-          <SerchInputes/>
+      <div className="row">
+          <div className="col-lg-7">
+              <h5 className="sub-headings">  {totalIcons.toLocaleString()} FREE ICONS </h5>
+              <h2>We Deliver the World’s Best Icons</h2>
+              <p className="text-para1"> High-quality icons for UI, apps, and design projects- free and premium. </p>
+                <SerchInputes/>
+              
+               <div className="favi-icons mt-4 col-lg-7 d-flex align-items-center ">
+                  <p className="m-0">Top searches: </p>
+                  <ul className="d-flex align-items-center ms-3">
+                      {/* {favicons.map((icon) => (
+                          <li key={icon.id}>
+                              <Link href={icon.link} className="fb-icon mx-2"> <span>{icon.code}</span> </Link>
+                          </li>
+                      ))} */}
+                      <li>
+                        <button className="btn btn-list015"> Education </button>
+                      </li>
+                      <li>
+                        <button className="btn btn-list015"> Education </button>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <figure className="m-0 img-cast015">
+        <Image loading="lazy" src="/bg-icons-templtes.svg"
+                                    alt="iconsguru"
+                                    width={1400}
+                                    height={2000} />
          
-         <div className="favi-icons mt-4 col-lg-7 mx-auto d-flex align-items-center justify-content-center">
-             <p className="m-0">Favorite Icons: </p>
-             <ul className="d-flex align-items-center ms-3">
-                {favicons.map((icon) => (
-                     <li key={icon.id}>
-                        <Link href={icon.link} className="fb-icon mx-2"> <span>{icon.code}</span> </Link>
-                     </li>
-                 ))}
-                 <li>
-                   
-                 </li>
-             </ul>
-         </div>
+      </figure>
+         
+         
+        
      </div>
   </section>
   );

@@ -119,7 +119,7 @@ export default function CategorySearchPage() {
                 </p>
 
                 <div className="tabsd_divs d-inline-block w-100 mt-2 position-relative">
-                      <div className=" mt-0">
+                      <div className="mt-0">
                         
                         {isLoading ? (
                           <div className="loading-animations">

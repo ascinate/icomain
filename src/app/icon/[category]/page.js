@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 import NavicationHomeSubpage from "@/app/components/NavicationHomeSubpage";
 import FooterSubpage from "@/app/components/FooterSubpage";
+import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
 
@@ -172,8 +173,7 @@ export default function CategorySearchPage() {
                     </div>
 
                   <div className="tabsd_divs d-inline-block w-100 mt-4">
-                    
-                        <div className="">
+                        <div className="new-icons-bm gy-2 g-lg-2 mt-0">
                           {isLoading ? (
                             <div className="loading-animations">
                                 <Image
@@ -186,10 +186,10 @@ export default function CategorySearchPage() {
                           </div>
                           ) : Array.isArray(icons) && icons.length > 0 ? (
                             icons.map((icon) => (
-                            <div className="new-icons-bm gy-2 g-lg-2 mt-0">
-                              <article key={icon.Id} className="svg-item position-relative">
+                           
+                              <button data-bs-toggle="modal" data-bs-target="#exampleModal" key={icon.Id} className="svg-item position-relative">
                                 <span className="tags-frees">Free</span>
-                                <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
+                                <span  className="btn icons-list p-0">
                                 {icon.type==='Animated' ? (
                                   <img
                                       src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(icon.icon_svg)}`}
@@ -201,21 +201,9 @@ export default function CategorySearchPage() {
                                 )  
                                 }
                                 
-                                </Link>
-                                <div className="hover-divs">
-                                  <button type="button" className="btn btn-adds">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(67,67,67,1)">
-                                      <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
-                                    </svg>
-                                  </button>
-                                  <button type="button" className="btn btn-downloads">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(255,255,255,1)">
-                                      <path d="M13 10H18L12 16L6 10H11V3H13V10ZM4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19Z"></path>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </article>
-                            </div>
+                                </span>
+                                
+                              </button>
                             ))
                           ) : (
                             <div className="col no-found-div w-100">
@@ -278,6 +266,7 @@ export default function CategorySearchPage() {
             <FooterSubpage />
         </div>
       </div>
+      <ModalDeatils/>
     </>
   );
 }
