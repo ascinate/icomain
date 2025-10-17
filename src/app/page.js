@@ -142,17 +142,16 @@ export default async function Home() {
 
             <section className="float-start w-100 categorise-sections">
                <div className="container">
-                  <div className="row align-content-center">
+                  <div className="row align-items-center">
                      <div className="col-lg-7">
                             <h2 className="comon-head m-0"> Popular Categories </h2>
                      </div>
                      <div className="col-lg-5 d-grid justify-content-end">
-                        <Link href="/" className="vides-btn d-table">View All <span> 
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg> </span> </Link>
+                        <Link href="/" className="vides-btn d-table ms-auto">View All  </Link>
                      </div>
                   </div>
 
-                  <div className="row row-cols-1 row-cols-lg-5 gy-4 g-lg-4 mt-0">
+                     <div className="row row-cols-1 row-cols-lg-5 gy-4 g-lg-4 mt-4">
 
                         {icontypes.map((type) => (
                                   <div className="col" key={type.id}>
