@@ -118,57 +118,64 @@ export default function CategorySearchPage() {
                   Showing <strong className="serch-data">{totalIcons}</strong> Icons
                 </p>
 
-                <div className="tabsd_divs d-inline-block w-100 mt-2 position-relative">
-                      <div className="mt-0">
-                        
-                        {isLoading ? (
-                          <div className="loading-animations">
-                                <Image
-                                  loading="lazy"
-                                  src="/ser-loader.svg"
-                                  alt="iconsguru"
-                                  width={859}
-                                  height={364}
-                                />
-                          </div>
-                        ) : Array.isArray(icons) && icons.length > 0 ? (
-                          icons.map((icon) => (
-                          <div className="new-icons-bm gy-2 g-lg-2 mt-0">
-                            <article key={icon.Id} className="svg-item position-relative">
-                              <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
-                               {icon.type === "Animated" ? (
-                                  <img
-                                    src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(icon.icon_svg)}`}
-                                    alt={icon.icon_name}
-                                    style={{ width: "100%", height: "100%" }}
-                                  />
-                                ) : (
-                                <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
-                                )}
-                                
-                              </Link>
-                              
-                            </article>
-                          </div>
-                          ))
-                        ) : (
-                          <div className="col no-found-div w-100">
-                                <div className="not-imgs text-center">
-                                    <figure className="m-0">
-                                          <Image
-                                            loading="lazy"
-                                            src="/nofound.png"
-                                            alt="iconsguru"
-                                            width={249}
-                                            height={219}
-                                          />
-                                    </figure>
-                                    <h2> No results found </h2>
-                                    <p> Try updating your search terms or filters </p>
-                                </div>
-                            </div>
-                        )}
-                      </div>
+                    <div className="tabsd_divs d-inline-block w-100 mt-2 position-relative">
+                      <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                                          {isLoading ? (
+                                            <div className="loading-animations">
+                                              <Image
+                                                loading="lazy"
+                                                src="/ser-loader.svg"
+                                                alt="iconsguru"
+                                                width={1500}
+                                                height={364}
+                                              />
+                                            </div>
+                                          ) : Array.isArray(icons) && icons.length > 0 ? (
+                                            icons.map((icon) => (
+                                              <button
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"
+                                                key={icon.Id}
+                                                className="svg-item position-relative"
+                                              >
+                                                <span className="tags-frees">Free</span>
+                                                <span className="btn icons-list p-0">
+                                                  {icon.type === "Animated" ? (
+                                                    <img
+                                                      src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
+                                                        icon.icon_svg
+                                                      )}`}
+                                                      alt={icon.icon_name}
+                                                      style={{ width: "100%", height: "100%" }}
+                                                    />
+                                                  ) : (
+                                                    <span
+                                                      dangerouslySetInnerHTML={{
+                                                        __html: icon.icon_svg,
+                                                      }}
+                                                    ></span>
+                                                  )}
+                                                </span>
+                                              </button>
+                                            ))
+                                          ) : (
+                                            <div className="col no-found-div w-100">
+                                              <div className="not-imgs text-center">
+                                                <figure className="m-0">
+                                                  <Image
+                                                    loading="lazy"
+                                                    src="/nofound.png"
+                                                    alt="iconsguru"
+                                                    width={249}
+                                                    height={219}
+                                                  />
+                                                </figure>
+                                                <h2>No results found</h2>
+                                                <p>Try updating your search terms or filters</p>
+                                              </div>
+                                            </div>
+                                          )}
+                                        </div>
                       
 
                       {/* Pagination */}

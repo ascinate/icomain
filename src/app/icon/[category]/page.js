@@ -250,7 +250,7 @@ export default function CategorySearchPage() {
               </div>
 
               <div className="tabsd_divs d-inline-block w-100 mt-4">
-                <div className="tabsd_divs d-inline-block w-100 mt-4">
+                
                   <div className="new-icons-bm gy-2 g-lg-2 mt-0">
                     {isLoading ? (
                       <div className="loading-animations">
@@ -308,7 +308,7 @@ export default function CategorySearchPage() {
                       </div>
                     )}
                   </div>
-                </div>
+               
 
                 {/* Pagination */}
                 {totalPages > 1 && (
