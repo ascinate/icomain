@@ -253,14 +253,10 @@ export default function CategorySearchPage() {
                 
                   <div className="new-icons-bm gy-2 g-lg-2 mt-0">
                     {isLoading ? (
-                      <div className="loading-animations">
-                        <Image
-                          loading="lazy"
-                          src="/ser-loader.svg"
-                          alt="iconsguru"
-                          width={1500}
-                          height={364}
-                        />
+                      <div className="loading-animations w-100 show-grids">
+                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
                       </div>
                     ) : Array.isArray(icons) && icons.length > 0 ? (
                       icons.map((icon) => (
@@ -308,7 +304,9 @@ export default function CategorySearchPage() {
                       </div>
                     )}
                   </div>
-               
+
+ 
+                
 
                 {/* Pagination */}
                 {totalPages > 1 && (

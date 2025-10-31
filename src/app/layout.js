@@ -86,7 +86,9 @@ export default function RootLayout({ children }) {
          .favi-icons li .btn,
          .comon-head,
          .comon-types01 h5,
-         .videw-btn{
+         .videw-btn,
+         .comons-cardscus h3,
+         .btn-subcibes{
            font-family: ${figtreesans.style.fontFamily};
          }
         input{

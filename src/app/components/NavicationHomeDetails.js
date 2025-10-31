@@ -44,7 +44,7 @@ function NavicationHomeDetails(){
                            <Link href='/login' className="nav-link  why-menu-btn"> Log in </Link> 
                         </li>
                         <li>
-                           <Link href='/register' className="nav-link ms-3 signup-btn10"> Sign up </Link> 
+                           <Link href='/register' className="nav-link ms-3 signup-btn10"> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 15V3m9 12v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10l5 5l5-5"></path></g></svg> Get Icons </Link> 
                         </li>
                      </ul>
                     {/* <Link href='/login' className="btn me-3">Login</Link>

@@ -151,29 +151,29 @@ export default async function Home() {
                      </div>
                   </div>
 
-                     <div className="row row-cols-1 row-cols-lg-5 gy-4 g-lg-4 mt-4">
+                     <div className="row row-cols-1 row-cols-lg-4 gy-4 g-lg-4 mt-4">
 
                         {icontypes.map((type) => (
                                   <div className="col" key={type.id}>
-                                    <article className="d-inline-block text-center w-100 comon-categorisg position-relative">
+                                    <article className="d-inline-block  w-100 comon-categorisg position-relative">
                                     <span className="tagsd">{type.tag}</span>
-                                      <figure className="text-center mx-auto d-block mb-1">
-                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(255,255,255,1)"><path d="M9 2.4578V4.58152C6.06817 5.76829 4 8.64262 4 12C4 16.4183 7.58172 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15H21.5422C20.2679 19.0571 16.4776 22 12 22C6.47715 22 2 17.5228 2 12C2 7.52236 4.94289 3.73207 9 2.4578ZM12 2C17.5228 2 22 6.47715 22 12C22 12.3375 21.9833 12.6711 21.9506 13H11V2.04938C11.3289 2.01672 11.6625 2 12 2ZM13 4.06189V11H19.9381C19.4869 7.38128 16.6187 4.51314 13 4.06189Z"></path></svg>
-                                      </figure>
-                                      <span className="icon-list-name w-100 mt-2 ms-0 d-inline-block">
-                                          <h5 className="mb-0"> 
-                                            <Link href={type.link}> 
-                                              {type.title}
-                                            </Link>
-                                          </h5>
-                                          <p className="coun-text mt-2 d-block"> 
-                                               {type.counting} Icons
-                                          </p>
-
-
-
-                                          
-                                      </span>
+                                      <div className="d-flex ps-lg-4 align-items-start">
+                                            <figure className="text-center mb-1">
+                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(255,255,255,1)"><path d="M9 2.4578V4.58152C6.06817 5.76829 4 8.64262 4 12C4 16.4183 7.58172 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15H21.5422C20.2679 19.0571 16.4776 22 12 22C6.47715 22 2 17.5228 2 12C2 7.52236 4.94289 3.73207 9 2.4578ZM12 2C17.5228 2 22 6.47715 22 12C22 12.3375 21.9833 12.6711 21.9506 13H11V2.04938C11.3289 2.01672 11.6625 2 12 2ZM13 4.06189V11H19.9381C19.4869 7.38128 16.6187 4.51314 13 4.06189Z"></path></svg>
+                                           </figure>
+                                           <span className="icon-list-name ps-4  mt-2 ms-0 d-inline-block">
+                                              <h5 className="mb-0"> 
+                                                <Link href={type.link}> 
+                                                  {type.title}
+                                                </Link>
+                                              </h5>
+                                              <p className="coun-text mt-2 d-block"> 
+                                                  {type.counting} Icons
+                                              </p>
+                                           </span>
+                                      </div>
+                                      
+                                      
                                     </article>
                                   </div>
                               ))}
@@ -184,141 +184,69 @@ export default async function Home() {
                 
             </section>
 
-            <section className="float-start about-sections comon-short-parts w-100">
+            <section className="float-start about-sections-features01 bg-light comon-short-parts w-100">
                 <aside className="container">
-                    <div className="row row-cols-1 row-cols-lg-2 align-items-center">
+                   <h2 className="comon-head text-center"> Customize Icons Instantly </h2>
+                    <div className="row row-cols-1 row-cols-lg-3 gx-lg-4 align-items-center mt-4">
                         <div className="col">
-                          <div className="ab-left">
-                              <h2 className="comon-head"> All the style that <span className="d-lg-block"> you need! </span> </h2>
-                              <p className="col-lg-8 mt-2"> We’ve developed from scratch our tools to browse, customize and quickly us.  </p>
-                              <ul className="p-0 m-0 fe-list mt-4">
-                                <li className="d-flex align-items-baseline">
-                                    <span className="icoh">
-                                      <Image loading="lazy" src="/flag.svg"
-                                            alt="user"
-                                            width={32}
-                                            height={32} />
-                                    
-                                    </span>
-                                    <h5 className="ms-3"> Line black 
-                                      <small className="d-block"> We offer 3 style of line icons  </small> 
-                                    </h5>
-                                </li>
-                                <li className="d-flex align-items-baseline">
-                                    <span className="icoh">
-                                      <Image loading="lazy" src="/fill-b.svg"
-                                            alt="user"
-                                            width={32}
-                                            height={32} />
-                                    
-                                    </span>
-                                    <h5 className="ms-3"> Fill black 
-                                      <small className="d-block"> This style is great for you project  </small> 
-                                    </h5>
-                                </li>
-                                <li className="d-flex align-items-baseline">
-                                    <span className="icoh">
-                                      <Image loading="lazy" src="/color.svg"
-                                            alt="user"
-                                            width={32}
-                                            height={32} />
-                                    
-                                    </span>
-                                    <h5 className="ms-3"> Colors 
-                                      <small className="d-block"> We offer 5 style of line icons   </small> 
-                                    </h5>
-                                </li>
-                              </ul>
-                          </div>
+                           <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                               <div className="text-div015 d-inline-block w-100">
+                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 22a1 1 0 0 1 0-20a10 9 0 0 1 10 9a5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></g></svg> </span> Change Color </h3>
+                                   <p> Tweak fills and strokes to match your brand with one click. </p>
+                                   <Link href="/" className="btn"> Try Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg> </Link>
+                               </div>
+                           </div>
                         </div>
                         <div className="col">
-                          <figure className="m-0">
-                              <Image loading="lazy" src="/style-icon.svg"
-                                            alt="user"
-                                            width={500}
-                                            height={383} />
-                          </figure>
+                             <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                               <div className="text-div015 d-inline-block w-100">
+                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 13v8m-8-6.101A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="m8 17l4-4l4 4"></path></g></svg> </span> Upload & Remix </h3>
+                                   <p> Upload SVGs and remix with styles, outlines, and effects. </p>
+                                   <Link href="/" className="btn"> Try Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg> </Link>
+                               </div>
+                             </div>
+                        </div>
+                        <div className="col">
+                             <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                               <div className="text-div015 d-inline-block w-100">
+                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4"></path><circle cx="4" cy="20" r="2"></circle></g></svg> </span> Generate </h3>
+                                   <p> Create consistent icon sets from text prompts instantly. </p>
+                                   <Link href="/" className="btn"> Try Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg> </Link>
+                               </div>
+                             </div>
                         </div>
                     </div>
                 </aside>
             </section>
 
-            <section className="float-start w-100 comon-short-parts types-catg-sections">
+            <section className="subscribe-sections float-start w-100">
                 <div className="container">
-                    <h2 className="text-center comon-head"> Professional Icon Set Features </h2>
-                    <p className="text-center"> Download the perfection and largest unique icons drawn by hand. </p>
-                    <div className="row row-cols-1 show-list04 row-cols-lg-3 gy-4 g-lg-4 mt-5 categort-list01">
-
-                    {categorytypes.map((type) => (
-                                  <div className="col" key={type.id}>
-                                    <article className="d-inline-block w-100 comon-types01 position-relative">
-                                    <span className="tagsd">{type.tag}</span>
-                                      <figure className="text-center mx-auto d-block mb-1">
-                                        <Link href={type.link}> <Image loading="lazy" src={type.img}
-                                              alt="user"
-                                              width={260}
-                                              height={178} /> </Link>
-                                      </figure>
-                                      <span className="d-flex icon-list-name col-lg-10 mx-auto align-items-center justify-content-between">
-                                          <h5 className="mb-0"> 
-                                            <Link href={type.link}> 
-                                              {type.title}
-                                            </Link>
-                                          </h5>
-                                          <Link className="coun-text" href={type.link}> 
-                                              
-                                          <strong> {type.counting}</strong> icons
-                                          </Link>
-                                          
-                                      </span>
-                                    </article>
-                                  </div>
-                              ))}
-
-                    </div>
+                  <div className="row row-cols-1 row-cols-lg-2">
+                     <div className="col">
+                         <h2> Trusted by 50,000+ designers worldwide </h2>
+                         <div className="row row-cols-1 row-cols-lg-5 mt-4">
+                             <div className="col">
+                                  <figure className="m-0 logos">
+                                     <Image loading="lazy" src="/sp-o.jpg"
+                                                        alt="iconsguru"
+                                                        width={436}
+                                                        height={51} />
+                                  </figure>
+                             </div>
+                         </div>
+                     </div>
+                     <div className="col">
+                        <h2 className=""> Get weekly design inspiration and free icons </h2>
+                        <div className="w-100 mt-5 getst-div justify-content-center d-flex align-items-center">
+                            <input type="text" className="form-control" placeholder="Enter your address"/>
+                            <button type="submit" className="btn btn-subcibes"> Subscribe </button>
+                        </div>
+                     </div>
+                  </div>
+                   
                 </div>
             </section>
-              
 
-            <section className="float-start about-sections comon-short-parts mb-5 w-100">
-                <aside className="container">
-                    <div className="row row-cols-1 row-cols-lg-2 align-items-center">
-                        <div className="col">
-                          <div className="ab-left">
-                              <h2 className="comon-head"> What’s New<span className="d-lg-block"> in Iconsguru </span> </h2>
-                              <p className="col-lg-9 mt-2"> Level up your designs with our premium icons! Whether you need sleek, modern, or creative icons, we’ve got you covered.  </p>
-                              <h5 className="mt-4"> Available Formats </h5>
-                              <ul className="p-0 d-flex align-items-center flex-wrap m-0 fe-list fe-list2 mt-4">
-                                <li className="d-flex align-items-baseline">
-                                    <h5 className="m-0"> PNG 
-                                    </h5>
-                                </li>
-                                <li className="d-flex align-items-baseline">
-                                    <h5 className="m-0"> SVG
-                                    </h5>
-                                </li>
-                                <li className="d-flex align-items-baseline">
-                                    <h5 className="m-0"> WEBP
-                                    </h5>
-                                </li>
-                                
-                                
-                              </ul>
-                              <Link href='/icons' className="btn btn-expolre mt-3"> Explore now </Link>
-                              
-                          </div>
-                        </div>
-                        <div className="col">
-                          <figure className="m-0">
-                              <Image loading="lazy" src="/download-svg.svg"
-                                            alt="user"
-                                            width={442}
-                                            height={338} />
-                          </figure>
-                        </div>
-                    </div>
-                </aside>
-              </section>
           
 
               

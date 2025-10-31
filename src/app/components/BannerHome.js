@@ -69,10 +69,10 @@ function BannerHome({ totalIcons }) {
       </div>
 
       <figure className="m-0 img-cast015">
-        <Image loading="lazy" src="/bg-icons-templtes.svg"
+        <Image loading="lazy" src="/banice.png"
                                     alt="iconsguru"
-                                    width={1400}
-                                    height={2000} />
+                                    width={522}
+                                    height={503} />
          
       </figure>
          

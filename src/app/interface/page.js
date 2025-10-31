@@ -85,7 +85,7 @@ export default function InterfaceIconsPage() {
               ) : (
                 <>
                 <div className="t-ind-icons mt-4">
-                  <div className="new-icons-bm-bg">
+                  <div className="new-icons-bm-bg news">
                     {icons.map((icon) => (
                       
                         <article className="svg-item position-relative" key={icon.Id}>
