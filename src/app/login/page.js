@@ -66,7 +66,7 @@ function Login(){
                              <div className="col-lg-4">
                                 <div className="coninues-div015 d-grid align-content-center w-100">
                                  {hiddend && (
-                                    <div className="col-lg-5 mx-auto mb-3">
+                                    <div className="col-lg-11 mx-auto mb-3">
                                         <button onClick={hideVisiblLogin} className="back-tbn01 btn"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path></svg> Back </button>
                                     </div>
                                     )}
@@ -107,7 +107,7 @@ function Login(){
                                     </div>
                                     )}
                                     {hiddend && (
-                                        <div className="col-lg-5 mx-auto email-div01">
+                                        <div className="col-lg-9 mx-auto email-div01">
                                         <div className="comon-rgesigner-sections d-inline-block w-100">
                                             <Form onSubmit={handleLogin}>
 
