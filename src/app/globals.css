@@ -1564,7 +1564,7 @@ span.imgs01 img{
 }
 .new-filter-05 .form-check .form-check-input{
   position: relative;
-  top:-1px !important;
+  top:-2px !important;
 }
 .filters-btn h4{
     font-size: 15px;
@@ -2063,7 +2063,7 @@ button.btn.btn-list015 {
   font-weight: 700 !important;
 }
 .totals-sections-mains01 .listing-pages{
-  padding-left: 1rem;
+  padding-left: 0;
 }
 .sidebars-subpages .slider-filtersr-div{
   overflow-y: auto;
