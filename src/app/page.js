@@ -219,33 +219,41 @@ export default async function Home() {
                 </aside>
             </section>
 
-            <section className="subscribe-sections float-start w-100">
+            <section className="trusted-list float-start w-100">
                 <div className="container">
-                  <div className="row row-cols-1 row-cols-lg-2">
-                     <div className="col">
-                         <h2> Trusted by 50,000+ designers worldwide </h2>
-                         <div className="row row-cols-1 row-cols-lg-5 mt-4">
-                             <div className="col">
-                                  <figure className="m-0 logos">
-                                     <Image loading="lazy" src="/sp-o.jpg"
+                   <div className="row align-items-center">
+                       <div className="col-lg-6 text-center">
+                           <h2 className="comon-head left-head"> Trusted by 50,000+ designers worldwide </h2>
+                              <figure className="m-0 mx-auto text-center d-block comons-logs">
+                                    <Image loading="lazy" src="/shofyi-logo.png"
                                                         alt="iconsguru"
-                                                        width={436}
-                                                        height={51} />
-                                  </figure>
-                             </div>
-                         </div>
-                     </div>
-                     <div className="col">
-                        <h2 className=""> Get weekly design inspiration and free icons </h2>
-                        <div className="w-100 mt-5 getst-div justify-content-center d-flex align-items-center">
-                            <input type="text" className="form-control" placeholder="Enter your address"/>
-                            <button type="submit" className="btn btn-subcibes"> Subscribe </button>
-                        </div>
-                     </div>
-                  </div>
+                                                        width={681}
+                                                        height={332} />
+                                 </figure>
+                           
+                       </div>
+                       <div className="col-lg-6">
+                          <div className="subscribes-div01 w-100 mx-auto d-table text-center">
+                              <h2 className="comon-head"> Lets Keep in touch </h2>  
+                              <p> Subscribe to keep up with fresh news exciting updates. <br/>
+                              We promise not to spam you!</p>
+                              <div className="col-lg-8 mx-auto d-table">
+                                <div className="w-100 mt-4 getst-div justify-content-center d-flex align-items-center">
+                                  <input type="text" className="form-control" placeholder="Enter your address"/>
+                                  <button type="submit" className="btn btn-subcibes"> Subscribe </button>
+                                </div>
+                              </div>
+                         
+                          </div>
+                       </div>
+                   </div>
+
                    
+
                 </div>
             </section>
+
+            
 
           
 

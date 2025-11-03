@@ -1456,6 +1456,52 @@ footer.footer-lights015-mains.comon-short-parts hr{
     right: 0 !important;
 }
 
+.trusted-list{ padding: 90px 0; }
+.btn-trustedbtn{ 
+    background: #1fb141 !important;
+    font-size: 17px !important;
+    border-radius: 7px !important;
+    padding: 10px 25px !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+}
+.trusted-list p{
+  font-size: 19px;
+  color: var(--foreground);
+}
+.comons-logs img{
+  width: 61% !important;
+  height: 61% !important;
+  display: block;
+  margin: auto;
+}
+.subscribes-div01{
+    padding: 40px 0;
+    border-radius: 12px;
+    margin-top: 0;
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+.subscribes-div01 .form-control {
+    font-size: 15px;
+    text-indent: 8px;
+    border-radius: 12px;
+    width: 90%;
+    margin-right: 16px;
+    border: 1px solid #ebebeb;
+    padding-right: 15px;
+    height: 50px;
+}
+.subscribes-div01 .btn-subcibes {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 7px;
+    background: var(--head-color) !important;
+}
+.trusted-list .left-head{
+  font-size: 30px;
+}
 @media (width >= 1200px) {
   .comon-rows .row > div.col {
       flex: none;
