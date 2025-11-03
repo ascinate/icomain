@@ -116,17 +116,11 @@ export default function CategorySearchPage() {
           <div className="slider-filtersr-div">
             <button
               onClick={handleToggle}
-              className="btn w-100 comon_heading01 d-flex align-items-center filters-btn"
+              className="btn ps-0 w-100 comon_heading01 d-flex align-items-center filters-btn"
             >
               <span className="icpn-svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  fill="rgba(0,0,0,1)"
-                >
-                  <path d="M5 7C5 6.17157 5.67157 5.5 6.5 5.5C7.32843 5.5 8 6.17157 8 7C8 7.82843 7.32843 8.5 6.5 8.5C5.67157 8.5 5 7.82843 5 7ZM6.5 3.5C4.567 3.5 3 5.067 3 7C3 8.933 4.567 10.5 6.5 10.5C8.433 10.5 10 8.933 10 7C10 5.067 8.433 3.5 6.5 3.5ZM12 8H20V6H12V8ZM16 17C16 16.1716 16.6716 15.5 17.5 15.5C18.3284 15.5 19 16.1716 19 17C19 17.8284 18.3284 18.5 17.5 18.5C16.6716 18.5 16 17.8284 16 17ZM17.5 13.5C15.567 13.5 14 15.067 14 17C14 18.933 15.567 20.5 17.5 20.5C19.433 20.5 21 18.933 21 17C21 15.067 19.433 13.5 17.5 13.5ZM4 16V18H12V16H4Z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
                 </svg>
               </span>
               <h4 className="ms-2">
@@ -173,19 +167,8 @@ export default function CategorySearchPage() {
           <main className="listing-pages floate-start w-100 mb-5 mt-0 pt-0">
             <NavicationHomeSubpage />
             <div className="main-divs g-col-6">
-              <div className="serchings-div-filets01">
-                <ul className="d-flex align-items-center menus-list01">
-                  {mianmenu.map((page) => (
-                    <li className="nav-item" key={page.id}>
-                      <Link href={page.link} className="nav-link">
-                        {" "}
-                        {page.title}{" "}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <h2 className="search-listings01"> </h2>
+             
+              
               <p>
                 Showing{" "}
                 <strong className="serch-data">
@@ -350,7 +333,6 @@ export default function CategorySearchPage() {
               </div>
             </div>
           </main>
-          <FooterSubpage />
         </div>
       </div>
       <ModalDeatils />
