@@ -146,7 +146,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                       </div>
                     </div>
                 </div>
-                <div className="accordion-item mt-4">
+                <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneb" aria-expanded="true" aria-controls="collapseOne">
                        <span className='me-2'> 
@@ -187,7 +187,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                        </div>
                     </div>
                 </div>
-                <div className="accordion-item mt-4">
+                <div className="accordion-item">
                    <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnec" aria-expanded="true" aria-controls="collapseOne">
                         <span className='me-2'> 

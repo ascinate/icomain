@@ -61,6 +61,7 @@ export default function Icons() {
                 </div>
       </section>
       <main className="pricing-pages-part float-start w-100 mb-5">
+        
             <section className="float-start w-100 pt-0">
                   <div className="container">
                      <div className="comon-cate-list trending-icons d-inline-block w-100">

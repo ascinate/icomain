@@ -88,254 +88,264 @@ export default function CategorySearchPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div
-        className={`totals-sections-mains01 ${isToggled ? "swowpactive" : ""}`}
-      >
-        <aside className="sidebars-subpages  pt-3">
-          <Link href="/" className="looso-shape pe-4 ps-3 d-flex align-items-center">
-            <div className="isons">
-              <Image
-                loading="lazy"
-                src="/shape-icons015.svg"
-                alt="iconsguru"
-                width={33}
-                height={34}
-              />
-            </div>
-            <div className="text-loghos">
-              <Image
-                loading="lazy"
-                src="/full-text015.svg"
-                alt="iconsguru"
-                width={170}
-                height={25}
-              />
-            </div>
-          </Link>
-          <div className="slider-filtersr-div">
-            <button
-              onClick={handleToggle}
-              className="btn pe-4 ps-3 w-100 comon_heading01 d-flex align-items-center filters-btn"
-            >
-              <span className="icpn-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-                </svg>
-              </span>
-              <h4 className="ms-2">
-                {" "}
-                Filter{" "}
-                <span className="arose">
+      
+      <body className="lesting-searchings">
+        <div
+          className={`totals-sections-mains01 ${isToggled ? "swowpactive" : ""}`}
+        >
+          <aside className="sidebars-subpages  pt-3">
+            <Link href="/" className="looso-shape pe-4 ps-3 d-flex align-items-center">
+              <div className="isons">
+                <Image
+                  loading="lazy"
+                  src="/shape-icons015.svg"
+                  alt="iconsguru"
+                  width={33}
+                  height={34}
+                />
+              </div>
+              <div className="text-loghos">
+                <Image
+                  loading="lazy"
+                  src="/full-text015.svg"
+                  alt="iconsguru"
+                  width={170}
+                  height={25}
+                />
+              </div>
+            </Link>
+            <div className="slider-filtersr-div">
+              <button
+                onClick={handleToggle}
+                className="btn pe-4 ps-3 w-100 comon_heading01 d-flex align-items-center filters-btn"
+              >
+                <span className="icpn-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </span>
+                <h4 className="ms-2">
                   {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-arrow-left"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
-                    />
-                  </svg>{" "}
-                </span>{" "}
-              </h4>
-            </button>
+                  Filter{" "}
+                  <span className="arose">
+                    {" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-left"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                      />
+                    </svg>{" "}
+                  </span>{" "}
+                </h4>
+              </button>
+              <SidebarFilter
+                onFilterChange={setFilters}
+                showCategoryFilter={false}
+              />
+            </div>
             <SidebarFilter
-              onFilterChange={setFilters}
-              showCategoryFilter={false}
+              onFilterChange={(newFilters) => {
+                setFilters((prev) => ({
+                  ...prev,
+                  ...newFilters,
+                  categories:
+                    newFilters.categories.length > 0
+                      ? newFilters.categories
+                      : [category],
+                }));
+              }}
+              showCategoryFilter={true}
             />
-          </div>
-          <SidebarFilter
-            onFilterChange={(newFilters) => {
-              setFilters((prev) => ({
-                ...prev,
-                ...newFilters,
-                categories:
-                  newFilters.categories.length > 0
-                    ? newFilters.categories
-                    : [category],
-              }));
-            }}
-            showCategoryFilter={true}
-          />
-        </aside>
-        <div className="rights-sections-sub">
-          <main className="listing-pages floate-start w-100 mb-5 mt-0 pt-0">
-            <NavicationHomeSubpage />
-            <div className="main-divs g-col-6">
-             
-              
-              <p>
-                Showing{" "}
-                <strong className="serch-data">
-                  {totalIcons} {category}
-                </strong>
-              </p>
+          </aside>
+          <div className="rights-sections-sub">
+            <main className="listing-pages no-border floate-start w-100 mb-5 mt-0 pt-0">
+              <NavicationHomeSubpage />
+              <div className="main-divs g-col-6">
+              <div className="serchings-div-filets01">
+                      <ul className="d-flex align-items-center menus-list01">
+                        {mianmenu.map((page) => (
+                              <li className="nav-item" key={page.id}>
+                                <Link href={page.link} className="nav-link"> {page.title} </Link>
+                              </li>
+                          ))}
+                      </ul>
+                      </div>
+                
+                <p className="spaceing-lefts">
+                  Showing{" "}
+                  <strong className="serch-data">
+                    {totalIcons} {category}
+                  </strong>
+                </p>
 
-              <div className="related-iconstext">
-                <div className="d-flex align-items-center">
-                  <p className="m-0"> Related: </p>
-                  <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Design{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Building{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Architecture{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Furniture{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Construction{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Construction{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Property{" "}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/" className="btn-mores-tex">
-                        {" "}
-                        Estate{" "}
-                      </Link>
-                    </li>
-                  </ul>
+                <div className="related-iconstext">
+                  <div className="d-flex align-items-center">
+                    <p className="m-0"> Related: </p>
+                    <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Design{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Building{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Architecture{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Furniture{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Construction{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Construction{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Property{" "}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/" className="btn-mores-tex">
+                          {" "}
+                          Estate{" "}
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="tabsd_divs d-inline-block w-100 mt-4">
+                    
+                    <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                      {isLoading ? (
+                        <div className="loading-animations w-100 show-grids">
+                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                        </div>
+                      ) : Array.isArray(icons) && icons.length > 0 ? (
+                        icons.map((icon) => (
+                          <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            key={icon.Id}
+                            className="svg-item position-relative"
+                          >
+                            <span className="tags-frees">Free</span>
+                            <span className="btn icons-list p-0">
+                              {icon.type === "Animated" ? (
+                                <img
+                                  src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
+                                    icon.icon_svg
+                                  )}`}
+                                  alt={icon.icon_name}
+                                  style={{ width: "100%", height: "100%" }}
+                                />
+                              ) : (
+                                <span
+                                  dangerouslySetInnerHTML={{
+                                    __html: icon.icon_svg,
+                                  }}
+                                ></span>
+                              )}
+                            </span>
+                          </button>
+                        ))
+                      ) : (
+                        <div className="col no-found-div w-100">
+                          <div className="not-imgs text-center">
+                            <figure className="m-0">
+                              <Image
+                                loading="lazy"
+                                src="/nofound.png"
+                                alt="iconsguru"
+                                width={249}
+                                height={219}
+                              />
+                            </figure>
+                            <h2>No results found</h2>
+                            <p>Try updating your search terms or filters</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+  
+                  
+
+                  {/* Pagination */}
+                  {totalPages > 1 && (
+                    <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
+                      <button
+                        className="btn btn-pre"
+                        onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                        disabled={page === 1}
+                      >
+                        ← Previous
+                      </button>
+
+                      {[...Array(totalPages)].map((_, index) => {
+                        const pageNum = index + 1;
+                        return (
+                          <button
+                            key={pageNum}
+                            onClick={() => setPage(pageNum)}
+                            className={`btn btn-sm ${
+                              page === pageNum
+                                ? "btn-primary"
+                                : "btn-outline-secondary"
+                            }`}
+                          >
+                            {pageNum}
+                          </button>
+                        );
+                      })}
+
+                      <button
+                        className="btn btn-next"
+                        onClick={() =>
+                          setPage((prev) => Math.min(prev + 1, totalPages))
+                        }
+                        disabled={page === totalPages}
+                      >
+                        Next →
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
-
-              <div className="tabsd_divs d-inline-block w-100 mt-4">
-                
-                  <div className="new-icons-bm gy-2 g-lg-2 mt-0">
-                    {isLoading ? (
-                      <div className="loading-animations w-100 show-grids">
-                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                          <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                      </div>
-                    ) : Array.isArray(icons) && icons.length > 0 ? (
-                      icons.map((icon) => (
-                        <button
-                          data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"
-                          key={icon.Id}
-                          className="svg-item position-relative"
-                        >
-                          <span className="tags-frees">Free</span>
-                          <span className="btn icons-list p-0">
-                            {icon.type === "Animated" ? (
-                              <img
-                                src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
-                                  icon.icon_svg
-                                )}`}
-                                alt={icon.icon_name}
-                                style={{ width: "100%", height: "100%" }}
-                              />
-                            ) : (
-                              <span
-                                dangerouslySetInnerHTML={{
-                                  __html: icon.icon_svg,
-                                }}
-                              ></span>
-                            )}
-                          </span>
-                        </button>
-                      ))
-                    ) : (
-                      <div className="col no-found-div w-100">
-                        <div className="not-imgs text-center">
-                          <figure className="m-0">
-                            <Image
-                              loading="lazy"
-                              src="/nofound.png"
-                              alt="iconsguru"
-                              width={249}
-                              height={219}
-                            />
-                          </figure>
-                          <h2>No results found</h2>
-                          <p>Try updating your search terms or filters</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
- 
-                
-
-                {/* Pagination */}
-                {totalPages > 1 && (
-                  <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
-                    <button
-                      className="btn btn-pre"
-                      onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                      disabled={page === 1}
-                    >
-                      ← Previous
-                    </button>
-
-                    {[...Array(totalPages)].map((_, index) => {
-                      const pageNum = index + 1;
-                      return (
-                        <button
-                          key={pageNum}
-                          onClick={() => setPage(pageNum)}
-                          className={`btn btn-sm ${
-                            page === pageNum
-                              ? "btn-primary"
-                              : "btn-outline-secondary"
-                          }`}
-                        >
-                          {pageNum}
-                        </button>
-                      );
-                    })}
-
-                    <button
-                      className="btn btn-next"
-                      onClick={() =>
-                        setPage((prev) => Math.min(prev + 1, totalPages))
-                      }
-                      disabled={page === totalPages}
-                    >
-                      Next →
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </main>
+            </main>
+          </div>
         </div>
-      </div>
-      <ModalDeatils />
+        <ModalDeatils />
+      </body>
     </>
   );
 }

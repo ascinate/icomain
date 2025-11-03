@@ -1432,7 +1432,7 @@ footer.footer-lights015-mains.comon-short-parts hr{
   background: none !important;
   border: none !important;
 }
-.sidebarsd_div .accordion .accordion-body{ padding: 0 !important; }
+.sidebarsd_div .accordion .accordion-body{ padding: 0 0 20px 0 !important; }
 .sidebarsd_div .accordion .accordion-body ul{ list-style-type: none !important; padding: 0; margin: 0; }
 .sidebarsd_div .accordion-button{ background: none !important; text-transform: uppercase; color: var(--head-color) !important;
  padding-left: 0; padding-right: 0; font-weight: 600; font-size: 15px; box-shadow: none !important; border-bottom:solid 1px #00000020 !important;
@@ -1444,7 +1444,17 @@ footer.footer-lights015-mains.comon-short-parts hr{
 .sidebarsd_div .accordion-button::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
 }
+.spaceing-lefts{ padding-left: 35px; }
+.no-border .main-divs{ padding-top: 0 !important; }
 
+
+.lesting-searchings .p-autocomplete-panel {
+    margin: auto;
+    width: 49% !important;
+    min-width: 52% !important;
+    left: -167px !important;
+    right: 0 !important;
+}
 
 @media (width >= 1200px) {
   .comon-rows .row > div.col {
@@ -1576,6 +1586,16 @@ span.imgs01 img{
     width: 90%;
     text-transform: uppercase;
 }
+.no-border .sub_header{ border-bottom: none !important; }
+.no-border .listing-pages {
+    padding-top: 59px !important;
+}
+.totals-sections-mains01 .main-divs{ padding-left: 0 !important; }
+.totals-sections-mains01 .main-divs{ padding-left: 0 !important; }
+.totals-sections-mains01 .main-divs .serchings-div-filets01{ padding-left: 20px; }
+.totals-sections-mains01 .main-divs .search-listings01 { padding-left: 39px; }
+.totals-sections-mains01 .main-divs .related-iconstext{ padding-left: 39px; }
+.totals-sections-mains01 .main-divs .tabsd_divs{ padding-left: 39px;  }
 /* .new-filter-05 .cmout .form-check-label::before{
   position: absolute;
   content: "\2713";
