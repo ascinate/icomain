@@ -92,8 +92,8 @@ export default function CategorySearchPage() {
       <div
         className={`totals-sections-mains01 ${isToggled ? "swowpactive" : ""}`}
       >
-        <aside className="sidebars-subpages pe-4 ps-3 pt-3">
-          <Link href="/" className="looso-shape d-flex align-items-center">
+        <aside className="sidebars-subpages  pt-3">
+          <Link href="/" className="looso-shape pe-4 ps-3 d-flex align-items-center">
             <div className="isons">
               <Image
                 loading="lazy"
@@ -116,7 +116,7 @@ export default function CategorySearchPage() {
           <div className="slider-filtersr-div">
             <button
               onClick={handleToggle}
-              className="btn ps-0 w-100 comon_heading01 d-flex align-items-center filters-btn"
+              className="btn pe-4 ps-3 w-100 comon_heading01 d-flex align-items-center filters-btn"
             >
               <span className="icpn-svg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">

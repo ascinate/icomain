@@ -85,7 +85,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
             <div className="accordion mt-3" id="accordionPanelsStayOpenExample">
                 <div className="accordion-item d-none">
                     <h2 className="accordion-header" id="headingOne">
-                      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <span className='me-2'> 
                            <Image
                             loading="lazy"
@@ -106,7 +106,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
-                      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnea" aria-expanded="true" aria-controls="collapseOne">
+                      <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnea" aria-expanded="true" aria-controls="collapseOne">
                         <span className='me-2'> 
                           
                            <Image
@@ -148,7 +148,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                 </div>
                 <div className="accordion-item mt-4">
                     <h2 className="accordion-header" id="headingOne">
-                      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneb" aria-expanded="true" aria-controls="collapseOne">
+                      <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneb" aria-expanded="true" aria-controls="collapseOne">
                        <span className='me-2'> 
                            <Image
                             loading="lazy"
@@ -189,7 +189,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                 </div>
                 <div className="accordion-item mt-4">
                    <h2 className="accordion-header" id="headingOne">
-                      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnec" aria-expanded="true" aria-controls="collapseOne">
+                      <button className="accordion-button pe-4 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnec" aria-expanded="true" aria-controls="collapseOne">
                         <span className='me-2'> 
                           
                            <Image
