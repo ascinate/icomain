@@ -1214,6 +1214,10 @@ footer hr{
   font-weight: 600;
   font-size: 46px;
 }
+.register-pages-crm {
+  background: #000;
+  min-height: 100vh;
+}
 .register-pages-crm .sub-para{
   font-size: 18px;
   color: var(--head-color);
@@ -1225,6 +1229,10 @@ footer hr{
   font-weight: 500;
   color: var(--head-color);
 
+}
+.register-pages-crm  .coninues-div015{
+  background: var(--background);
+  min-height: 100vh;
 }
 
 .comon-rgesigner-sections .form-control{
@@ -1455,7 +1463,10 @@ footer.footer-lights015-mains.comon-short-parts hr{
     left: -167px !important;
     right: 0 !important;
 }
-
+.full-img img{
+  width: 100%;
+  height: 100%;
+}
 .trusted-list{ padding: 90px 0; }
 .btn-trustedbtn{ 
     background: #1fb141 !important;
