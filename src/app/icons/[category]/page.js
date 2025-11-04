@@ -9,8 +9,14 @@ import SidebarFilter from "@/app/components/SidebarFilter";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useSearchParams } from 'next/navigation';
+import NavicationHomeSubpage from "@/app/components/NavicationHomeSubpage";
 
 export default function CategorySearchPage() {
+    const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled((prev) => !prev);
+  };
   const params = useParams();
   const searchParams = useSearchParams();
   const category = params.category;
@@ -85,143 +91,177 @@ export default function CategorySearchPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavicationHome />
-      
-
-      <main className="listing-pages floate-start w-100">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3">
-            <SidebarFilter
-              onFilterChange={(newFilters) => {
-                setFilters((prev) => ({
-                  ...prev,
-                  ...newFilters,
-                  categories: newFilters.categories?.length > 0
-                    ? newFilters.categories
-                    : isType ? [] : [category],
-                  types: newFilters.types?.length > 0
-                    ? newFilters.types
-                    : isType ? [category] : [],
-                  tag: newFilters.tag ?? prev.tag 
-                }));
-              }}
-              showCategoryFilter={!hideCategoryFilter}
-            />
-
-
-            </div>
-            <div className="col-lg-9 ps-lg-4">
-              <div className="main-divs g-col-6">
-                <h2 className="search-listings01">{iconname} icons</h2>
-                <p>
-                  Showing <strong className="serch-data">{totalIcons}</strong> Icons
-                </p>
-
-                    <div className="tabsd_divs d-inline-block w-100 mt-2 position-relative">
-                      <div className="new-icons-bm gy-2 g-lg-2 mt-0">
-                                          {isLoading ? (
-                                            <div className="loading-animations">
-                                              <Image
-                                                loading="lazy"
-                                                src="/ser-loader.svg"
-                                                alt="iconsguru"
-                                                width={1500}
-                                                height={364}
-                                              />
-                                            </div>
-                                          ) : Array.isArray(icons) && icons.length > 0 ? (
-                                            icons.map((icon) => (
-                                              <button
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal"
-                                                key={icon.Id}
-                                                className="svg-item position-relative"
-                                              >
-                                                <span className="tags-frees">Free</span>
-                                                <span className="btn icons-list p-0">
-                                                  {icon.type === "Animated" ? (
-                                                    <img
-                                                      src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
-                                                        icon.icon_svg
-                                                      )}`}
-                                                      alt={icon.icon_name}
-                                                      style={{ width: "100%", height: "100%" }}
-                                                    />
-                                                  ) : (
-                                                    <span
-                                                      dangerouslySetInnerHTML={{
-                                                        __html: icon.icon_svg,
-                                                      }}
-                                                    ></span>
-                                                  )}
-                                                </span>
-                                              </button>
-                                            ))
-                                          ) : (
-                                            <div className="col no-found-div w-100">
-                                              <div className="not-imgs text-center">
-                                                <figure className="m-0">
-                                                  <Image
-                                                    loading="lazy"
-                                                    src="/nofound.png"
-                                                    alt="iconsguru"
-                                                    width={249}
-                                                    height={219}
-                                                  />
-                                                </figure>
-                                                <h2>No results found</h2>
-                                                <p>Try updating your search terms or filters</p>
-                                              </div>
-                                            </div>
-                                          )}
-                                        </div>
-                      
-
-                      {/* Pagination */}
-                      {totalPages > 1 && (
-                      <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
-                        <button
-                          className="btn btn-pre"
-                          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                          disabled={page === 1}
-                        >
-                          ← Previous
-                        </button>
-
-                        {[...Array(totalPages)].map((_, index) => {
-                          const pageNum = index + 1;
-                          return (
-                            <button
-                              key={pageNum}
-                              onClick={() => setPage(pageNum)}
-                              className={`btn btn-sm ${page === pageNum ? "btn-primary" : "btn-outline-secondary"}`}
-                            >
-                              {pageNum}
-                            </button>
-                          );
-                        })}
-
-                        <button
-                          className="btn btn-next"
-                          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                          disabled={page === totalPages}
-                        >
-                          Next →
-                        </button>
-                      </div>
-                       )}
-                    
-                  
-                </div>
-
+      <body className="lesting-searchings">
+         <div
+          className={`totals-sections-mains01 ${isToggled ? "swowpactive" : ""}`}
+        >   
+            <aside className="sidebars-subpages  pt-3">
+                <Link href="/" className="looso-shape pe-4 ps-3 d-flex align-items-center">
+              <div className="isons">
+                <Image
+                  loading="lazy"
+                  src="/shape-icons015.svg"
+                  alt="iconsguru"
+                  width={33}
+                  height={34}
+                />
               </div>
-            </div>
-          </div>
-        </div>
-      </main>
+              <div className="text-loghos">
+                <Image
+                  loading="lazy"
+                  src="/full-text015.svg"
+                  alt="iconsguru"
+                  width={170}
+                  height={25}
+                />
+              </div>
+            </Link>
+              <div className="slider-filtersr-div">
+                <button
+                  onClick={handleToggle}
+                  className="btn pe-4 ps-3 w-100 comon_heading01 d-flex align-items-center filters-btn"
+                >
+                  <span className="icpn-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                  </span>
+                  <h4 className="ms-2">
+                    {" "}
+                    Filter{" "}
+                    <span className="arose">
+                      {" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-arrow-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                        />
+                      </svg>{" "}
+                    </span>{" "}
+                  </h4>
+                </button>
+                <SidebarFilter
+                  onFilterChange={setFilters}
+                  showCategoryFilter={false}
+                />
+              </div>
+            </aside>
+             <div className="rights-sections-sub">
+                  <main className="listing-pages floate-start no-border w-100 mt-0 pt-0">
+                      <NavicationHomeSubpage />
+                      <div className="main-divs g-col-6">
+                        <h2 className="search-listings01">{iconname} icons</h2>
+                        <p className="spaceing-lefts">
+                          Showing <strong className="serch-data">{totalIcons}</strong> Icons
+                        </p>
 
-      <Footer />
+                            <div className="tabsd_divs d-inline-block w-100 mt-2 position-relative">
+                                            <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                                                  {isLoading ? (
+                                                    <div className="loading-animations w-100 show-grids">
+                                                        <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                                                        <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                                                        <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                                                    </div>
+                                                  ) : Array.isArray(icons) && icons.length > 0 ? (
+                                                    icons.map((icon) => (
+                                                      <button
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal"
+                                                        key={icon.Id}
+                                                        className="svg-item position-relative"
+                                                      >
+                                                        <span className="tags-frees">Free</span>
+                                                        <span className="btn icons-list p-0">
+                                                          {icon.type === "Animated" ? (
+                                                            <img
+                                                              src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
+                                                                icon.icon_svg
+                                                              )}`}
+                                                              alt={icon.icon_name}
+                                                              style={{ width: "100%", height: "100%" }}
+                                                            />
+                                                          ) : (
+                                                            <span
+                                                              dangerouslySetInnerHTML={{
+                                                                __html: icon.icon_svg,
+                                                              }}
+                                                            ></span>
+                                                          )}
+                                                        </span>
+                                                      </button>
+                                                    ))
+                                                  ) : (
+                                                    <div className="col no-found-div w-100">
+                                                      <div className="not-imgs text-center">
+                                                        <figure className="m-0">
+                                                          <Image
+                                                            loading="lazy"
+                                                            src="/nofound.png"
+                                                            alt="iconsguru"
+                                                            width={249}
+                                                            height={219}
+                                                          />
+                                                        </figure>
+                                                        <h2>No results found</h2>
+                                                        <p>Try updating your search terms or filters</p>
+                                                      </div>
+                                                    </div>
+                                                  )}
+                                                </div>
+                              
+
+                              {/* Pagination */}
+                              {totalPages > 1 && (
+                              <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
+                                <button
+                                  className="btn btn-pre"
+                                  onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                                  disabled={page === 1}
+                                >
+                                  ← Previous
+                                </button>
+
+                                {[...Array(totalPages)].map((_, index) => {
+                                  const pageNum = index + 1;
+                                  return (
+                                    <button
+                                      key={pageNum}
+                                      onClick={() => setPage(pageNum)}
+                                      className={`btn btn-sm ${page === pageNum ? "btn-primary" : "btn-outline-secondary"}`}
+                                    >
+                                      {pageNum}
+                                    </button>
+                                  );
+                                })}
+
+                                <button
+                                  className="btn btn-next"
+                                  onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                                  disabled={page === totalPages}
+                                >
+                                  Next →
+                                </button>
+                              </div>
+                              )}
+                            
+                          
+                        </div>
+
+                      </div>
+                       
+                  </main>
+             </div>
+         </div>
+      </body>
+
     </>
   );
 }

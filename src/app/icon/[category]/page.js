@@ -252,7 +252,7 @@ export default function CategorySearchPage() {
                         </div>
                       ) : Array.isArray(icons) && icons.length > 0 ? (
                         icons.map((icon) => (
-                          <button
+                          <Link href="" role="button"
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
                             key={icon.Id}
@@ -276,7 +276,7 @@ export default function CategorySearchPage() {
                                 ></span>
                               )}
                             </span>
-                          </button>
+                          </Link>
                         ))
                       ) : (
                         <div className="col no-found-div w-100">

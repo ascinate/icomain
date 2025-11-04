@@ -63,7 +63,7 @@ export default function Icons() {
       <main className="pricing-pages-part float-start w-100 mb-5">
         
             <section className="float-start w-100 pt-0">
-                  <div className="container">
+                  <div className="container-fluid">
                      <div className="comon-cate-list trending-icons d-inline-block w-100">
                         <div className="row align-items-center">
                             <div className="col-lg-7">
@@ -116,7 +116,7 @@ export default function Icons() {
 
                                               
                                           </span>
-                                          
+
                                       </article>
                                     </div>
                                 ))}

@@ -396,7 +396,7 @@ a {
   align-items: center; padding: 8px 25px !important; border-radius:0 5px 5px 0 !important;  transition: all 0.5s; height: 60px; }
 .btn-search:hover{background: var(--foreground) !important;}
 .btn-search:focus{box-shadow: none !important;}
-.search-sections-home{ border-radius: 5px !important; height: 60px; border: solid 2px #E8E8E8; margin-top: 49px; }
+.search-sections-home{ border-radius: 5px !important; height: 60px; border: solid 2px #E8E8E8; margin-top: 20px; }
 .search-sections-home svg{ margin-left: 5px; }
 .search-sections-home .form-control{ width: 82%; font-size: 16px; text-indent: 15px; border:none !important; }
 .search-sections-home .form-control:focus{ box-shadow: none; }
@@ -2199,7 +2199,7 @@ footer hr{
 
 .home-pages-sp .banner-parts01 h2 {
     font-size: 55px !important;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 54px;
     color: var(--head-color);
 }
