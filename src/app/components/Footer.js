@@ -150,7 +150,7 @@ function Footer(){
                 
                 <div className="row row-cols-1 row-cols-lg-2 g-lg-0">
                    
-                   <div className="col "> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved </p> </div>
+                   <div className="col "> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved. <Link href="https://ascinatetech.com/" className="links-btn01"> Ascinate Technology Project. </Link>  </p> </div>
                    <div className="col d-grid justify-content-lg-end">
                       <ul className="d-flex align-items-center copy-text1 p-0 m-0 copt-lisk">
                         <li>

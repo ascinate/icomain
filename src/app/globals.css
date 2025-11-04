@@ -514,7 +514,10 @@ a {
   color: var(--head-color) !important;
   
 }
-
+.links-btn01{
+  text-decoration: underline !important;
+  font-weight: 500;
+}
 .pricing-pages-part{
   
 }
