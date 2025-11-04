@@ -2169,13 +2169,14 @@ footer hr{
 
 }
 .signup-btn10{
-  padding: 12px 30px !important;
+  padding: 10px 30px !important;
   background: #179f07;
   font-size: 17px;
-  border-radius: 50px;
+  border-radius: 10px;
   color: #fff !important;
   margin-right: 0 !important;
   font-weight: 700 !important;
+
 }
 .home-menus{
     border-bottom: solid 1px #e4e4e4;
@@ -2223,7 +2224,7 @@ button.btn.btn-list015 {
 .why-menu-btn{
   border: solid 2px #179f07 !important;
   font-size: 17px;
-  border-radius: 50px;
+  border-radius: 7px;
   padding: 9px 30px !important;
   color: #179f07 !important;
   font-weight: 700 !important;
