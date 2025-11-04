@@ -481,7 +481,7 @@ a {
 .btn-comon-socail{
   border: solid 3px var(--head-color) !important;
   border-radius: 7px;
-  width: 400px;
+  width: 100%;
   height: 51px;
   margin-bottom: 15px;
 }
@@ -503,7 +503,7 @@ a {
   background: var(--primaycolor) !important;
   color: var(--background) !important;
   border-radius: 7px;
-  width: 400px;
+  width: 100%;
   height: 51px;
 }
 .continue-btn:hover{

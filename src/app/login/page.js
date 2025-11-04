@@ -66,7 +66,7 @@ function Login(){
                              <div className="col-lg-4">
                                 <div className="coninues-div015 d-grid align-content-center w-100">
                                     <Link href="/" className="d-block text-center w-100 mb-3">
-                                        <Image loading="lazy" src="/icons_guru_logo.webp"
+                                        <Image loading="lazy" src="/icon-logos.jpg"
                                                                 alt="iconsguru"
                                                                 width={223}
                                                                 height={53} />
@@ -79,7 +79,7 @@ function Login(){
                                     <h2 className="text-center comon-heading-sub"> Continue with Email </h2>
                                     <p className="text-center sub-para"> Don’t have an account? <Link href='/register'> <strong> Create a free account </strong> </Link> </p>
                                     {isVisible && (
-                                    <div className="col-lg-8 mx-auto email-div01">
+                                    <div className="col-lg-9 mx-auto email-div01">
                                         <button className="btn btn-comon-socail mx-auto d-flex align-items-center justify-content-center"> 
                                         <span> 
                                             <Image loading="lazy" src="/logo_googleg_48dp.svg"
