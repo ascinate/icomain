@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ModalDeatils from "../components/ModalDeatils";
 
 export default function InterfaceIconsPage() {
   const [icons, setIcons] = useState([]);
@@ -72,15 +73,13 @@ export default function InterfaceIconsPage() {
 
               {loading ? (
                 <div className="d-block w-100">
-                  <div className="loading-animations">
-                                    <Image
-                                      loading="lazy"
-                                      src="/ser-loader.svg"
-                                      alt="iconsguru"
-                                      width={859}
-                                      height={364}
-                                    />
-                  </div>
+                          <div className="text-center my-5 d-block w-100">
+                              <div className="loading-animations w-100 show-grids">
+                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                              </div>
+                          </div>
                 </div>
               ) : (
                 <>
@@ -88,11 +87,12 @@ export default function InterfaceIconsPage() {
                   <div className="new-icons-bm-bg news">
                     {icons.map((icon) => (
                       
-                        <article className="svg-item position-relative" key={icon.Id}>
+                        <button  data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" className="svg-item position-relative" key={icon.Id}>
                           <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
                             <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
                           </Link>
-                        </article>
+                        </button>
                      
                     ))}
                   </div>
@@ -137,6 +137,8 @@ export default function InterfaceIconsPage() {
           </div>
         </section>
       </main>
+
+      <ModalDeatils />
 
       <Footer />
     </>

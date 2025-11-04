@@ -918,6 +918,7 @@ footer{
   text-decoration: none;
   padding-bottom: 13px;
   display: inline-block;
+  
 }
 .copy-text1{
   font-weight: 300;
@@ -1890,6 +1891,7 @@ footer hr{
   color: #888888 !important;
   text-decoration: none !important;
   line-height: 25px !important;
+  margin-bottom: 10px;
 }
 
 @media(min-width:1400px){
