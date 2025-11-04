@@ -91,7 +91,7 @@ export default function Icons() {
                                         <span className="tagsd">{type.tag}</span>
                                           <figure className="text-center mx-auto d-block mb-1">
                                             <Link href={type.link}> <Image loading="lazy" src={type.img}
-                                                  alt={type.id}
+                                                  alt="name"
                                                   width={260}
                                                   height={178} /> </Link>
                                           </figure>
