@@ -10,6 +10,11 @@ import Image from "next/image";
 
 
 function ModalDeatils({ }) {
+    const [isVisible, setIsVisible] = useState(false);
+
+  const toggleDiv = () => {
+    setIsVisible((prev) => !prev);
+  };
 
   return (
     <>
@@ -84,6 +89,19 @@ function ModalDeatils({ }) {
                                                      
                                                       
                                                  </div>
+
+                                                 <div className="mores-szies d-flex align-items-center flex-wrap mt-4">
+                                                    <button type="button" className="btn size-btn"> 48px </button>
+                                                    <button type="button" className="btn size-btn"> 64px </button>
+                                                    <button type="button" className="btn size-btn"> 128px </button>
+                                                    <button type="button" className="btn size-btn"> 256px </button>
+                                                    <button type="button"  onClick={toggleDiv} className="btn size-btn-customes"> Custome size </button>
+                                                 </div>
+                                                 {isVisible && (
+                                                    <div className="mt-4 ">
+                                                        <input type="text" className="form-control cust-sze" placeholder="Type here.."/>
+                                                    </div>
+                                                 )}
 
                                                  <div className="details-list-modals-lis mt-4">
                                                      <ul className="m-0  ms-0 p-0">

@@ -434,6 +434,28 @@ a {
   font-weight: 600;
   
 }
+.mores-szies .size-btn{
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    color: #3c4c5b;
+    border-color: #e1e6ec;
+    background-color: #fff;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.mores-szies .size-btn:active,
+.mores-szies .size-btn:focus{
+  background: var(--primaycolor);
+  color: #fff !important;
+}
+.mores-szies  .size-btn-customes{
+   font-weight: 600;
+    font-size: 12px;
+    color: #3c4c5b;
+}
+.cust-sze{
+  font-size: 13px;
+}
 .fe-list li h5 small{
   color: #666666;
   font-weight: 400;
