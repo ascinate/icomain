@@ -71,7 +71,7 @@ function Footer(){
                                     <h5 className="text-white"> Company </h5>
                                     <ul className="p-0 m-0 mt-3">
                                         <li>
-                                            <Link href='/' className="trust01">About</Link>
+                                            <Link href='/about' className="trust01">About</Link>
                                         </li>
                                         <li>
                                             <Link href='/' className="trust01">Careers</Link>
@@ -88,13 +88,13 @@ function Footer(){
                                     <h5 className="text-white"> Resources </h5>
                                     <ul className="p-0 m-0 mt-3">
                                         <li>
-                                            <Link href='/' className="trust01">Tutorials</Link>
+                                            <Link href='/privacy' className="trust01">Tutorials</Link>
                                         </li>
                                         <li>
-                                            <Link href='/' className="trust01">ΑΡΙ</Link>
+                                            <Link href='/terms' className="trust01">ΑΡΙ</Link>
                                         </li>
                                         <li>
-                                            <Link href='/' className="trust01">Docs</Link>
+                                            <Link href='/privacy' className="trust01">Docs</Link>
                                         </li>
                                     </ul>
                                  </div>
@@ -126,19 +126,19 @@ function Footer(){
                              <h4 className="text-white"> Popular Categories </h4>
                              <ul className="mt-0 flex-wrap lisu015-lis ps-0">
                                 <li>
-                                    <Link href='/terms' className="trust01">
+                                    <Link href='/icons/Sports' className="trust01">
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M12.366 13.366L14.1407 14.3911C13.05 16.8036 12.9953 19.4669 13.8296 21.8314C13.2375 21.9426 12.6255 22 12 22C10.5353 22 9.14414 21.6851 7.89054 21.1193L12.366 13.366ZM15.8835 15.3976L20.1168 17.8423C19.0224 19.3601 17.5128 20.5586 15.7543 21.2714C15.1047 19.511 15.0756 17.5348 15.7624 15.7017L15.8835 15.3976ZM8.85892 11.3417L10.634 12.366L6.15773 20.1168C4.5194 18.9355 3.25309 17.2704 2.56813 15.3308C4.92702 14.8924 7.11579 13.6115 8.65334 11.6179L8.85892 11.3417ZM21.9051 10.6165C21.9677 11.0687 22 11.5306 22 12C22 13.4647 21.6851 14.8559 21.1193 16.1095L16.8838 13.6649C18.1057 12.0497 19.8575 11.0078 21.7497 10.6436L21.9051 10.6165ZM2.8807 7.89054L7.11588 10.3356C5.86043 11.9949 4.0458 13.0491 2.09489 13.3854C2.03239 12.932 2 12.4698 2 12C2 10.5353 2.3149 9.14414 2.8807 7.89054ZM17.8423 3.88318C19.4803 5.06428 20.7465 6.72901 21.4315 8.66817C19.0721 9.108 16.8836 10.3891 15.3463 12.3826L15.1407 12.6588L13.366 11.634L17.8423 3.88318ZM12 2C13.4647 2 14.8559 2.3149 16.1095 2.8807L11.634 10.634L9.85892 9.60983C10.95 7.19703 11.0048 4.53332 10.1704 2.16848C10.7625 2.05742 11.3745 2 12 2ZM8.24679 2.72936C8.89548 4.48945 8.92444 6.46595 8.2373 8.2992L8.11613 8.60335L3.88318 6.15773C4.93611 4.69744 6.37339 3.53272 8.04682 2.81177L8.24679 2.72936Z"></path></svg> </span> Sports </Link>
                                 </li>
                                 <li>
-                                    <Link href='/terms' className="trust01">
+                                    <Link href='/icons/Health' className="trust01">
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M20.2426 4.75736C22.5053 7.02472 22.583 10.637 20.4786 12.993L11.9999 21.485L3.52138 12.993C1.41705 10.637 1.49571 7.01901 3.75736 4.75736C5.51545 2.99926 8.09315 2.56029 10.2605 3.44044L6.34315 7.35843L7.75736 8.77264L12 4.53L11.9872 4.51617C11.9918 4.52028 11.9964 4.5244 12.001 4.52853C14.35 2.42 17.98 2.49 20.2426 4.75736Z"></path></svg> </span> Health </Link>
                                 </li>
                                 <li>
-                                    <Link href='/terms' className="trust01">
+                                    <Link href='/icons/Music' className="trust01">
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M13 9.17071C12.6872 9.06015 12.3506 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V2.4578C19.0571 3.73207 22 7.52236 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.3375 2 12.6711 2.01672 13 2.04938V9.17071Z"></path></svg> </span> Music </Link>
                                 </li>
                                 <li>
-                                    <Link href='/terms' className="trust01">
+                                    <Link href='/icons/Weather' className="trust01">
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M17 7C13.5705 7 10.6449 9.15804 9.50734 12.1903L11.3805 12.8927C12.2337 10.6185 14.4278 9 17 9C17.6983 9 18.3687 9.11928 18.992 9.33857C21.3265 10.16 23 12.3846 23 15C23 18.3137 20.3137 21 17 21H7C3.68629 21 1 18.3137 1 15C1 12.3846 2.67346 10.16 5.00804 9.33857C5.0027 9.22639 5 9.11351 5 9C5 5.13401 8.13401 2 12 2C15.242 2 17.9693 4.20399 18.7652 7.19539C18.1973 7.0675 17.6065 7 17 7Z"></path></svg> </span> Weather </Link>
                                 </li>
                              </ul>

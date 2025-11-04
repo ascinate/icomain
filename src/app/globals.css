@@ -521,6 +521,7 @@ a {
 .pricing-pages-part{
   
 }
+
 .pricing-pages-part .nav-link{
   font-size: 16px;
   color: var(--head-color);
@@ -757,6 +758,9 @@ tbody, td, tfoot, th, thead, tr{
     padding: 8px;
     min-height: 310px;
     background: #f7f7f7;
+}
+.comon-types01 img{
+   width: 100% !important;
 }
 .comon-types01 .icon-list-name{
 }
