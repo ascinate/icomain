@@ -370,7 +370,8 @@ a {
 
 
 .home-menus .navbar-nav .nav-link{ padding-left: 16px !important; padding-right: 16px !important;
-  font-size: 1.120rem !important; position: relative; font-weight: 500 !important; }
+  position: relative;  font-size: 1rem !important;
+    font-weight: 400 !important; }
 /* .home-menus .navbar-nav .nav-link::before{
   position: absolute;
   left: 0;
@@ -400,7 +401,7 @@ a {
 .search-sections-home .form-control{ width: 82%; font-size: 16px; text-indent: 15px; border:none !important; }
 .search-sections-home .form-control:focus{ box-shadow: none; }
 .text-para1{ font-size: 24px; letter-spacing: -1px; font-weight: 500;}
-.comon-head{ font-size: 38px; font-weight: 800; color: var(--head-color);}
+.comon-head{ font-size: 30px; font-weight: 700; color: var(--head-color);}
 .btn-expolre{ background: var(--primaycolor) !important; font-size: 18px;  padding: 10px 31px !important;  color: #fff !important; }
 .about-sections{ padding: 70px 0;}
 .fetures-acountins-sections{ padding: 70px 0; }
@@ -1269,7 +1270,7 @@ footer hr{
   display: inline-block;
 }
 .categires h4{
-  font-size: 35px;
+  font-size: 26px;
   margin-bottom: 35px;
 }
 .register-pages-crm .sub-para a{
@@ -1909,7 +1910,7 @@ footer hr{
 
 }
 .comon-ctegories01 h5{
- font-size: 19px;
+ font-size: 16px;
 }
 .comon-ctegories01 ul{
   list-style-type: none;
@@ -1921,6 +1922,7 @@ footer hr{
   text-decoration: none !important;
   line-height: 25px !important;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 @media(min-width:1400px){
@@ -2171,11 +2173,11 @@ footer hr{
 .signup-btn10{
   padding: 10px 30px !important;
   background: #179f07;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 10px;
   color: #fff !important;
   margin-right: 0 !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 
 }
 .home-menus{
@@ -2196,8 +2198,9 @@ footer hr{
 }
 
 .home-pages-sp .banner-parts01 h2 {
-    font-size: 72px !important;
+    font-size: 55px !important;
     font-weight: 700;
+    line-height: 54px;
     color: var(--head-color);
 }
 .home-pages-sp .p-autocomplete-panel{
@@ -2223,11 +2226,11 @@ button.btn.btn-list015 {
 }
 .why-menu-btn{
   border: solid 2px #179f07 !important;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 7px;
   padding: 9px 30px !important;
   color: #179f07 !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 }
 .totals-sections-mains01 .listing-pages{
   padding-left: 0;
@@ -2695,7 +2698,7 @@ article.comon-categorisg{
     padding-top: 26px;
 }
 article.comon-categorisg h5 a{
-  font-size: 20px;
+  font-size: 18px;
   color: var(--head-color);
   font-weight: 600;
   text-decoration: none;
@@ -2743,8 +2746,8 @@ article.comon-categorisg .coun-text{
 }
 .comons-cardscus .text-div015 h3 {
     font-weight: 700;
-    font-size: 22px;
-    color: #272727 !important;
+    font-size: 20px;
+    color: #000000 !important;
     margin-bottom: 10px;
 }
 .comons-cardscus .text-div015 p {

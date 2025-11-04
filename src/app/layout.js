@@ -31,7 +31,7 @@ const playfa = Playfair({
 
 const inter = Inter({
   variable: "--font-inter-sans",
-  weight: ['800'],
+  weight: ['800','700', '500', '300', '400', '200', '600'],
   subsets: ['latin'],
 });
 
@@ -53,17 +53,17 @@ export default function RootLayout({ children }) {
       <body>
       <style>{`
         html {
-          font-family: ${figtreesans.style.fontFamily};
+          font-family: ${inter.style.fontFamily};
         }
         .banner-parts01 h2, .form-select{
-         font-family: ${sorasans.style.fontFamily};
+         font-family: ${inter.style.fontFamily};
         }
         button,
         .p-autocomplete-item,
         .comon-cont-head,
         .comon-content-div h3,
         .privacy-page h5,{
-         font-family: ${figtreesans.style.fontFamily};
+         font-family: ${inter.style.fontFamily};
         } 
          .signup-btn10,
          .why-menu-btn,
@@ -91,10 +91,10 @@ export default function RootLayout({ children }) {
          .btn-subcibes,
          .register-pages-crm .comon-heading-sub,
          .main-bodys h2{
-           font-family: ${figtreesans.style.fontFamily};
+           font-family: ${inter.style.fontFamily};
          }
         input{
-         font-family: ${sorasans.style.fontFamily};
+         font-family: ${inter.style.fontFamily};
         }
          h5.sub-headings{
            font-family: ${play.style.fontFamily};

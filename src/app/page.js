@@ -167,7 +167,7 @@ export default async function Home() {
                                                   {type.title}
                                                 </Link>
                                               </h5>
-                                              <p className="coun-text mt-2 d-block"> 
+                                              <p className="coun-text mt-1 d-block"> 
                                                   {type.counting} Icons
                                               </p>
                                            </span>
