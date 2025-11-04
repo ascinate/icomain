@@ -885,7 +885,7 @@ article.comon-categorisg figure svg{
 
 footer{
   background: var(--tabs-active-color);
-  padding: 85px 0 5px 0;
+  padding: 57px 0 5px;
 }
 .solic-list{
   list-style: none;
@@ -931,6 +931,7 @@ footer{
 }
 footer hr{
   background: var(--background) !important;
+  opacity: 0.1 !important;
 }
 .comon-links li a:hover{
   color: var(--primaycolor) !important;
@@ -1221,6 +1222,25 @@ footer hr{
 .register-pages-crm .sub-para{
   font-size: 18px;
   color: var(--head-color);
+}
+.lisu015-lis{
+  list-style-type: none !important;
+  display: flex;
+  align-items: center;
+}
+.lisu015-lis li{
+  margin-right: 31px;
+}
+.lisu015-lis a{
+  font-size: 21px;
+  color: #fff !important;
+  text-decoration: none !important;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.categires h4{
+  font-size: 35px;
+  margin-bottom: 35px;
 }
 .register-pages-crm .sub-para a{
   color: var(--head-color);
@@ -1834,6 +1854,44 @@ span.imgs01 img{
 .swowpactive .rights-sections-sub{
   width: calc(100% - 70px);
 }
+.register-pages-crm .comon-heading-sub{ 
+   font-size: 28px;
+   font-weight: 700;
+ }
+.comon-footers-div01 a{
+  display: inline-block;
+  width: 100%;
+}
+.comon-footers-div01 a img{
+  width: 30%;
+  text-align: left;
+  height: 30%;
+  vertical-align: middle;
+}
+p.ft-paras{
+  color: #555555 !important;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+
+}
+footer hr{
+
+}
+.comon-ctegories01 h5{
+ font-size: 19px;
+}
+.comon-ctegories01 ul{
+  list-style-type: none;
+}
+.comon-ctegories01 ul a{
+  display: block !important;
+  text-align: left !important;
+  color: #888888 !important;
+  text-decoration: none !important;
+  line-height: 25px !important;
+}
+
 @media(min-width:1400px){
   .right-details-lis01{
     width: 66%;

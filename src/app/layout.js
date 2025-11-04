@@ -88,7 +88,8 @@ export default function RootLayout({ children }) {
          .comon-types01 h5,
          .videw-btn,
          .comons-cardscus h3,
-         .btn-subcibes{
+         .btn-subcibes,
+         .register-pages-crm .comon-heading-sub{
            font-family: ${figtreesans.style.fontFamily};
          }
         input{

@@ -54,109 +54,116 @@ function Footer(){
         <>
         <footer className="float-start  comon-short-parts w-100">
             <div className="container">
-                <div className="row row-cols-1 row-cols-lg-5">
-                    <div className="col">
-                        <div className="comon-footers-div01">
+                <div className="row align-items-center">
+                    <div className="col-lg-8">
+                        <div className="comon-footers-div01 mb-0">
                             <Link href='/'>
-                                <Image loading="lazy" src="/footer-logo.svg"
+                                <Image loading="lazy" src="/footer-logo1.png"
                                         alt="iconsguru"
                                         width={114}
                                         height={18} />
                             </Link>
+                            <p className="text-white ft-paras"> Empowering creativity through icons</p>
+                          
+                          <div className="row row-cols-1 row-cols-lg-3 mt-4">
+                              <div className="col">
+                                 <div className="comon-ctegories01 d-inline-block w-100">
+                                    <h5 className="text-white"> Company </h5>
+                                    <ul className="p-0 m-0 mt-3">
+                                        <li>
+                                            <Link href='/' className="trust01">About</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/' className="trust01">Careers</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/blog' className="trust01">Blog</Link>
+                                        </li>
+                                    </ul>
+                                 </div>
+                              </div>
 
-                            <p className="text-white ft-paras mt-4"> Join millions of designers, developers, and content creators using Iconguru — a comprehensive icon library and toolkit built for creativity and efficiency. .</p>
+                              <div className="col">
+                                 <div className="comon-ctegories01 d-inline-block w-100">
+                                    <h5 className="text-white"> Resources </h5>
+                                    <ul className="p-0 m-0 mt-3">
+                                        <li>
+                                            <Link href='/' className="trust01">Tutorials</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/' className="trust01">ΑΡΙ</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/' className="trust01">Docs</Link>
+                                        </li>
+                                    </ul>
+                                 </div>
+                              </div>
 
-                            
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Help & Support </h5>
-                           <ul className="comon-links mt-4 ms-0 p-0">
-                                {supports.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Company </h5>
-                            
-                            <ul className="comon-links mt-4 ms-0 p-0">
-                                {mianmenu.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-center">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Top Icons </h5>
-                           
-                            <ul className="comon-links mt-4 ms-0 p-0">
-                                {topicons.map((page) => (
-                                    <li key={page.id}>
-                                      <Link href={page.link}> {page.title} </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col d-grid justify-content-end">
-                        <div className="comon-footers-div01">
-                           <h5 className="text-white"> Social media </h5>
-                           
-                            <ul className="solic-list d-flex align-items-center">
-                                <li>
-                                    <Link href='https://www.instagram.com/iconguru_official/' className="ft-scol" target="_blank" role="noopener noreferrer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(0,0,0,1)"><path d="M13.0281 2.00073C14.1535 2.00259 14.7238 2.00855 15.2166 2.02322L15.4107 2.02956C15.6349 2.03753 15.8561 2.04753 16.1228 2.06003C17.1869 2.1092 17.9128 2.27753 18.5503 2.52503C19.2094 2.7792 19.7661 3.12253 20.3219 3.67837C20.8769 4.2342 21.2203 4.79253 21.4753 5.45003C21.7219 6.0867 21.8903 6.81337 21.9403 7.87753C21.9522 8.1442 21.9618 8.3654 21.9697 8.58964L21.976 8.78373C21.9906 9.27647 21.9973 9.84686 21.9994 10.9723L22.0002 11.7179C22.0003 11.809 22.0003 11.903 22.0003 12L22.0002 12.2821L21.9996 13.0278C21.9977 14.1532 21.9918 14.7236 21.9771 15.2163L21.9707 15.4104C21.9628 15.6347 21.9528 15.8559 21.9403 16.1225C21.8911 17.1867 21.7219 17.9125 21.4753 18.55C21.2211 19.2092 20.8769 19.7659 20.3219 20.3217C19.7661 20.8767 19.2069 21.22 18.5503 21.475C17.9128 21.7217 17.1869 21.89 16.1228 21.94C15.8561 21.9519 15.6349 21.9616 15.4107 21.9694L15.2166 21.9757C14.7238 21.9904 14.1535 21.997 13.0281 21.9992L12.2824 22C12.1913 22 12.0973 22 12.0003 22L11.7182 22L10.9725 21.9993C9.8471 21.9975 9.27672 21.9915 8.78397 21.9768L8.58989 21.9705C8.36564 21.9625 8.14444 21.9525 7.87778 21.94C6.81361 21.8909 6.08861 21.7217 5.45028 21.475C4.79194 21.2209 4.23444 20.8767 3.67861 20.3217C3.12278 19.7659 2.78028 19.2067 2.52528 18.55C2.27778 17.9125 2.11028 17.1867 2.06028 16.1225C2.0484 15.8559 2.03871 15.6347 2.03086 15.4104L2.02457 15.2163C2.00994 14.7236 2.00327 14.1532 2.00111 13.0278L2.00098 10.9723C2.00284 9.84686 2.00879 9.27647 2.02346 8.78373L2.02981 8.58964C2.03778 8.3654 2.04778 8.1442 2.06028 7.87753C2.10944 6.81253 2.27778 6.08753 2.52528 5.45003C2.77944 4.7917 3.12278 4.2342 3.67861 3.67837C4.23444 3.12253 4.79278 2.78003 5.45028 2.52503C6.08778 2.27753 6.81278 2.11003 7.87778 2.06003C8.14444 2.04816 8.36564 2.03847 8.58989 2.03062L8.78397 2.02433C9.27672 2.00969 9.8471 2.00302 10.9725 2.00086L13.0281 2.00073ZM12.0003 7.00003C9.23738 7.00003 7.00028 9.23956 7.00028 12C7.00028 14.7629 9.23981 17 12.0003 17C14.7632 17 17.0003 14.7605 17.0003 12C17.0003 9.23713 14.7607 7.00003 12.0003 7.00003ZM12.0003 9.00003C13.6572 9.00003 15.0003 10.3427 15.0003 12C15.0003 13.6569 13.6576 15 12.0003 15C10.3434 15 9.00028 13.6574 9.00028 12C9.00028 10.3431 10.3429 9.00003 12.0003 9.00003ZM17.2503 5.50003C16.561 5.50003 16.0003 6.05994 16.0003 6.74918C16.0003 7.43843 16.5602 7.9992 17.2503 7.9992C17.9395 7.9992 18.5003 7.4393 18.5003 6.74918C18.5003 6.05994 17.9386 5.49917 17.2503 5.50003Z"></path></svg>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href='https://www.facebook.com/profile.php?id=61575078242862' className="ft-scol" target="_blank" role="noopener noreferrer">
-                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(0,0,0,1)"><path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z"></path></svg>
-                                    </Link>
-                                </li>
-                                <li>
-                                   <Link href='https://x.com/icons_guru' className="ft-scol" target="_blank" role="noopener noreferrer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(0,0,0,1)"><path d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"></path></svg>
-                                   </Link>
-                                </li>
-                                <li>
-                                    <Link href='https://www.linkedin.com/in/icons-guru-27583335b/' className="ft-scol" target="_blank" role="noopener noreferrer">
-                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(0,0,0,1)"><path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path></svg>
-                                    </Link>
-                                </li>
-                            </ul>
-                           <p className="mt-3 text-white"> Receive premium resources directly in your inbox. </p>
-                           
-                        </div>
-                    </div>
+                              <div className="col">
+                                 <div className="comon-ctegories01 d-inline-block w-100">
+                                    <h5 className="text-white"> Community </h5>
+                                    <ul className="p-0 m-0 mt-3">
+                                        <li>
+                                            <Link href='/terms' className="trust01">Discord</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/terms' className="trust01">Dribbble</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='/terms' className="trust01">Twitter</Link>
+                                        </li>
+                                    </ul>
+                                 </div>
+                              </div>
 
-                    
+                          </div>
+
+                        </div>
+                    </div>
+                    <div className="col-lg-4 d-grid">
+                        <div className="categires d-inline-block w-100">
+                             <h4 className="text-white"> Popular Categories </h4>
+                             <ul className="mt-0 flex-wrap lisu015-lis ps-0">
+                                <li>
+                                    <Link href='/terms' className="trust01">
+                                    <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M12.366 13.366L14.1407 14.3911C13.05 16.8036 12.9953 19.4669 13.8296 21.8314C13.2375 21.9426 12.6255 22 12 22C10.5353 22 9.14414 21.6851 7.89054 21.1193L12.366 13.366ZM15.8835 15.3976L20.1168 17.8423C19.0224 19.3601 17.5128 20.5586 15.7543 21.2714C15.1047 19.511 15.0756 17.5348 15.7624 15.7017L15.8835 15.3976ZM8.85892 11.3417L10.634 12.366L6.15773 20.1168C4.5194 18.9355 3.25309 17.2704 2.56813 15.3308C4.92702 14.8924 7.11579 13.6115 8.65334 11.6179L8.85892 11.3417ZM21.9051 10.6165C21.9677 11.0687 22 11.5306 22 12C22 13.4647 21.6851 14.8559 21.1193 16.1095L16.8838 13.6649C18.1057 12.0497 19.8575 11.0078 21.7497 10.6436L21.9051 10.6165ZM2.8807 7.89054L7.11588 10.3356C5.86043 11.9949 4.0458 13.0491 2.09489 13.3854C2.03239 12.932 2 12.4698 2 12C2 10.5353 2.3149 9.14414 2.8807 7.89054ZM17.8423 3.88318C19.4803 5.06428 20.7465 6.72901 21.4315 8.66817C19.0721 9.108 16.8836 10.3891 15.3463 12.3826L15.1407 12.6588L13.366 11.634L17.8423 3.88318ZM12 2C13.4647 2 14.8559 2.3149 16.1095 2.8807L11.634 10.634L9.85892 9.60983C10.95 7.19703 11.0048 4.53332 10.1704 2.16848C10.7625 2.05742 11.3745 2 12 2ZM8.24679 2.72936C8.89548 4.48945 8.92444 6.46595 8.2373 8.2992L8.11613 8.60335L3.88318 6.15773C4.93611 4.69744 6.37339 3.53272 8.04682 2.81177L8.24679 2.72936Z"></path></svg> </span> Sports </Link>
+                                </li>
+                                <li>
+                                    <Link href='/terms' className="trust01">
+                                    <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M20.2426 4.75736C22.5053 7.02472 22.583 10.637 20.4786 12.993L11.9999 21.485L3.52138 12.993C1.41705 10.637 1.49571 7.01901 3.75736 4.75736C5.51545 2.99926 8.09315 2.56029 10.2605 3.44044L6.34315 7.35843L7.75736 8.77264L12 4.53L11.9872 4.51617C11.9918 4.52028 11.9964 4.5244 12.001 4.52853C14.35 2.42 17.98 2.49 20.2426 4.75736Z"></path></svg> </span> Health </Link>
+                                </li>
+                                <li>
+                                    <Link href='/terms' className="trust01">
+                                    <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M13 9.17071C12.6872 9.06015 12.3506 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V2.4578C19.0571 3.73207 22 7.52236 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.3375 2 12.6711 2.01672 13 2.04938V9.17071Z"></path></svg> </span> Music </Link>
+                                </li>
+                                <li>
+                                    <Link href='/terms' className="trust01">
+                                    <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="rgba(255,255,255,1)"><path d="M17 7C13.5705 7 10.6449 9.15804 9.50734 12.1903L11.3805 12.8927C12.2337 10.6185 14.4278 9 17 9C17.6983 9 18.3687 9.11928 18.992 9.33857C21.3265 10.16 23 12.3846 23 15C23 18.3137 20.3137 21 17 21H7C3.68629 21 1 18.3137 1 15C1 12.3846 2.67346 10.16 5.00804 9.33857C5.0027 9.22639 5 9.11351 5 9C5 5.13401 8.13401 2 12 2C15.242 2 17.9693 4.20399 18.7652 7.19539C18.1973 7.0675 17.6065 7 17 7Z"></path></svg> </span> Weather </Link>
+                                </li>
+                             </ul>
+                        </div>
+                    </div>
                 </div>
                
-                <hr/>
+                <hr className="my-4"/>
+                
                 <div className="row row-cols-1 row-cols-lg-2 g-lg-0">
-                   <div className="col">
+                   
+                   <div className="col "> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved </p> </div>
+                   <div className="col d-grid justify-content-lg-end">
                       <ul className="d-flex align-items-center copy-text1 p-0 m-0 copt-lisk">
                         <li>
-                            <Link href='/terms' className="trust01">Terms & conditions</Link>
+                            <Link href='/terms' className="trust01"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,255,255,1)"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg></Link>
                         </li>
                         <li className="mx-3">
-                            <Link href='/terms' className="trust01">Cookies policy</Link>
+                            <Link href='/terms' className="trust01"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,255,255,1)"><path d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"></path></svg></Link>
                         </li>
                         <li>
-                            <Link href='/terms' className="trust01">Cookies Settings</Link>
+                            <Link href='/terms' className="trust01"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M5.33317 5.33333C5.33317 3.49238 6.82556 2 8.6665 2H11.9997H11.9998H15.333C17.174 2 18.6663 3.49238 18.6663 5.33333C18.6663 7.17428 17.174 8.66667 15.333 8.66667H11.9998H11.9997L11.9997 12L11.9997 15.3333V18.6667C11.9997 20.5076 10.5073 22 8.66634 22C6.82539 22 5.33301 20.5076 5.33301 18.6667C5.33301 16.8257 6.82539 15.3333 8.66634 15.3333C6.82539 15.3333 5.33301 13.841 5.33301 12C5.33301 10.1591 6.82539 8.66667 8.66634 8.66667H8.6665C6.82555 8.66667 5.33317 7.17428 5.33317 5.33333ZM11.9997 12C11.9997 13.841 13.4921 15.3333 15.333 15.3333C17.174 15.3333 18.6663 13.841 18.6663 12C18.6663 10.1591 17.174 8.66667 15.333 8.66667C13.4921 8.66667 11.9997 10.1591 11.9997 12Z"></path></svg></Link>
                         </li>
                       </ul>
                    </div>
-                   <div className="col d-grid justify-content-lg-end"> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved </p> </div>
                 </div>
             </div>
         </footer>
