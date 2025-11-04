@@ -95,16 +95,25 @@ export default function Icons() {
                                                   width={260}
                                                   height={178} /> </Link>
                                           </figure>
-                                          <span className="d-flex icon-list-name col-lg-10 mx-auto align-items-center justify-content-between">
+                                          
+                                          <span className="icon-list-name w-100 mt-2 ms-2 d-inline-block">
                                               <h5 className="mb-0"> 
                                                 <Link href={type.link}> 
                                                 {type.icon_category.trim()}
                                                 </Link>
                                               </h5>
-                                              <Link className="coun-text" href={type.link}> 
-                                                  
-                                                <strong> {type.count}</strong> icons
+                                              <p className="coun-text mt-2 d-block"> 
+                                                  {type.counting} Icons with source files
+                                              </p>
+
+                                              <Link className="videw-btn btn d-flex align-items-center" href={type.link}> 
+                                                  View Collections 
+                                                  <span className="ms-2">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,255,255,1)"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg>
+                                                  </span>
                                               </Link>
+
+
                                               
                                           </span>
                                       </article>
