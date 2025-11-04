@@ -74,7 +74,7 @@ function Footer(){
                                             <Link href='/about' className="trust01">About</Link>
                                         </li>
                                         <li>
-                                            <Link href='/' className="trust01">Careers</Link>
+                                            <Link href='/career' className="trust01">Careers</Link>
                                         </li>
                                         <li>
                                             <Link href='/blog' className="trust01">Blog</Link>

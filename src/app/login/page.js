@@ -56,11 +56,11 @@ function Login(){
                     <div className="container-fluid pe-lg-0">
                         <div className="row gx-lg-0 align-items-start">
                              <div className="col-lg-8">
-                                 <figure className="full-img w-100 mt-5 d-block">
-                                     <Image loading="lazy" src="/logins-bg.png"
+                                 <figure className="full-img w-100 d-block">
+                                     <Image loading="lazy" src="/register-bg.jpg"
                                                                 alt="iconsguru"
-                                                                width={2880}
-                                                                height={1620} /> 
+                                                                width={915}
+                                                                height={641} /> 
                                  </figure>
                              </div>
                              <div className="col-lg-4">

@@ -694,15 +694,36 @@ tbody, td, tfoot, th, thead, tr{
   position: relative;
   z-index: 2;
 }
-
-
+.main-bodys{
+  padding: 70px 0;
+}
+.main-bodys h2{
+  font-size: 40px;
+  color: var(--head-color);
+  font-weight: 700;
+}
+.tabs-liso01{
+  list-style-type: none;
+}
+.tabs-liso01 li{
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.main-bodys h4{ color: var(--head-color); }
+.rights-sendmessage .form-group{ display: flex; align-items: center; border-radius: 10px;
+    height: 50px; margin-bottom: 16px; }
+.rights-sendmessage .form-group span{ position: relative; top:-5px; }
+.rights-sendmessage .form-group .form-control{ border: none !important; width: 90%; }
+.rights-sendmessage h4{ color: var(--head-color); font-weight: 700; }
+.btn-submits{ background: var(--primaycolor)!important; color: var(--background) !important; border-radius: 12px !important; width: 100%; padding: 12px 25px !important; }
 @media (width >= 992px) {
-  .fetures-acountins-sections .container{
+  /* .fetures-acountins-sections .container{
     max-width: 1010px;
   }
   .comon-short-parts .container{
     max-width: 1010px;
-  }
+  } */
   .cn-news{
     max-width: 1265px;
   }

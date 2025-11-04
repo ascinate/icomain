@@ -89,7 +89,8 @@ export default function RootLayout({ children }) {
          .videw-btn,
          .comons-cardscus h3,
          .btn-subcibes,
-         .register-pages-crm .comon-heading-sub{
+         .register-pages-crm .comon-heading-sub,
+         .main-bodys h2{
            font-family: ${figtreesans.style.fontFamily};
          }
         input{
