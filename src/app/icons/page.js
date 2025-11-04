@@ -63,7 +63,7 @@ export default function Icons() {
       <main className="pricing-pages-part float-start w-100 mb-5">
         
             <section className="float-start w-100 pt-0">
-                  <div className="container-fluid">
+                  <div className="container">
                      <div className="comon-cate-list trending-icons d-inline-block w-100">
                         <div className="row align-items-center">
                             <div className="col-lg-7">
@@ -91,7 +91,7 @@ export default function Icons() {
                                         <span className="tagsd">{type.tag}</span>
                                           <figure className="text-center mx-auto d-block mb-1">
                                             <Link href={type.link}> <Image loading="lazy" src={type.img}
-                                                  alt="user"
+                                                  alt={type.id}
                                                   width={260}
                                                   height={178} /> </Link>
                                           </figure>
