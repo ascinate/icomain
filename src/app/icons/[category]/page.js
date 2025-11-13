@@ -10,10 +10,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams, useSearchParams } from 'next/navigation';
 import NavicationHomeSubpage from "@/app/components/NavicationHomeSubpage";
+import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
     const [isToggled, setIsToggled] = useState(false);
-
+const [selectedIconId, setSelectedIconId] = useState(null);
   const handleToggle = () => {
     setIsToggled((prev) => !prev);
   };
@@ -173,11 +174,12 @@ export default function CategorySearchPage() {
                                                   ) : Array.isArray(icons) && icons.length > 0 ? (
                                                     icons.map((icon) => (
                                                       <button
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal"
-                                                        key={icon.Id}
-                                                        className="svg-item position-relative"
-                                                      >
+                                                          key={icon.Id}
+                                                          data-bs-toggle="modal"
+                                                          data-bs-target="#exampleModal"
+                                                          className="svg-item position-relative"
+                                                          onClick={() => setSelectedIconId(icon.Id)}
+                                                        >
                                                         <span className="tags-frees">Free</span>
                                                         <span className="btn icons-list p-0">
                                                           {icon.type === "Animated" ? (
@@ -260,6 +262,8 @@ export default function CategorySearchPage() {
                   </main>
              </div>
          </div>
+          {/* Modal */}
+         <ModalDeatils id={selectedIconId ?? null} />
       </body>
 
     </>

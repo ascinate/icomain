@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Suspense } from 'react';
 import { useSearchParams } from "next/navigation";
 import Searchlisting from "../components/Searchlisting";
+
 import Script from 'next/script';
 
 
@@ -44,6 +45,7 @@ export default function Page() {
           <Suspense fallback={<div>Loading...</div>}>
             
             <Searchlisting />
+            
           </Suspense>
         </body>
     </>

@@ -11,11 +11,13 @@ import { useSearchParams } from "next/navigation";
 import SerchInputes from "./SerchInputes";
 import NavicationHomeSubpage from "./NavicationHomeSubpage";
 import FooterSubpage from "./FooterSubpage";
+import ModalDeatils from "./ModalDeatils";
 
 
 export default function Searchlisting() {
 
    const [isToggled, setIsToggled] = useState(false);
+  const [selectedIconId, setSelectedIconId] = useState(null);
 
   const handleToggle = () => {
     setIsToggled(prev => !prev); 
@@ -182,13 +184,32 @@ const searchKeyword = searchParams.get("search");
                              </div>
                             ) : Array.isArray(icons) && icons.length > 0 ? (
                               icons.map((icon) => (
-                                <article key={icon.Id} className="svg-item  position-relative">
-                                  <span className="tags-frees">Free</span>
-                                  <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
-                                    <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
-                                  </Link>
-                                  
-                                </article>
+                                 <button
+                            key={icon.Id}
+                             data-bs-toggle="modal"
+                             data-bs-target="#exampleModal"
+                            className="svg-item position-relative"
+                            onClick={() => setSelectedIconId(icon.Id)}
+                          >
+                            <span className="tags-frees">Free</span>
+                            <span className="btn icons-list p-0">
+                              {icon.type === "Animated" ? (
+                                <img
+                                  src={`https://iconsguru.ascinatetech.com/public/uploads/animated/${encodeURIComponent(
+                                    icon.icon_svg
+                                  )}`}
+                                  alt={icon.icon_name}
+                                  style={{ width: "100%", height: "100%" }}
+                                />
+                              ) : (
+                                <span
+                                  dangerouslySetInnerHTML={{
+                                    __html: icon.icon_svg,
+                                  }}
+                                ></span>
+                              )}
+                            </span>
+                          </button>
                               ))
                             ) : (
                               <div className="col no-found-div w-100">
@@ -255,6 +276,7 @@ const searchKeyword = searchParams.get("search");
          
         </div>
     </div>
+    <ModalDeatils id={selectedIconId ?? null} />
     </>
   );
 }

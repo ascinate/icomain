@@ -28,7 +28,7 @@ const id = slug?.split('_').pop();
   const handleCopy = async () => {
     navigator.clipboard.writeText(renderedSvg);
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 2000); // hide after 2 sec
+    setTimeout(() => setShowToast(false), 2000);
   
     try {
       await fetch(`https://iconsguru.ascinatetech.com/api/icon-download/${icon.Id}`, {
@@ -139,8 +139,6 @@ const id = slug?.split('_').pop();
 
  
   useEffect(() => {
-
-   
 
     const fetchRelatedIcons = async () => {
       try {

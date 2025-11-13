@@ -2323,7 +2323,7 @@ button.btn.btn-list015 {
   font-weight: 700;
 }
 .totals-sections-mains01 .new-icons-bm{
-  grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px;
+  grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px;
   gap: 10px 8px;
   min-height: 290px;
 }
@@ -2805,6 +2805,25 @@ article.comon-categorisg .coun-text{
   width: 27px;
   height: 27px;
   font-weight: 300;
+}
+a.videw-btn:hover,
+.about-sections-features01 .row .comons-cardscus .btn:hover,
+.signup-btn10:hover{
+  background: var(--head-color) !important;
+  color: var(--background) !important;
+  
+}
+.why-menu-btn:hover{
+  border: solid 2px var(--head-color) !important;
+  background: var(--head-color) !important;
+  color: var(--background) !important;
+}
+.new-filter-05 .cmout .form-check-label:hover{
+  color: #179f07 !important;
+}
+.subscribes-div01 .btn-subcibes:hover{
+  background: var(--background) !important;
+  color: var(--head-color) !important;
 }
 .subscribe-sections{ padding: 70px 0; }
 /* .about-sections-features01 .row > div:nth-child(2) .btn{

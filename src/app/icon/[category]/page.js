@@ -5,7 +5,6 @@ import NavicationHome from "@/app/components/NavicationHome";
 import Footer from "@/app/components/Footer";
 import { useEffect, useState } from "react";
 import SidebarFilter from "@/app/components/SidebarFilter";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -15,24 +14,23 @@ import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
   const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggled((prev) => !prev);
-  };
-
-  const params = useParams();
-  const category = params.category;
-
+  const [selectedIconId, setSelectedIconId] = useState(null);
   const [icons, setIcons] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [totalIcons, setTotalIcons] = useState(0);
+
+  const params = useParams();
+  const category = params.category;
+
   const [filters, setFilters] = useState({
     categories: [category],
     colors: [],
     types: [],
   });
-  const [totalIcons, setTotalIcons] = useState(0);
+
+  const handleToggle = () => setIsToggled((prev) => !prev);
 
   const mianmenu = [
     { id: 1, title: "Icons", link: "/icons" },
@@ -57,7 +55,6 @@ export default function CategorySearchPage() {
           filters.types.forEach((t) => query.append("types[]", t));
 
         const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
-
         const response = await fetch(finalURL);
         const data = await response.json();
 
@@ -66,7 +63,6 @@ export default function CategorySearchPage() {
           setTotalPages(data.icons.last_page || 1);
           setTotalIcons(data.icons.total || 0);
         } else {
-          console.error("❌ Unexpected data.icons format:", data);
           setIcons([]);
         }
       } catch (error) {
@@ -80,6 +76,9 @@ export default function CategorySearchPage() {
     fetchIcons();
   }, [page, filters]);
 
+
+  
+
   return (
     <>
       <Head>
@@ -88,13 +87,16 @@ export default function CategorySearchPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <body className="lesting-searchings">
         <div
           className={`totals-sections-mains01 ${isToggled ? "swowpactive" : ""}`}
         >
           <aside className="sidebars-subpages  pt-3">
-            <Link href="/" className="looso-shape pe-4 ps-3 d-flex align-items-center">
+            <Link
+              href="/"
+              className="looso-shape pe-4 ps-3 d-flex align-items-center"
+            >
               <div className="isons">
                 <Image
                   loading="lazy"
@@ -120,15 +122,20 @@ export default function CategorySearchPage() {
                 className="btn pe-4 ps-3 w-100 comon_heading01 d-flex align-items-center filters-btn"
               >
                 <span className="icpn-svg">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    className="bi bi-filter"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                   </svg>
                 </span>
                 <h4 className="ms-2">
-                  {" "}
-                  Filter{" "}
+                  Filter
                   <span className="arose">
-                    {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -141,8 +148,8 @@ export default function CategorySearchPage() {
                         fillRule="evenodd"
                         d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
                       />
-                    </svg>{" "}
-                  </span>{" "}
+                    </svg>
+                  </span>
                 </h4>
               </button>
               <SidebarFilter
@@ -164,20 +171,23 @@ export default function CategorySearchPage() {
               showCategoryFilter={true}
             />
           </aside>
+
           <div className="rights-sections-sub">
             <main className="listing-pages no-border floate-start w-100 mb-5 mt-0 pt-0">
               <NavicationHomeSubpage />
               <div className="main-divs g-col-6">
-              <div className="serchings-div-filets01">
-                      <ul className="d-flex align-items-center menus-list01">
-                        {mianmenu.map((page) => (
-                              <li className="nav-item" key={page.id}>
-                                <Link href={page.link} className="nav-link"> {page.title} </Link>
-                              </li>
-                          ))}
-                      </ul>
-                      </div>
-                
+                <div className="serchings-div-filets01">
+                  <ul className="d-flex align-items-center menus-list01">
+                    {mianmenu.map((page) => (
+                      <li className="nav-item" key={page.id}>
+                        <Link href={page.link} className="nav-link">
+                          {page.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <p className="spaceing-lefts">
                   Showing{" "}
                   <strong className="serch-data">
@@ -242,21 +252,22 @@ export default function CategorySearchPage() {
                 </div>
 
                 <div className="tabsd_divs d-inline-block w-100 mt-4">
-                    
-                    <div className="new-icons-bm gy-2 g-lg-2 mt-0">
-                      {isLoading ? (
-                        <div className="loading-animations w-100 show-grids">
-                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                            <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                        </div>
-                      ) : Array.isArray(icons) && icons.length > 0 ? (
-                        icons.map((icon) => (
-                          <Link href="" role="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
+                  <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                    {isLoading ? (
+                      <div className="loading-animations w-100 show-grids">
+                        {[...Array(18)].map((_, i) => (
+                          <div className="df01" key={i}></div>
+                        ))}
+                      </div>
+                    ) : Array.isArray(icons) && icons.length > 0 ? (
+                      icons.map((icon) => {
+                        return (
+                          <button
                             key={icon.Id}
+                             data-bs-toggle="modal"
+                             data-bs-target="#exampleModal"
                             className="svg-item position-relative"
+                            onClick={() => setSelectedIconId(icon.Id)}
                           >
                             <span className="tags-frees">Free</span>
                             <span className="btn icons-list p-0">
@@ -276,31 +287,28 @@ export default function CategorySearchPage() {
                                 ></span>
                               )}
                             </span>
-                          </Link>
-                        ))
-                      ) : (
-                        <div className="col no-found-div w-100">
-                          <div className="not-imgs text-center">
-                            <figure className="m-0">
-                              <Image
-                                loading="lazy"
-                                src="/nofound.png"
-                                alt="iconsguru"
-                                width={249}
-                                height={219}
-                              />
-                            </figure>
-                            <h2>No results found</h2>
-                            <p>Try updating your search terms or filters</p>
-                          </div>
+                          </button>
+                        );
+                      })
+                    ) : (
+                      <div className="col no-found-div w-100">
+                        <div className="not-imgs text-center">
+                          <figure className="m-0">
+                            <Image
+                              loading="lazy"
+                              src="/nofound.png"
+                              alt="iconsguru"
+                              width={249}
+                              height={219}
+                            />
+                          </figure>
+                          <h2>No results found</h2>
+                          <p>Try updating your search terms or filters</p>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
+                  </div>
 
-  
-                  
-
-                  {/* Pagination */}
                   {totalPages > 1 && (
                     <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
                       <button
@@ -344,7 +352,9 @@ export default function CategorySearchPage() {
             </main>
           </div>
         </div>
-        <ModalDeatils />
+
+        {/* Modal */}
+        <ModalDeatils id={selectedIconId ?? null} />
       </body>
     </>
   );
