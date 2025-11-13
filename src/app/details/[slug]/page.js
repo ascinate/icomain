@@ -10,8 +10,8 @@ export default function IconDetailPage() {
 
 
   const params = useParams();
-const slug = params?.slug;
-const id = slug?.split('_').pop();
+  const slug = params?.slug;
+  const id = slug?.split('_').pop();
   const [icon, setIcon] = useState(null);
   const [color, setColor] = useState(null); // null to preserve original
   const [size, setSize] = useState(200);
@@ -155,6 +155,10 @@ const id = slug?.split('_').pop();
       fetchRelatedIcons();
     }
   }, [id]);
+  
+
+  
+
   
 
   const applyColorAndSize = (svgRaw) => {
