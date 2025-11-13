@@ -276,7 +276,7 @@ a {
   display: inline-block;
   height: 74px;
   border: solid 1px #ebebeb;
-  padding-top: 17px;
+  padding-top: 34px;
   box-shadow: 0 1px 3px rgb(0 0 0 / 4%), 0 1px 2px rgb(0 0 0 / 5%);
   background: var(--background);
 }
@@ -1849,16 +1849,16 @@ span.imgs01 img{
 
 .new-icons-bm{
   display: grid;
-  grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px ;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px ;
   gap: 24px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .new-icons-bm-bg{
   display: grid;
-  grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px 74px 74px;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
   gap: 24px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .sub-listu-div01 .search-sections-home{
@@ -2323,13 +2323,14 @@ button.btn.btn-list015 {
   font-weight: 700;
 }
 .totals-sections-mains01 .new-icons-bm{
-  grid-template-columns: 74px 74px 74px 74px 74px 74px 74px 74px;
-  gap: 10px 8px;
+  grid-template-columns: 150px 150px 150px 150px 150px 150px 150px ;
+  gap: 10px 30px;
   min-height: 290px;
+  justify-content: space-between;
 }
 .totals-sections-mains01 .new-icons-bm .svg-item{
-  height: 114px;
-  width: 105px;
+  height: 150px;
+  width: 150px;
 }
 .totals-sections-mains01 .new-icons-bm .svg-item::before{
   height: 100%;
