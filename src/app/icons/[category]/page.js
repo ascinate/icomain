@@ -12,9 +12,10 @@ import { useParams, useSearchParams } from 'next/navigation';
 import NavicationHomeSubpage from "@/app/components/NavicationHomeSubpage";
 import ModalDeatils from "@/app/components/ModalDeatils";
 
+
 export default function CategorySearchPage() {
     const [isToggled, setIsToggled] = useState(false);
-const [selectedIconId, setSelectedIconId] = useState(null);
+
   const handleToggle = () => {
     setIsToggled((prev) => !prev);
   };
@@ -30,6 +31,8 @@ const [selectedIconId, setSelectedIconId] = useState(null);
   const [totalPages, setTotalPages] = useState(1);
   const [totalIcons, setTotalIcons] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+    const [selectedIconId, setSelectedIconId] = useState(null);
+
 
   const [filters, setFilters] = useState({
     categories: isType ? [] : [category],
@@ -37,7 +40,7 @@ const [selectedIconId, setSelectedIconId] = useState(null);
     types: isType ? [category] : [],
     tag: searchParams.get('tag') || ''
   });
-  const hideCategoryFilter = !!filters.tag; 
+
 
   useEffect(() => {
     const fetchIcons = async () => {
@@ -80,8 +83,21 @@ const [selectedIconId, setSelectedIconId] = useState(null);
     fetchIcons();
   }, [page, filters]);
 
+  useEffect(() => {
+  const handleRoute = () => {
+    document.querySelectorAll('.modal-backdrop').forEach((el) => el.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('padding-right');
+  };
+
+  return () => handleRoute();
+}, []);
+
 
   const iconname = filters.tag ? `${filters.tag}` : `${category}`;
+
+
 
   return (
     <>
@@ -174,12 +190,12 @@ const [selectedIconId, setSelectedIconId] = useState(null);
                                                   ) : Array.isArray(icons) && icons.length > 0 ? (
                                                     icons.map((icon) => (
                                                       <button
-                                                          key={icon.Id}
-                                                          data-bs-toggle="modal"
-                                                          data-bs-target="#exampleModal"
-                                                          className="svg-item position-relative"
-                                                          onClick={() => setSelectedIconId(icon.Id)}
-                                                        >
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal"
+                                                        key={icon.Id}
+                                                        className="svg-item position-relative"
+                                                        onClick={() => setSelectedIconId(icon.Id)}
+                                                      >
                                                         <span className="tags-frees">Free</span>
                                                         <span className="btn icons-list p-0">
                                                           {icon.type === "Animated" ? (
@@ -260,10 +276,9 @@ const [selectedIconId, setSelectedIconId] = useState(null);
                       </div>
                        
                   </main>
+                  <ModalDeatils id={selectedIconId ?? null} />
              </div>
          </div>
-          {/* Modal */}
-         <ModalDeatils id={selectedIconId ?? null} />
       </body>
 
     </>
