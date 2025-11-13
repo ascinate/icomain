@@ -44,8 +44,8 @@ export default function CategorySearchPage() {
       setIsLoading(true);
       try {
         const query = new URLSearchParams();
-        query.append("page", page);
         query.append("limit", 20);
+        query.append("limit", page === 1 ? 48 : 6);
 
         if (filters.categories.length)
           filters.categories.forEach((c) => query.append("categories[]", c));
@@ -59,10 +59,12 @@ export default function CategorySearchPage() {
         const data = await response.json();
 
         if (data?.icons?.data && Array.isArray(data.icons.data)) {
-          setIcons(data.icons.data);
+          setIcons(prev =>
+            page === 1 ? data.icons.data : [...prev, ...data.icons.data]
+          );
           setTotalPages(data.icons.last_page || 1);
           setTotalIcons(data.icons.total || 0);
-        } else {
+        }  else {
           setIcons([]);
         }
       } catch (error) {
@@ -309,44 +311,22 @@ export default function CategorySearchPage() {
                     )}
                   </div>
 
-                  {totalPages > 1 && (
-                    <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
-                      <button
-                        className="btn btn-pre"
-                        onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                        disabled={page === 1}
-                      >
-                        ← Previous
-                      </button>
-
-                      {[...Array(totalPages)].map((_, index) => {
-                        const pageNum = index + 1;
-                        return (
+                   {page < totalPages && !isLoading && (
+                        <div className="text-center my-4">
                           <button
-                            key={pageNum}
-                            onClick={() => setPage(pageNum)}
-                            className={`btn btn-sm ${
-                              page === pageNum
-                                ? "btn-primary"
-                                : "btn-outline-secondary"
-                            }`}
+                            className="btn btn-primary px-4 py-2"
+                            onClick={() => setPage((prev) => prev + 1)}
                           >
-                            {pageNum}
+                            Load More
                           </button>
-                        );
-                      })}
+                        </div>
+                      )}
 
-                      <button
-                        className="btn btn-next"
-                        onClick={() =>
-                          setPage((prev) => Math.min(prev + 1, totalPages))
-                        }
-                        disabled={page === totalPages}
-                      >
-                        Next →
-                      </button>
-                    </div>
-                  )}
+                      {isLoading && (
+                        <div className="text-center my-4">
+                          <span>Loading...</span>
+                        </div>
+                      )}
                 </div>
               </div>
             </main>

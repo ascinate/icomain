@@ -49,8 +49,8 @@ export default function Searchlisting() {
       setIsLoading(true);
       try {
         const query = new URLSearchParams();
-        query.append("page", page);
         query.append("limit", 20);
+        query.append("limit", page === 1 ? 48 : 6);
 
         if (filters.categories.length) filters.categories.forEach(c => query.append("categories[]", c));
         if (filters.colors.length) filters.colors.forEach(c => query.append("colors[]", c));
@@ -63,8 +63,10 @@ export default function Searchlisting() {
         const response = await fetch(finalURL);
         const data = await response.json();
 
-        if (data?.icons?.data && Array.isArray(data.icons.data)) {
-          setIcons(data.icons.data);
+         if (data?.icons?.data && Array.isArray(data.icons.data)) {
+          setIcons(prev =>
+            page === 1 ? data.icons.data : [...prev, ...data.icons.data]
+          );
           setTotalPages(data.icons.last_page || 1);
           setTotalIcons(data.icons.total || 0);
         } else {
@@ -232,39 +234,22 @@ export default function Searchlisting() {
                             )}
                           </div>
 
-                          {/* Pagination */}
-                          {totalPages > 1 && (
-                          <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
-                            <button
-                              className="btn btn-pre"
-                              onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                              disabled={page === 1}
-                            >
-                              ← Previous
-                            </button>
+                          {page < totalPages && !isLoading && (
+                                <div className="text-center my-4">
+                                  <button
+                                    className="btn btn-primary px-4 py-2"
+                                    onClick={() => setPage((prev) => prev + 1)}
+                                  >
+                                    Load More
+                                  </button>
+                                </div>
+                              )}
 
-                            {[...Array(totalPages)].map((_, index) => {
-                              const pageNum = index + 1;
-                              return (
-                                <button
-                                  key={pageNum}
-                                  onClick={() => setPage(pageNum)}
-                                  className={`btn btn-sm ${page === pageNum ? "btn-primary" : "btn-outline-secondary"}`}
-                                >
-                                  {pageNum}
-                                </button>
-                              );
-                            })}
-
-                            <button
-                              className="btn btn-next"
-                              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                              disabled={page === totalPages}
-                            >
-                              Next →
-                            </button>
-                          </div>
-                          )}
+                              {isLoading && (
+                                <div className="text-center my-4">
+                                  <span>Loading...</span>
+                                </div>
+                              )}
 
                     
                     </div>
