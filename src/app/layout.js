@@ -35,7 +35,6 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-
 export const metadata = {
   icons: {
     icon: '/favicon.png',
@@ -48,9 +47,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     
-    <html lang="en">
+    <html lang="en" className={`${inter.variable}`}>
       
       <body>
+
       <style>{`
         html {
           font-family: ${inter.style.fontFamily};
@@ -109,13 +109,17 @@ export default function RootLayout({ children }) {
         h5,
         .icon-headings,
         .styles-icons-div h4,
-        .comon-heading-sub,{
+        .comon-heading-sub,
+        .search-listings01 span{
           font-family: ${inter.style.fontFamily};
         }
         
-        
+        .search-listings01 span,
+        .spaceing-lefts {
+          font-family: var(--font-inter-sans), sans-serif !important;
+        }
       `}
-    </style>
+      </style>
          <noscript
             id="gtm-noscript"
             dangerouslySetInnerHTML={{
