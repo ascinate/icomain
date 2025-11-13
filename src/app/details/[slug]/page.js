@@ -157,10 +157,6 @@ const id = slug?.split('_').pop();
   }, [id]);
   
 
-  
-
-  
-
   const applyColorAndSize = (svgRaw) => {
     let svg = svgRaw;
 
