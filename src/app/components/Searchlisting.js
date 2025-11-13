@@ -82,16 +82,7 @@ const searchKeyword = searchParams.get("search");
   }, [page, filters, searchKeyword]);
   
 
-  useEffect(() => {
-  const handleRoute = () => {
-    document.querySelectorAll('.modal-backdrop').forEach((el) => el.remove());
-    document.body.classList.remove('modal-open');
-    document.body.style.removeProperty('overflow');
-    document.body.style.removeProperty('padding-right');
-  };
 
-  return () => handleRoute();
-  }, []);
 
   return (
     <>
