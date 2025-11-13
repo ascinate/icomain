@@ -17,7 +17,6 @@ import ModalDeatils from "./ModalDeatils";
 export default function Searchlisting() {
 
    const [isToggled, setIsToggled] = useState(false);
-  const [selectedIconId, setSelectedIconId] = useState(null);
 
   const handleToggle = () => {
     setIsToggled(prev => !prev); 
@@ -81,8 +80,6 @@ const searchKeyword = searchParams.get("search");
     fetchIcons();
   }, [page, filters, searchKeyword]);
   
-
-
 
   return (
     <>
