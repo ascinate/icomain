@@ -16,14 +16,14 @@ import ModalDeatils from "./ModalDeatils";
 
 export default function Searchlisting() {
 
-   const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
-    setIsToggled(prev => !prev); 
+    setIsToggled(prev => !prev);
   };
-  
+
   const searchParams = useSearchParams();
-const searchKeyword = searchParams.get("search");
+  const searchKeyword = searchParams.get("search");
 
   const [icons, setIcons] = useState([]);
   const [page, setPage] = useState(1);
@@ -31,16 +31,18 @@ const searchKeyword = searchParams.get("search");
   const [isLoading, setIsLoading] = useState(false);
   const [filters, setFilters] = useState({ categories: [], colors: [], types: [] });
   const [totalIcons, setTotalIcons] = useState(0);
+  const [selectedIconId, setSelectedIconId] = useState(null);
 
- 
+
+
 
   const mianmenu = [
-        { id: 1, title: 'Icons' , link: '/icons'  },
-        { id: 2, title: 'Interface Icons' , link: '/interface'  },
-        { id: 3, title: 'Stickers' , link: '/interface'  },
-        { id: 5, title: 'Animated icons' , link: '/interface'  },
+    { id: 1, title: 'Icons', link: '/icons' },
+    { id: 2, title: 'Interface Icons', link: '/interface' },
+    { id: 3, title: 'Stickers', link: '/interface' },
+    { id: 5, title: 'Animated icons', link: '/interface' },
   ];
-  
+
 
   useEffect(() => {
     const fetchIcons = async () => {
@@ -49,18 +51,18 @@ const searchKeyword = searchParams.get("search");
         const query = new URLSearchParams();
         query.append("page", page);
         query.append("limit", 20);
-  
+
         if (filters.categories.length) filters.categories.forEach(c => query.append("categories[]", c));
         if (filters.colors.length) filters.colors.forEach(c => query.append("colors[]", c));
         if (filters.types.length) filters.types.forEach(t => query.append("types[]", t));
-  
+
         if (searchKeyword) query.append("search", searchKeyword);
-  
+
         const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
-         
+
         const response = await fetch(finalURL);
         const data = await response.json();
-  
+
         if (data?.icons?.data && Array.isArray(data.icons.data)) {
           setIcons(data.icons.data);
           setTotalPages(data.icons.last_page || 1);
@@ -76,10 +78,10 @@ const searchKeyword = searchParams.get("search");
         setIsLoading(false);
       }
     };
-  
+
     fetchIcons();
   }, [page, filters, searchKeyword]);
-  
+
 
   return (
     <>
