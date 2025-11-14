@@ -44,27 +44,29 @@ export default function CategorySearchPage() {
       setIsLoading(true);
       try {
         const query = new URLSearchParams();
+        query.append("page", page);
         query.append("limit", 20);
-        query.append("limit", page === 1 ? 48 : 6);
 
         if (filters.categories.length)
-          filters.categories.forEach((c) => query.append("categories[]", c));
+          filters.categories.forEach(c => query.append("categories[]", c));
         if (filters.colors.length)
-          filters.colors.forEach((c) => query.append("colors[]", c));
+          filters.colors.forEach(c => query.append("colors[]", c));
         if (filters.types.length)
-          filters.types.forEach((t) => query.append("types[]", t));
+          filters.types.forEach(t => query.append("types[]", t));
+        if (filters.tag)
+          query.append("tag", filters.tag);
 
         const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
+
         const response = await fetch(finalURL);
         const data = await response.json();
 
         if (data?.icons?.data && Array.isArray(data.icons.data)) {
-          setIcons(prev =>
-            page === 1 ? data.icons.data : [...prev, ...data.icons.data]
-          );
+          setIcons(data.icons.data);
           setTotalPages(data.icons.last_page || 1);
           setTotalIcons(data.icons.total || 0);
-        }  else {
+        } else {
+          console.error("❌ Unexpected data.icons format:", data);
           setIcons([]);
         }
       } catch (error) {
@@ -254,7 +256,7 @@ export default function CategorySearchPage() {
                 </div>
 
                 <div className="tabsd_divs d-inline-block w-100 mt-4">
-                  <div className="new-icons-bm gy-2 g-lg-2 mt-0">
+                  <div className="new-icons-bm news-colors-div row gy-2 g-lg-2 mt-0">
                     {isLoading ? (
                       <div className="loading-animations w-100 show-grids">
                         {[...Array(18)].map((_, i) => (
@@ -268,7 +270,7 @@ export default function CategorySearchPage() {
                             key={icon.Id}
                              data-bs-toggle="modal"
                              data-bs-target="#exampleModal"
-                            className="svg-item position-relative"
+                            className="col-lg-2 svg-item position-relative"
                             onClick={() => setSelectedIconId(icon.Id)}
                           >
                             <span className="tags-frees">Free</span>
@@ -311,22 +313,40 @@ export default function CategorySearchPage() {
                     )}
                   </div>
 
-                   {page < totalPages && !isLoading && (
-                        <div className="text-center my-4">
-                          <button
-                            className="btn btn-primary px-4 py-2"
-                            onClick={() => setPage((prev) => prev + 1)}
-                          >
-                            Load More
-                          </button>
-                        </div>
-                      )}
+                   {/* Pagination */}
+                              {totalPages > 1 && (
+                              <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
+                                <button
+                                  className="btn btn-pre"
+                                  onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                                  disabled={page === 1}
+                                >
+                                  ← Previous
+                                </button>
 
-                      {isLoading && (
-                        <div className="text-center my-4">
-                          <span>Loading...</span>
-                        </div>
-                      )}
+                                {[...Array(totalPages)].map((_, index) => {
+                                  const pageNum = index + 1;
+                                  return (
+                                    <button
+                                      key={pageNum}
+                                      onClick={() => setPage(pageNum)}
+                                      className={`btn btn-sm ${page === pageNum ? "btn-primary" : "btn-outline-secondary"}`}
+                                    >
+                                      {pageNum}
+                                    </button>
+                                  );
+                                })}
+
+                                <button
+                                  className="btn btn-next"
+                                  onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                                  disabled={page === totalPages}
+                                >
+                                  Next →
+                                </button>
+                              </div>
+                              )}
+
                 </div>
               </div>
             </main>

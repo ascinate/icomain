@@ -1,4 +1,4 @@
-import { Sora, Play, Playfair, Inter, Figtree} from "next/font/google";
+import { Sora, Play, Playfair, Inter, Figtree, Onest} from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
@@ -6,6 +6,13 @@ import ImportBsJS from "../app/components/ImportBsJS";
 
 const sorasans = Sora({
   variable: "--font-sora-sans",
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+});
+
+
+const onest = Onest({
+  variable: "--font-onest-sans",
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
 });
@@ -47,76 +54,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${onest.variable}`}>
       
       <body>
 
       <style>{`
-        html {
-          font-family: ${inter.style.fontFamily};
-        }
-        .banner-parts01 h2, .form-select{
-         font-family: ${inter.style.fontFamily};
-        }
-        button,
-        .p-autocomplete-item,
-        .comon-cont-head,
-        .comon-content-div h3,
-        .privacy-page h5,{
-         font-family: ${inter.style.fontFamily};
-        } 
-         .signup-btn10,
-         .why-menu-btn,
-         .serchings-div-filets01 .nav-link,
-         .related-iconstext .btn-mores-tex,
-         .comon-footers-div01 h5,
-         .comon-links li a,
-         .comon-footers-div01,
-         .ft-paras,
-         .navbar-light .navbar-nav .nav-link,
-         .rights-text-div015 .btn-coun-downalod,
-         .btn-addtocollections,
-         .details-list-modals-lis ul li,
-         .rights-text-div015 h4,
-         .styleigs-list,
-         .main-details-pages01 .styles-icons-div,
-         .cions-titels,
-         .home-banner-sections .btn-search,
-         .favi-icons p,
-         .favi-icons li .btn,
-         .comon-head,
-         .comon-types01 h5,
-         .videw-btn,
-         .comons-cardscus h3,
-         .btn-subcibes,
-         .register-pages-crm .comon-heading-sub,
-         .main-bodys h2{
-           font-family: ${inter.style.fontFamily};
-         }
-        input{
-         font-family: ${inter.style.fontFamily};
-        }
+       
          h5.sub-headings{
            font-family: ${play.style.fontFamily};
          }
         p.text-para1{
           font-family: ${playfa.style.fontFamily};
         }
-        h2.comon-head,
-        .comon-types01 h5 a,
-        .coun-text,
-        .btn,
-        h5,
-        .icon-headings,
-        .styles-icons-div h4,
-        .comon-heading-sub,
-        .search-listings01 span{
-          font-family: ${inter.style.fontFamily};
-        }
-        
+               
         .search-listings01 span,
         .spaceing-lefts {
           font-family: var(--font-inter-sans), sans-serif !important;
+        }
+        .navbar-light .navbar-nav .nav-link{
+              font-family: ${onest.style.fontFamily};   
+        }
+        .why-menu-btn{
+            font-family: ${onest.style.fontFamily}; 
+        }
+        body{
+             font-family: ${onest.style.fontFamily} !important;
+        }
+        .signup-btn10{
+           font-family: ${onest.style.fontFamily} !important;
         }
       `}
       </style>

@@ -178,12 +178,12 @@ export default function Searchlisting() {
                     </div>
                     <div className="tabsd_divs d-inline-block w-100 mt-4">
                         
-                    <div className="new-icons-bm w-100 mt-0 position-relative">
+                    <div className="new-icons-bm news-colors-div row w-100 mt-0 position-relative">
                             {isLoading ? (
-                              <div className="loading-animations w-100 show-grids">
-                               <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                               <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                               <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                              <div className="loading-animations row w-100 show-grids">
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
                              </div>
                             ) : Array.isArray(icons) && icons.length > 0 ? (
                               icons.map((icon) => (
@@ -191,7 +191,7 @@ export default function Searchlisting() {
                             key={icon.Id}
                              data-bs-toggle="modal"
                              data-bs-target="#exampleModal"
-                            className="svg-item position-relative"
+                            className="col-lg-2 svg-item position-relative"
                             onClick={() => setSelectedIconId(icon.Id)}
                           >
                             <span className="tags-frees">Free</span>
@@ -234,21 +234,38 @@ export default function Searchlisting() {
                             )}
                           </div>
 
-                          {page < totalPages && !isLoading && (
-                                <div className="text-center my-4">
-                                  <button
-                                    className="btn btn-primary px-4 py-2"
-                                    onClick={() => setPage((prev) => prev + 1)}
-                                  >
-                                    Load More
-                                  </button>
-                                </div>
-                              )}
+                          {/* Pagination */}
+                              {totalPages > 1 && (
+                              <div className="d-flex align-items-center justify-content-center my-5 gap-2 flex-wrap">
+                                <button
+                                  className="btn btn-pre"
+                                  onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                                  disabled={page === 1}
+                                >
+                                  ← Previous
+                                </button>
 
-                              {isLoading && (
-                                <div className="text-center my-4">
-                                  <span>Loading...</span>
-                                </div>
+                                {[...Array(totalPages)].map((_, index) => {
+                                  const pageNum = index + 1;
+                                  return (
+                                    <button
+                                      key={pageNum}
+                                      onClick={() => setPage(pageNum)}
+                                      className={`btn btn-sm ${page === pageNum ? "btn-primary" : "btn-outline-secondary"}`}
+                                    >
+                                      {pageNum}
+                                    </button>
+                                  );
+                                })}
+
+                                <button
+                                  className="btn btn-next"
+                                  onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                                  disabled={page === totalPages}
+                                >
+                                  Next →
+                                </button>
+                              </div>
                               )}
 
                     
