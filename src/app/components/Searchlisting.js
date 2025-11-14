@@ -184,7 +184,6 @@ export default function Searchlisting() {
                                <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
                                <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
                                <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
                              </div>
                             ) : Array.isArray(icons) && icons.length > 0 ? (
                               icons.map((icon) => (
@@ -236,7 +235,7 @@ export default function Searchlisting() {
                           </div>
 
 
-                          
+                         
 
                           {/* Pagination */}
                               {totalPages > 1 && (

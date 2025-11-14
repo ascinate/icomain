@@ -260,12 +260,11 @@ export default function CategorySearchPage() {
                     {isLoading ? (
                       <div className="loading-animations row w-100 show-grids">
                         {[...Array(18)].map((_, i) => (
-                         <div className="loading-animations news-colors-div row w-100 show-grids">
-                                                      <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                                                      <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                                                      <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                                                      <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                                                    </div>
+                          <div className="loading-animations row w-100 show-grids" key={i}>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                          </div>
                         ))}
                       </div>
                     ) : Array.isArray(icons) && icons.length > 0 ? (
