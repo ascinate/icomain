@@ -2324,7 +2324,7 @@ button.btn.btn-list015 {
 }
 .totals-sections-mains01 .new-icons-bm{
   /* grid-template-columns: 150px 150px 150px 150px 150px 150px 150px ; */
-  gap: 10px 0;
+  gap: 10px 30px;
   min-height: 290px;
   /* justify-content: space-between; */
 }
