@@ -821,8 +821,8 @@ tbody, td, tfoot, th, thead, tr{
    width: 45%;
 } 
 article.comon-categorisg figure{
-    background: #e0ffe7 !important;
-    border: 1px solid #b3e7bf !important;
+    background: #f6f5f3 !important;
+    border: 1px solid #eae9e7 !important;
     border-radius: 12px !important;
     color: #1fb141 !important;
 }
@@ -1847,19 +1847,19 @@ span.imgs01 img{
   color: var(--background) !important;
 }
 
-.new-icons-bm{
+/* .new-icons-bm{
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px ;
   gap: 24px;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .new-icons-bm-bg{
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
   gap: 24px;
-  /* justify-content: space-between; */
-}
+  justify-content: space-between;
+} */
 
 .sub-listu-div01 .search-sections-home{
   width: 100%;

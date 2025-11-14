@@ -83,6 +83,9 @@ export default function RootLayout({ children }) {
         .signup-btn10{
            font-family: ${onest.style.fontFamily} !important;
         }
+           article.comon-categorisg h5 a{
+           font-family: ${onest.style.fontFamily} !important;
+           }
       `}
       </style>
          <noscript

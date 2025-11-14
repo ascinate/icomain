@@ -26,6 +26,7 @@ export default async function Home() {
 
     const icontypes = [    { id: 1, title: 'Arrow' , counting: '144', tag:"", img: '/arrow.svg', link: '/icons/arrow'  },    { id: 2, title: 'Business' , counting: '65', tag:"New", img: '/business.svg', link: '/icons/business'  },    { id: 3, title: 'Device' , counting: '118', tag:"", img: '/device.svg', link: '/icons/device'  },    { id: 4, title: 'Music' , counting: '200', tag:"", img: '/Music.svg', link: '/icons/music'  },    { id: 5, title: 'home' , counting: '49', tag:"", img: '/home.svg', link: '/icons/home'  },    { id: 6, title: 'Interface' , counting: '89', tag:"", img: '/interface.svg', link: '/icons/interface'  },  ];  
     const categorytypes = [    { id: 1, title: 'Thin' , counting: '450', tag:"", img: '/tine1.svg', link: '/icons/thin'  },    { id: 2, title: 'Solid' , counting: '590', tag:"New", img: '/solid1.svg', link: '/icons/solid'  },    { id: 3, title: 'Regular' , counting: '387', tag:"", img: '/regulari.svg', link: '/icons/regular'  }  ];
+    const icontypeslist = [    { id: 1, title: 'Arrow' , counting: '144', tag:"", img: '/arrow.svg', link: '/icons/arrow'  },    { id: 2, title: 'Business' , counting: '65', tag:"New", img: '/business.svg', link: '/icons/business'  },    { id: 3, title: 'Device' , counting: '118', tag:"", img: '/device.svg', link: '/icons/device'  },    { id: 4, title: 'Music' , counting: '200', tag:"", img: '/Music.svg', link: '/icons/music'  },    { id: 5, title: 'home' , counting: '49', tag:"", img: '/home.svg', link: '/icons/home'  },    { id: 6, title: 'Interface' , counting: '89', tag:"", img: '/interface.svg', link: '/icons/interface'  },  ];  
 
   
   return (
@@ -153,13 +154,16 @@ export default async function Home() {
 
                      <div className="row row-cols-1 row-cols-lg-4 gy-4 g-lg-4 mt-4">
 
-                        {icontypes.map((type) => (
+                        {icontypeslist.map((type) => (
                                   <div className="col" key={type.id}>
                                     <article className="d-inline-block  w-100 comon-categorisg position-relative">
                                     <span className="tagsd">{type.tag}</span>
                                       <div className="d-flex ps-lg-4 align-items-start">
                                             <figure className="text-center mb-1">
-                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="rgba(255,255,255,1)"><path d="M9 2.4578V4.58152C6.06817 5.76829 4 8.64262 4 12C4 16.4183 7.58172 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15H21.5422C20.2679 19.0571 16.4776 22 12 22C6.47715 22 2 17.5228 2 12C2 7.52236 4.94289 3.73207 9 2.4578ZM12 2C17.5228 2 22 6.47715 22 12C22 12.3375 21.9833 12.6711 21.9506 13H11V2.04938C11.3289 2.01672 11.6625 2 12 2ZM13 4.06189V11H19.9381C19.4869 7.38128 16.6187 4.51314 13 4.06189Z"></path></svg>
+                                                 <Image loading="lazy" src={type.img}
+                                              alt="user"
+                                              width={260}
+                                              height={178} />
                                            </figure>
                                            <span className="icon-list-name ps-4  mt-2 ms-0 d-inline-block">
                                               <h5 className="mb-0"> 
