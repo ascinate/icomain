@@ -183,7 +183,8 @@ export default function Searchlisting() {
                               <div className="loading-animations row w-100 show-grids">
                                <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
                                <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
-                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
+                               <div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div><div className="df01 col-lg-2"></div>
                              </div>
                             ) : Array.isArray(icons) && icons.length > 0 ? (
                               icons.map((icon) => (
@@ -233,6 +234,9 @@ export default function Searchlisting() {
                               </div>
                             )}
                           </div>
+
+
+                          
 
                           {/* Pagination */}
                               {totalPages > 1 && (

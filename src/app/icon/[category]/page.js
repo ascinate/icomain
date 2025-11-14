@@ -258,9 +258,9 @@ export default function CategorySearchPage() {
                 <div className="tabsd_divs d-inline-block w-100 mt-4">
                   <div className="new-icons-bm news-colors-div row gy-2 g-lg-2 mt-0">
                     {isLoading ? (
-                      <div className="loading-animations w-100 show-grids">
+                      <div className="loading-animations row w-100 show-grids">
                         {[...Array(18)].map((_, i) => (
-                          <div className="df01" key={i}></div>
+                          <div className="df01 col-lg-2" key={i}></div>
                         ))}
                       </div>
                     ) : Array.isArray(icons) && icons.length > 0 ? (
