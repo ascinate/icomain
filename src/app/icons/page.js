@@ -75,10 +75,10 @@ export default function Icons() {
                         </div>
                         {loading ? (
                           <div className="text-center my-5 d-block w-100">
-                              <div className="loading-animations w-100 show-grids">
-                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
-                                <div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div><div className="df01"></div>
+                              <div className="loading-animations new-gaps row w-100 show-grids">
+                                <div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div>
+                                <div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div>
+                                <div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div><div className="df01 col-lg-4"></div>
                               </div>
                           </div>
                         ) : (
@@ -124,8 +124,6 @@ export default function Icons() {
                         </div>
                         )}
                      </div>
-
-                  
       
                   </div>
              </section>

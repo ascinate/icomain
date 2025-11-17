@@ -2921,7 +2921,11 @@ padding: 10px 30px;
 .news .svg-item .icons-list:hover:before {
   transform: translate(1);
 }
-
+.df01.col-lg-4 {
+    width: 32.3333%;
+    height: 310px !important;
+}
+.new-gaps{ gap: 20px 0; }
 @media (width >= 1400px) {
     .fetures-acountins-sections .container {
         max-width: 1200px;
