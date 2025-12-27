@@ -1860,6 +1860,9 @@ span.imgs01 img{
   width: 100%;
   margin-bottom: 28px;
 }
+.swowpactive .col-lg-9 {
+    width: 100%;
+}
 .bg-light01{
   background: #e7e7e7;
 }

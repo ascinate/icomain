@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import NavicationHome from "@/app/components/NavicationHome";
-import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import NavicationHomeDetails from "@/app/components/NavicationHomeDetails";
 
