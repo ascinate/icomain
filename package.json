@@ -14,7 +14,7 @@
     "bootstrap": "^5.0.1",
     "html2canvas": "^1.4.1",
     "mysql2": "^3.13.0",
-    "next": "15.2.1",
+    "next": "15.2.8",
     "next-sitemap": "^4.2.3",
     "primereact": "^10.9.4",
     "react": "^19.0.0",
