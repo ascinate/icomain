@@ -27,6 +27,14 @@ export default function CategorySearchPage() {
   });
 
   const handleToggle = () => setIsToggled((prev) => !prev);
+    const handleFilterChange = (newFilters) => {
+    setPage(1);
+    setFilters((prev) => ({
+      ...prev,
+      ...newFilters,
+      categories: [category], // 🔐 force category
+    }));
+  };
 
 
 
@@ -101,7 +109,7 @@ export default function CategorySearchPage() {
                                     </svg>  </span>
                                   </h4>
                                 <SidebarFilter
-                                  onFilterChange={setFilters}
+                                  onFilterChange={handleFilterChange}
                                   showCategoryFilter={false}
                                 />
                               </div>

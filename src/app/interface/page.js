@@ -86,7 +86,6 @@ export default function InterfaceIconsPage() {
                 <div className="t-ind-icons mt-4">
                   <div className="new-icons-bm-bg news">
                     {icons.map((icon) => (
-                      
                         <button  data-bs-toggle="modal"
                             data-bs-target="#exampleModal" className="svg-item position-relative" key={icon.Id}>
                           <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">

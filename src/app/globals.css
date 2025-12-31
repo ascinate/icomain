@@ -2545,6 +2545,9 @@ footer.footer-lights015-mains .ft-scol svg{
   justify-content: space-between;
 }
 
+.icon-cate{
+  margin-top: 0 !important;
+}
 @media (width >= 576px) {
     .cre-modals-details01 .modal-dialog {
         max-width: 1160px;
