@@ -11,6 +11,7 @@ export default function InterfaceIconsPage() {
   const [icons, setIcons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("interface");
+  const [selectedIconId, setSelectedIconId] = useState(null);
 
   useEffect(() => {
     const fetchInterfaceIcons = async () => {
@@ -39,7 +40,7 @@ export default function InterfaceIconsPage() {
       </Head>
 
       <NavicationHome />
-      <section className="sub-banners d-inline-block w-100 float-start mt-2">
+      <section className="sub-banners d-inline-block w-100 float-start">
                 <div className="container">
                     <div className="row align-items-center">
                       <div className="col-lg-6">
@@ -86,7 +87,7 @@ export default function InterfaceIconsPage() {
                 <div className="t-ind-icons mt-4">
                   <div className="new-icons-bm-bg news">
                     {icons.map((icon) => (
-                        <button  data-bs-toggle="modal"
+                        <button  data-bs-toggle="modal" onClick={() => setSelectedIconId(icon.Id)} 
                             data-bs-target="#exampleModal" className="svg-item position-relative" key={icon.Id}>
                           <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
                             <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
@@ -137,7 +138,7 @@ export default function InterfaceIconsPage() {
         </section>
       </main>
 
-      <ModalDeatils />
+      <ModalDeatils  id={selectedIconId ?? null}/>
 
       <Footer />
     </>
