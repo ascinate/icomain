@@ -3182,6 +3182,11 @@ padding: 10px 30px;
 .offcanvas-header .btn-close{
   background-color: var(--primaycolor);
 }
+.new-typesr-crmsd.comon-types01 img{
+  height: auto !important;
+}
+
+
 @keyframes pulse {
   0%, 100% {
     opacity: 0.6;

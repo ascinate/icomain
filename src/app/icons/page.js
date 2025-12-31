@@ -87,7 +87,7 @@ export default function Icons() {
       
                             {icontypes.map((type) => (
                                     <div className="col" key={type.id}>
-                                      <article className="d-inline-block w-100 comon-types01 position-relative">
+                                      <article className="d-inline-block new-typesr-crmsd w-100 comon-types01 position-relative">
                                         <span className="tagsd">{type.tag}</span>
                                           <figure className="text-center mx-auto d-block mb-1">
                                             <Link href={type.link}> <Image loading="lazy" src={type.img}
