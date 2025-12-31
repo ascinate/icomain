@@ -62,11 +62,6 @@ export default function InterfaceIconsPage() {
       <main className="pricing-pages-part float-start w-100">
         <section className="float-start w-100 pt-0">
           <div className="container">
-            
-
-
-
- 
 
             <div className="comon-cate-list trending-icons d-inline-block w-100">
               <h2 className="text-left comon-head cmg-heading m-0">Interface Icons</h2>
@@ -85,14 +80,17 @@ export default function InterfaceIconsPage() {
               ) : (
                 <>
                 <div className="t-ind-icons mt-4">
-                  <div className="new-icons-bm-bg news">
+                  <div className="new-icons-bm-bg news-colors-div news">
                     {icons.map((icon) => (
-                        <button  data-bs-toggle="modal" onClick={() => setSelectedIconId(icon.Id)} 
-                            data-bs-target="#exampleModal" className="svg-item position-relative" key={icon.Id}>
-                          <Link href={`/details/${icon.icon_name.replace(/\s+/g, "-").toLowerCase()}_${icon.Id}`} className="btn icons-list p-0">
-                            <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
-                          </Link>
+                      <div key={icon.Id} className="svg-item position-relative">
+                        <button  data-bs-toggle="modal" onClick={() => setSelectedIconId(icon.Id)} data-bs-target="#exampleModal" className="tags-frees">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.41421 15.89L16.5563 5.74785L15.1421 4.33363L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6473L14.435 2.21231C14.8256 1.82179 15.4587 1.82179 15.8492 2.21231L18.6777 5.04074C19.0682 5.43126 19.0682 6.06443 18.6777 6.45495L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg>
                         </button>
+                        
+                          <span className="btn icons-list sm-icons015 p-0">
+                            <span dangerouslySetInnerHTML={{ __html: icon.icon_svg }}></span>
+                          </span>
+                       </div>
                      
                     ))}
                   </div>
