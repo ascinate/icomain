@@ -1,7 +1,9 @@
+
 import { Sora, Play, Playfair, Inter, Figtree, Onest} from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
+
 
 
 const sorasans = Sora({
@@ -52,11 +54,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
+
   return (
     
     <html lang="en" className={`${onest.variable}`}>
       
-      <body>
+      <body className="names-bgs">
 
       <style>{`
        
@@ -98,6 +103,9 @@ export default function RootLayout({ children }) {
         <ImportBsJS/>
         {children}
       </body>
+
+     
+     
     </html>
   );
 }

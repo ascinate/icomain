@@ -67,6 +67,34 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
     })
   }
 
+  // select type code
+
+  const typeOptions = filters.types.map(type => ({
+  value: type,
+  label: type.trim(),
+  }));
+
+  const selectedTypeOptions = selectedFilters.types.map(type => ({
+  value: type,
+  label: type.trim(),
+  }));
+
+
+  // category selects
+  const categoryOptions = filters.categories.map(cat => ({
+    value: cat,
+    label: cat.trim(),
+  }));
+
+  const selectedCategoryOptions = selectedFilters.categories.map(cat => ({
+  value: cat,
+  label: cat.trim(),
+}));
+
+const visibleCategoryOptions = showAll
+  ? categoryOptions
+  : categoryOptions.slice(0, 4);
+
   return (
     <div className="sidebarsd_div d-inline-block w-100 p-0 box">
 
@@ -139,12 +167,28 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
 
                      <div className='rights-sectionu01'>
 
-                        <Select
+                         {/* <Select
                             isMulti
                             defaultValue={selectedOption}
                             onChange={setSelectedOption}
                             options={options}
+                          />  */}
+
+                          <Select
+                            isMulti
+                            options={typeOptions}
+                            value={selectedTypeOptions}
+                            onChange={(selected) => {
+                              setSelectedFilters(prev => ({
+                                ...prev,
+                                types: selected ? selected.map(item => item.value) : [],
+                              }))
+                            }}
+                            placeholder="Select types..."
+                            className="mt-3"
+                            classNamePrefix="react-select"
                           />
+
                      </div>
                         {/* <ul className="options_names  m-0 new-filter-05 flex-wrap align-items-center mt-3">
                             {filters.types.map((type, i) => {
@@ -173,12 +217,21 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
 
                      <div className='rights-sectionu01'>
 
-                        <Select
+                          <Select
                             isMulti
-                            defaultValue={selectedOption}
-                            onChange={setSelectedOption}
-                            options={options}
+                            options={visibleCategoryOptions}
+                            value={selectedCategoryOptions}
+                            onChange={(selected) => {
+                              setSelectedFilters(prev => ({
+                                ...prev,
+                                categories: selected ? selected.map(item => item.value) : [],
+                              }));
+                            }}
+                            placeholder="Select categories"
+                            className="mt-3"
+                            classNamePrefix="react-select"
                           />
+                          
                      </div>
                         {/* <ul className="options_names  m-0 new-filter-05 flex-wrap align-items-center mt-3">
                             {filters.types.map((type, i) => {
