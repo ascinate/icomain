@@ -185,7 +185,7 @@ const visibleCategoryOptions = showAll
                               }))
                             }}
                             placeholder="Select types..."
-                            className="mt-3"
+                            className="basic-single"
                             classNamePrefix="react-select"
                           />
 
@@ -217,18 +217,20 @@ const visibleCategoryOptions = showAll
 
                      <div className='rights-sectionu01'>
 
-                          <Select
-                            isMulti
-                            options={visibleCategoryOptions}
+                          <Select 
+                          isMulti 
+                          options={categoryOptions}
                             value={selectedCategoryOptions}
                             onChange={(selected) => {
                               setSelectedFilters(prev => ({
                                 ...prev,
-                                categories: selected ? selected.map(item => item.value) : [],
-                              }));
+                                categories: selected
+                                  ? selected.map(item => item.value)
+                                  : [],
+                              }))
                             }}
                             placeholder="Select categories"
-                            className="mt-3"
+                            className="basic-single"
                             classNamePrefix="react-select"
                           />
                           
@@ -254,57 +256,9 @@ const visibleCategoryOptions = showAll
                             })}
                         </ul> */}
                 </div>
-            
-                
-                
-            </div>
 
-            {/* Types */}
-            
-           
-          {showCategoryFilter && (
-              <>
-            <div className="d-flex align-items-center">
-                 
-                  <h5 className="ms-2 mb-0"> Categories </h5>
             </div>
-                <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-3">
-                  {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => (
-                    <li className="cmout form-check position-relative" key={i}>
-                      <input
-                        id={`cat-${i}`}
-                        type="checkbox"
-                        className="form-check-input"
-                        onChange={() => handleCheckboxChange('categories', cat)}
-                        checked={selectedFilters.categories.includes(cat)}
-                      />
-                      <label className="form-check-label" htmlFor={`cat-${i}`}>
-                        <span className='imgs01'>
-                            <Image
-                              loading="lazy"
-                              src="/3D.webp"
-                              alt="iconsguru"
-                              width={28}
-                              height={28}
-                            />
-                        </span>
-                        {cat.trim()}
-                      </label>
-                    </li>
-                  ))}
-                  {filters.categories.length > 4 && (
-                  <button
-                    type="button"
-                    className="btn btn-sm  px-0"
-                    onClick={() => setShowAll(!showAll)}
-                  >
-                    {showAll ? '+ Less' : '+ More'}
-                  </button>
-                )}
-                </ul>
-                
-            </>
-            )}
+            {/* Types */}
           </>
         )}
       </div>
