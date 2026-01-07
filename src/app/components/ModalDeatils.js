@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 
-export default function ModalDeatils({ id }) {
+export default function ModalDeatils({ id , onClose }) {
     const [selectedId, setSelectedId] = useState(id);
     const [icon, setIcon] = useState(null);
     const [relatedIcons, setRelatedIcons] = useState([]);
@@ -157,12 +157,12 @@ export default function ModalDeatils({ id }) {
 
     return (
         <>
-            <div className="modal fade cre-modals-details01" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="cre-modals-details01 modal-backdrop-custom" >
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header border-0 p-0">
 
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" onClick={onClose} className="btn-close"></button>
                         </div>
                         <div className="modal-body">
 

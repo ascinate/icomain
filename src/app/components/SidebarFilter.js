@@ -4,11 +4,7 @@ import axios from 'axios'
 import Image from 'next/image';
 import Select from 'react-select';
 
-const options = [
-  { value: 'thin', label: 'Thin' },
-  { value: 'regular', label: 'Regular' },
-  { value: 'bold', label: 'Bold' },
-];
+
 
 export default function SidebarFilter({ onFilterChange, showCategoryFilter = true }) {
   const [showAll, setShowAll] = useState(false);
@@ -30,7 +26,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
   })
 
 
-  const [selectedOption, setSelectedOption] = useState(null);
+
 
 
   useEffect(() => {
@@ -82,18 +78,13 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
 
   // category selects
   const categoryOptions = filters.categories.map(cat => ({
-    value: cat,
-    label: cat.trim(),
-  }));
-
-  const selectedCategoryOptions = selectedFilters.categories.map(cat => ({
   value: cat,
-  label: cat.trim(),
+  label: cat,
 }));
 
-const visibleCategoryOptions = showAll
-  ? categoryOptions
-  : categoryOptions.slice(0, 4);
+
+
+
 
   return (
     <div className="sidebarsd_div d-inline-block w-100 p-0 box">
@@ -184,7 +175,7 @@ const visibleCategoryOptions = showAll
                                 types: selected ? selected.map(item => item.value) : [],
                               }))
                             }}
-                            placeholder="Select types..."
+                            placeholder="Select.."
                             className="basic-single"
                             classNamePrefix="react-select"
                           />
@@ -217,7 +208,7 @@ const visibleCategoryOptions = showAll
 
                      <div className='rights-sectionu01'>
 
-                          <Select 
+                          {/* <Select 
                           isMulti 
                           options={categoryOptions}
                             value={selectedCategoryOptions}
@@ -232,7 +223,30 @@ const visibleCategoryOptions = showAll
                             placeholder="Select categories"
                             className="basic-single"
                             classNamePrefix="react-select"
+                          /> */}
+
+                          <Select
+                            isMulti
+                            options={categoryOptions}
+                            value={categoryOptions.filter(opt =>
+                              selectedFilters.categories.includes(opt.value)
+                            )}
+                            onChange={(selected) => {
+                              setSelectedFilters(prev => ({
+                                ...prev,
+                                categories: selected
+                                  ? selected.map(item => item.value)
+                                  : [],
+                              }))
+                            }}
+                            placeholder="Select categories"
+                            className="basic-single"
+                            classNamePrefix="react-select"
                           />
+
+
+
+                            
                           
                      </div>
                         {/* <ul className="options_names  m-0 new-filter-05 flex-wrap align-items-center mt-3">

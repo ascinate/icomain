@@ -183,7 +183,7 @@ a {
   background: var(--primaycolor) !important;
   color: var(--background) !important;
   border-radius: 6px !important;
-  padding: 0 30px !important;
+  padding: 0 18px !important;
   height: 44px;
   font-weight: 600;
   font-size: 16px !important;
@@ -205,7 +205,7 @@ a {
 }
 .btn-pre{
   border-radius: 6px !important;
-  padding: 0 30px !important;
+  padding:0 18px !important;
   height: 44px;
   font-weight: 600;
   transition: all 0.5s;
@@ -2555,6 +2555,28 @@ footer.footer-lights015-mains .ft-scol svg{
 
 .icon-cate{
   margin-top: 0 !important;
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.35s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.modals-body .modal-backdrop-custom{
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+  overflow-y: auto;
+  
+}
+.modals-body{
+  overflow: hidden;
+  height: 100vh;
 }
 @media (width >= 576px) {
     .cre-modals-details01 .modal-dialog {

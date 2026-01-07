@@ -16,6 +16,11 @@ export default function CategorySearchPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [totalIcons, setTotalIcons] = useState(0);
+  const [isIconActive, setIsIconActive] = useState(false);
+
+  const pagesToShow = Array.from(
+  new Set([1, 2, totalPages].filter(p => p >= 1 && p <= totalPages))
+  );
 
   const params = useParams();
   const category = params.category;
@@ -90,7 +95,7 @@ export default function CategorySearchPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
+    <div className={`full-bodys ${isIconActive ? "modals-body" : ""}`}>
       <div className={`totals-sections-mains01 new-lisiting ${isToggled ? "swowpactive" : ""}`}>
         <NavicationHomeDetails />
         <div className="main-listings01 float-start w-100 only-listings01">
@@ -223,12 +228,13 @@ export default function CategorySearchPage() {
                               return (
                                 <div
                                   key={icon.Id}
-
+                                   onClick={() => {
+                                   setIsIconActive(true);
+                                  }}
                                   className="svg-item position-relative"
-                                  onClick={() => setSelectedIconId(icon.Id)}
+                                  
                                 >
-                                  <button className="tags-frees" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.41421 15.89L16.5563 5.74785L15.1421 4.33363L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6473L14.435 2.21231C14.8256 1.82179 15.4587 1.82179 15.8492 2.21231L18.6777 5.04074C19.0682 5.43126 19.0682 6.06443 18.6777 6.45495L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg></button>
+                                  <button className="tags-frees" onClick={() => setSelectedIconId(icon.Id)}> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.41421 15.89L16.5563 5.74785L15.1421 4.33363L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6473L14.435 2.21231C14.8256 1.82179 15.4587 1.82179 15.8492 2.21231L18.6777 5.04074C19.0682 5.43126 19.0682 6.06443 18.6777 6.45495L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg></button>
                                   <span className="btn icons-list sm-icons015 p-0">
                                     {icon.type === "Animated" ? (
                                       <img
@@ -268,24 +274,51 @@ export default function CategorySearchPage() {
                           )}
                         </div>
                         {/* Pagination */}
+                                                    
                         {totalPages > 1 && (
                           <div className="d-flex align-items-center paginnations justify-content-center justify-content-lg-end my-5 gap-2 flex-wrap">
+
                             <div className="text-muted text-shows">
                               Page <strong>{page}</strong> of <strong>{totalPages}</strong>
                             </div>
 
-                            {[...Array(totalPages)].map((_, index) => {
-                              const pageNum = index + 1;
-                              return (
+                            {Array.from(
+                              new Set([
+                                1,
+                                2,
+                                page,        // current page (dynamic)
+                                totalPages,
+                              ].filter(p => p >= 1 && p <= totalPages))
+                            )
+                              .sort((a, b) => a - b)
+                              .map((pageNum) => (
                                 <button
                                   key={pageNum}
                                   onClick={() => setPage(pageNum)}
-                                  className={`btn btn-sm ${page === pageNum ? "btn-actives" : "btn-outline-secondary"}`}
+                                  className={`btn btn-sm ${
+                                    page === pageNum ? "btn-actives" : "btn-outline-secondary"
+                                  }`}
                                 >
                                   {pageNum}
                                 </button>
-                              );
-                            })}
+                              ))}
+
+
+                            <button
+                              className="btn btn-pre"
+                              onClick={() => setPage(prev => Math.max(prev - 1, 1))}
+                              disabled={page === 1}
+                            >
+                              ←
+                            </button>
+
+                            <button
+                              className="btn btn-next"
+                              onClick={() => setPage(prev => Math.min(prev + 1, totalPages))}
+                              disabled={page === totalPages}
+                            >
+                              →
+                            </button>
 
                           </div>
                         )}
@@ -304,8 +337,10 @@ export default function CategorySearchPage() {
       </div>
 
       {/* Modal */}
-      <ModalDeatils id={selectedIconId ?? null} />
-
+      <ModalDeatils id={selectedIconId ?? null}  onClose={() => {
+               setIsIconActive(false);
+                }} />
+    </div>
     </>
   );
 }

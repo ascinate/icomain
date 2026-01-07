@@ -49,14 +49,10 @@ function BannerHome({ totalIcons }) {
               <p className="text-para1"> High-quality icons for UI, apps, and design projects- free and premium. </p>
                 <SerchInputes/>
               
-               <div className="favi-icons mt-4 col-lg-7 d-flex align-items-center ">
+               {/* <div className="favi-icons mt-4 col-lg-7 d-flex align-items-center ">
                   <p className="m-0">Top searches: </p>
                   <ul className="d-flex align-items-center ms-3">
-                      {/* {favicons.map((icon) => (
-                          <li key={icon.id}>
-                              <Link href={icon.link} className="fb-icon mx-2"> <span>{icon.code}</span> </Link>
-                          </li>
-                      ))} */}
+                     
                       <li>
                         <button className="btn btn-list015"> Education </button>
                       </li>
@@ -64,7 +60,7 @@ function BannerHome({ totalIcons }) {
                         <button className="btn btn-list015"> Education </button>
                       </li>
                   </ul>
-              </div>
+              </div> */}
           </div>
       </div>
 
