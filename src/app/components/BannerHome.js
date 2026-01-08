@@ -31,11 +31,13 @@ function BannerHome({ totalIcons }) {
 
 
 
-  const handleSearchClick = () => {
-    if (value.trim()) {
-      router.push(`/search?search=${encodeURIComponent(value.trim())}`);
-    }
-  };
+const handleSearchClick = () => {
+  const trimmed = value.trim();
+  if (!trimmed) return;
+
+  router.push(`/search?search=${encodeURIComponent(trimmed)}&page=1`);
+};
+
 
   return (
    
