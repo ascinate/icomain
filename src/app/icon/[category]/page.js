@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import SidebarFilter from "@/app/components/SidebarFilter";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams,useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import NavicationHomeDetails from "@/app/components/NavicationHomeDetails";
 import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
-    const [selectedIconId, setSelectedIconId] = useState(null);
+  const [selectedIconId, setSelectedIconId] = useState(null);
   const [isToggled, setIsToggled] = useState(false);
   const params = useParams();
   const searchParams = useSearchParams();
@@ -23,7 +23,7 @@ export default function CategorySearchPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [totalIcons, setTotalIcons] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-    const [isIconActive, setIsIconActive] = useState(false);
+  const [isIconActive, setIsIconActive] = useState(false);
 
   const [filters, setFilters] = useState({
     categories: isType ? [] : [category],
@@ -31,14 +31,16 @@ export default function CategorySearchPage() {
     types: isType ? [category] : [],
     tag: searchParams.get('tag') || ''
   });
-  const hideCategoryFilter = !!filters.tag; 
-   const handleToggle = () => setIsToggled((prev) => !prev);
-   const displayCategory =
-  filters.tag
-    ? filters.tag
-    : filters.categories.length > 0
-      ? filters.categories[0]
-      : category;
+  const [iconSize, setIconSize] = useState(35);
+  const hideCategoryFilter = !!filters.tag;
+  const handleToggle = () => setIsToggled((prev) => !prev);
+  const displayCategory =
+    filters.tag
+      ? filters.tag
+      : filters.categories.length > 0
+        ? filters.categories[0]
+        : category;
+
 
 
   useEffect(() => {
@@ -82,6 +84,15 @@ export default function CategorySearchPage() {
     fetchIcons();
   }, [page, filters]);
 
+  const applySizeToSvg = (svgRaw, size) => {
+    if (!svgRaw) return '';
+
+    return svgRaw
+      .replace(/width=".*?"/g, `width="${size}"`)
+      .replace(/height=".*?"/g, `height="${size}"`);
+  };
+
+
 
   const iconname = filters.tag ? `${filters.tag}` : `${category}`;
 
@@ -112,22 +123,28 @@ export default function CategorySearchPage() {
                           <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                         </svg>  </span>
                       </h4>
+
                       <SidebarFilter
                         onFilterChange={(newFilters) => {
                           setFilters((prev) => ({
                             ...prev,
                             ...newFilters,
-                            categories: newFilters.categories?.length > 0
+                            categories: newFilters.categories?.length
                               ? newFilters.categories
                               : isType ? [] : [category],
-                            types: newFilters.types?.length > 0
+                            types: newFilters.types?.length
                               ? newFilters.types
                               : isType ? [category] : [],
-                            tag: newFilters.tag ?? prev.tag
+                            tag: newFilters.tag ?? prev.tag,
                           }));
                         }}
+                        onSizeChange={setIconSize}
+                        
                         showCategoryFilter={!hideCategoryFilter}
                       />
+
+
+
                     </div>
                   </aside>
                   <aside className="sidebars-subpages cmb-borad01 p-4 d-none d-inline-lg-block w-100 bd-md015 pt-2 mt-5">
@@ -259,9 +276,11 @@ export default function CategorySearchPage() {
                                       ) : (
                                         <span
                                           dangerouslySetInnerHTML={{
-                                            __html: icon.icon_svg,
+                                            __html: applySizeToSvg(icon.icon_svg, iconSize),
                                           }}
-                                        ></span>
+                                        />
+
+
                                       )}
                                     </span>
                                   </div>

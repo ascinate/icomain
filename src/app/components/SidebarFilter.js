@@ -6,11 +6,12 @@ import Select from 'react-select';
 
 
 
-export default function SidebarFilter({ onFilterChange, showCategoryFilter = true }) {
+export default function SidebarFilter({ onFilterChange, onSizeChange, showCategoryFilter = true }) {
   const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(true)
 
-  const [value, setValue] = useState(50);
+  const [value, setValue] = useState(35);
+
 
 
   const [filters, setFilters] = useState({
@@ -48,6 +49,7 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
       onFilterChange(selectedFilters)
     }
   }, [selectedFilters])
+
 
 
 
@@ -152,13 +154,18 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
 
                 <input
                   type="range"
-                  className=" w-100 material-slider"
-                  min="0"
-                  max="100"
+                  className="w-100 material-slider"
+                  min="16"
+                  max="35"
                   step="1"
                   value={value}
-                  onChange={(e) => setValue(e.target.value)}
+                  onChange={(e) => {
+                    const newSize = Number(e.target.value);
+                    setValue(newSize);
+                    onSizeChange?.(newSize);
+                  }}
                 />
+
               </div>
 
               <div className='crm-nes-styles1 d-flex align-items-center justify-content-between w-100'>

@@ -276,10 +276,7 @@ a {
   display: inline-block;
 
 }
-.icons-list span svg{
-  width: 32px;
-  height: 32px;
-}
+
 .btn-load-more{
   text-decoration: underline !important;
   font-size: 14px;
@@ -2464,10 +2461,7 @@ button.tags-frees {
     }
 }
 
-.totals-sections-mains01 .icons-list span svg {
-    width: 2rem;
-    height:2rem;
-}
+
 .sidebars-subpages h5{
     font-size: 15px;
     font-weight: 700;
@@ -3317,3 +3311,4 @@ padding: 10px 30px;
  
 
 }
+
