@@ -39,7 +39,7 @@ export default function CategorySearchPage() {
     : filters.categories.length > 0
       ? filters.categories[0]
       : category;
-
+ const [iconSize, setIconSize] = useState(35);
 
   useEffect(() => {
     const fetchIcons = async () => {
@@ -81,6 +81,14 @@ export default function CategorySearchPage() {
 
     fetchIcons();
   }, [page, filters]);
+
+    const applySizeToSvg = (svgRaw, size) => {
+    if (!svgRaw) return '';
+
+    return svgRaw
+      .replace(/width=".*?"/g, `width="${size}"`)
+      .replace(/height=".*?"/g, `height="${size}"`);
+  };
 
 
   const iconname = filters.tag ? `${filters.tag}` : `${category}`;
@@ -126,6 +134,7 @@ export default function CategorySearchPage() {
                             tag: newFilters.tag ?? prev.tag
                           }));
                         }}
+                        onSizeChange={setIconSize}
                         showCategoryFilter={!hideCategoryFilter}
                       />
                     </div>
@@ -257,11 +266,11 @@ export default function CategorySearchPage() {
                                           style={{ width: "100%", height: "100%" }}
                                         />
                                       ) : (
-                                        <span
+                                         <span
                                           dangerouslySetInnerHTML={{
-                                            __html: icon.icon_svg,
+                                            __html: applySizeToSvg(icon.icon_svg, iconSize),
                                           }}
-                                        ></span>
+                                        />
                                       )}
                                     </span>
                                   </div>
