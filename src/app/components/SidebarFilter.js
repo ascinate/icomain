@@ -166,13 +166,6 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
 
                 <div className='rights-sectionu01'>
 
-                  {/* <Select
-                            isMulti
-                            defaultValue={selectedOption}
-                            onChange={setSelectedOption}
-                            options={options}
-                          />  */}
-
                   <Select
                     isMulti
                     options={typeOptions}
@@ -189,47 +182,30 @@ export default function SidebarFilter({ onFilterChange, showCategoryFilter = tru
                   />
 
                 </div>
-                {/* <ul className="options_names  m-0 new-filter-05 flex-wrap align-items-center mt-3">
-                            {filters.types.map((type, i) => {
-                              const id = `type-${i}`
-                              return (
-                                <li className="cmout form-check position-relative" key={i}>
-                                  <input
-                                    id={id}
-                                    type="checkbox"
-                                    className="form-check-input"
-                                    onChange={() => handleCheckboxChange('types', type)}
-                                    checked={selectedFilters.types.includes(type)}
-                                  />
-                                  <label className="form-check-label" htmlFor={id}>
-                                  
-                                    {type.trim()}
-                                  </label>
-                                </li>
-                              )
-                            })}
-                        </ul> */}
-              </div>
-
-              <div className='crm-nes-styles1 d-flex align-items-center justify-content-between w-100'>
-                <div className="mt-4">
-                  <select
-                    className="form-select"
-                    value={selectedFilters.categories[0] || ''}
-                    onChange={handleCategorySelect}
-                  >
-                    <option value="">All Categories</option>
-
-                    {filters.categories.map((cat, i) => (
-                      <option key={i} value={cat}>
-                        {cat.trim()}
-                      </option>
-                    ))}
-                  </select>
-                </div>
 
               </div>
+              {showCategoryFilter && (
+                <>
+                  <div className='crm-nes-styles1 d-flex align-items-center justify-content-between w-100'>
+                    <div className="mt-4">
+                      <select
+                        className="form-select"
+                        value={selectedFilters.categories[0] || ''}
+                        onChange={handleCategorySelect}
+                      >
+                        <option value="">All Categories</option>
 
+                        {filters.categories.map((cat, i) => (
+                          <option key={i} value={cat}>
+                            {cat.trim()}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                  </div>
+                </>
+              )}
             </div>
             {/* Types */}
           </>
