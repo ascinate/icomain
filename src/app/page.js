@@ -95,7 +95,7 @@ export default async function Home() {
                             <h2 className="comon-head"> Explore Trending Collections </h2>
                      </div>
                      <div className="col-lg-5 d-grid justify-content-end">
-                        <Link href="/" className="vides-btn">View All </Link>
+                        <Link href="/icons" className="vides-btn">View All </Link>
                      </div>
                   </div>
                     
@@ -148,7 +148,7 @@ export default async function Home() {
                             <h2 className="comon-head m-0"> Popular Categories </h2>
                      </div>
                      <div className="col-lg-5 d-grid justify-content-end">
-                        <Link href="/" className="vides-btn d-table ms-auto">View All  </Link>
+                        <Link href="/icons" className="vides-btn d-table ms-auto">View All  </Link>
                      </div>
                   </div>
 
