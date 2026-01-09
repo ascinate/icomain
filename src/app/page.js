@@ -158,6 +158,7 @@ export default async function Home() {
                                   <div className="col" key={type.id}>
                                     <article className="d-inline-block  w-100 comon-categorisg position-relative">
                                     <span className="tagsd">{type.tag}</span>
+                                     <Link href={type.link}> 
                                       <div className="d-flex ps-lg-4 align-items-start">
                                             <figure className="text-center mb-1">
                                                  <Image loading="lazy" src={type.img}
@@ -167,15 +168,16 @@ export default async function Home() {
                                            </figure>
                                            <span className="icon-list-name ps-4  mt-2 ms-0 d-inline-block">
                                               <h5 className="mb-0"> 
-                                                <Link href={type.link}> 
+                                              
                                                   {type.title}
-                                                </Link>
+                                               
                                               </h5>
                                               <p className="coun-text mt-1 d-block"> 
                                                   {type.counting} Icons
                                               </p>
                                            </span>
                                       </div>
+                                      </Link>
                                       
                                       
                                     </article>
