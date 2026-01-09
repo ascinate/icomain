@@ -44,7 +44,7 @@ function NavicationHome() {
         localStorage.removeItem("user");
 
         setIsLoggedIn(false);
-        router.push("/login");
+        router.push("/");
     };
 
     return (

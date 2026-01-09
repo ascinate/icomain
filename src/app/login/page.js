@@ -18,7 +18,14 @@ function Login() {
     const [isVisible, setIsVisible] = useState(true);
     const [hiddend, setHiddend] = useState(false);
 
-
+   useEffect(() => {
+    const token = localStorage.getItem("access_token");
+    const user = localStorage.getItem("user");
+    if (token && user) {
+      setMessage("You are already logged in.");
+      router.push("/");
+    }
+  }, []);
     const hideVisiblLogin = () => {
         setIsVisible(prevState => !prevState);
         setHiddend(prevState => !prevState);
