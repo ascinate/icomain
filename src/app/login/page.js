@@ -25,31 +25,40 @@ function Login() {
         setHiddend(!hiddend);
     };
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        setMessage("Logging in...");
 
-        try {
-            const response = await fetch("https://iconsguru.ascinatetech.com/api/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setMessage("Logging in...");
 
-            const data = await response.json();
+    try {
+      const response = await fetch("https://iconsguru.ascinatetech.com/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-            if (response.ok) {
-                setMessage("Login successful!");
-            } else {
-                setMessage(data.message || "Login failed.");
-            }
-        } catch (error) {
-            console.error("Error logging in:", error);
-            setMessage("Something went wrong.");
-        }
-    };
+      const data = await response.json();
+      if (response.ok) {
+      setMessage("Login successful!");
+      localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      const redirectURL = localStorage.getItem("redirect_after_login");
+
+      if (redirectURL) {
+        localStorage.removeItem("redirect_after_login");
+        router.push(redirectURL);
+      } else {
+        router.push("/");
+      }
+    } else {
+        setMessage(data.message || "Login failed.");
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      setMessage("Something went wrong.");
+    }
+  };
 
     const handleGoogleLogin = async (response) => {
         try {
