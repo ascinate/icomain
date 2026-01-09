@@ -68,7 +68,7 @@ function NavicationHomeDetails() {
                                     onClick={handleLogout}
                                    className="nav-link  why-menu-btn"
                                  >
-                                    Logout
+                                    Logou
                                  </button>
                               </li>
                            </>
