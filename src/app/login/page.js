@@ -1,13 +1,15 @@
 "use client"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import NavicationHome from "../components/NavicationHome";
 import Link from "next/link";
 import Form from "next/form";
 import Script from "next/script";
 import Image from "next/image";
 import Footer from "../components/Footer";
+import { useRouter } from "next/navigation";
 
 function Login() {
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -15,6 +17,15 @@ function Login() {
 
     const [isVisible, setIsVisible] = useState(true);
     const [hiddend, setHiddend] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("access_token");
+        const user = localStorage.getItem("user");
+        if (token && user) {
+            setMessage("You are already logged in.");
+            router.push("/");
+        }
+    }, []);
     const hideVisiblLogin = () => {
         setIsVisible(prevState => !prevState);
         setHiddend(prevState => !prevState);
@@ -25,40 +36,35 @@ function Login() {
         setHiddend(!hiddend);
     };
 
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        setMessage("Logging in...");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setMessage("Logging in...");
+        try {
+            const response = await fetch("https://iconsguru.ascinatetech.com/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
 
-    try {
-      const response = await fetch("https://iconsguru.ascinatetech.com/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+            const data = await response.json();
 
-      const data = await response.json();
-      if (response.ok) {
-      setMessage("Login successful!");
-      localStorage.setItem("access_token", data.access_token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+            if (response.ok) {
+                setMessage("Login successful!");
+                localStorage.setItem("access_token", data.access_token);
+                localStorage.setItem("user", JSON.stringify(data.user));
+                router.push("/");
 
-      const redirectURL = localStorage.getItem("redirect_after_login");
-
-      if (redirectURL) {
-        localStorage.removeItem("redirect_after_login");
-        router.push(redirectURL);
-      } else {
-        router.push("/");
-      }
-    } else {
-        setMessage(data.message || "Login failed.");
-      }
-    } catch (error) {
-      console.error("Error logging in:", error);
-      setMessage("Something went wrong.");
-    }
-  };
+            } else {
+                setMessage(data.message || "Login failed.");
+            }
+        } catch (error) {
+            console.error("Error logging in:", error);
+            setMessage("Something went wrong.");
+        }
+    };
 
     const handleGoogleLogin = async (response) => {
         try {
