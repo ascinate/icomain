@@ -1,7 +1,6 @@
 
 "use client";
 import { useState } from "react";
-import NavicationHome from "../components/NavicationHome";
 import Link from "next/link";
 import Form from "next/form";
 import Image from "next/image";
@@ -53,8 +52,7 @@ export default function Register() {
 
   return (
     <>
-    <NavicationHome/>
-    <main className="float-start w-100 register-pages-crm">
+    <main className="float-start w-100">
         <div className="container">
             {hiddend && (
               <div className="col-lg-5 mx-auto mb-3">
@@ -177,7 +175,7 @@ export default function Register() {
         )}
       
     </div>
-    <Footer/>
+  
     </>
 
   );
