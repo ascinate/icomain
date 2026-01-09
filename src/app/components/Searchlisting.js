@@ -152,28 +152,28 @@ export default function Searchlisting() {
                             <p className="m-0"> Related: </p>
                             <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Design </Link>
+                                <Link href='/icon/Time' className="btn-mores-tex">  Time </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Building </Link>
+                                <Link href='/icon/Technology' className="btn-mores-tex">  Technology </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Architecture </Link>
+                                <Link href='/icon/Sports' className="btn-mores-tex">  Sports </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Furniture </Link>
+                                <Link href='/icon/Payment' className="btn-mores-tex">  Payment </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Construction </Link>
+                                <Link href='/icon/Marketing' className="btn-mores-tex">  Marketing </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Construction </Link>
+                                <Link href='icon/Lock' className="btn-mores-tex">  Lock </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Property </Link>
+                                <Link href='/icon/Kpi' className="btn-mores-tex">  Kpi </Link>
                               </li>
                               <li>
-                                <Link href='/' className="btn-mores-tex">  Estate </Link>
+                                <Link href='/icon/Hieroglyphs' className="btn-mores-tex">  Hieroglyphs </Link>
                               </li>
                             </ul>
                           </div>

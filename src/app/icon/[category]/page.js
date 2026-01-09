@@ -190,49 +190,49 @@ export default function CategorySearchPage() {
                             <p className="m-0"> Related: </p>
                             <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Beauty" className="btn-mores-tex">
                                   {" "}
-                                  Design{" "}
+                                  Beauty{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Building" className="btn-mores-tex">
                                   {" "}
                                   Building{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Architecture" className="btn-mores-tex">
                                   {" "}
                                   Architecture{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Bar" className="btn-mores-tex">
                                   {" "}
-                                  Furniture{" "}
+                                  Bar{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Chatbot" className="btn-mores-tex">
                                   {" "}
-                                  Construction{" "}
+                                  Chatbot{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Clothing" className="btn-mores-tex">
                                   {" "}
-                                  Construction{" "}
+                                  Clothing{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Finance" className="btn-mores-tex">
                                   {" "}
-                                  Property{" "}
+                                  Finance{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/" className="btn-mores-tex">
+                                <Link href="/icons/Estate" className="btn-mores-tex">
                                   {" "}
                                   Estate{" "}
                                 </Link>
