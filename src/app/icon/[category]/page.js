@@ -232,9 +232,9 @@ export default function CategorySearchPage() {
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icons/Estate" className="btn-mores-tex">
+                                <Link href="/icons/Security" className="btn-mores-tex">
                                   {" "}
-                                  Estate{" "}
+                                  Security{" "}
                                 </Link>
                               </li>
                             </ul>
