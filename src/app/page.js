@@ -158,7 +158,7 @@ export default async function Home() {
                                   <div className="col" key={type.id}>
                                     <article className="d-inline-block  w-100 comon-categorisg position-relative">
                                     <span className="tagsd">{type.tag}</span>
-                                     <Link href={type.link}> 
+                                     <Link className="text-decoration-none" href={type.link}> 
                                       <div className="d-flex ps-lg-4 align-items-start">
                                        
                                             <figure className="text-center mb-1">
