@@ -202,9 +202,9 @@ export default function CategorySearchPage() {
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icons/Architecture" className="btn-mores-tex">
+                                <Link href="/icons/Agriculture" className="btn-mores-tex">
                                   {" "}
-                                  Architecture{" "}
+                                  Agriculture{" "}
                                 </Link>
                               </li>
                               <li>
