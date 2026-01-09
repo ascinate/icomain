@@ -160,14 +160,14 @@ export default async function Home() {
                                     <span className="tagsd">{type.tag}</span>
                                      <Link href={type.link}> 
                                       <div className="d-flex ps-lg-4 align-items-start">
-                                        <Link href={type.link}> 
+                                       
                                             <figure className="text-center mb-1">
                                                  <Image loading="lazy" src={type.img}
                                               alt="user"
                                               width={50}
                                               height={50} />
                                            </figure>
-                                           </Link>
+                                           
                                            <span className="icon-list-name ps-4  mt-2 ms-0 d-inline-block">
                                               <h5 className="mb-0"> 
                                               
