@@ -414,15 +414,19 @@ a {
 .btn-expolre{ background: var(--primaycolor) !important; font-size: 18px;  padding: 10px 31px !important;  color: #fff !important; }
 .about-sections{ padding: 70px 0;}
 .fetures-acountins-sections{ padding: 70px 0; }
-.tagsd{ position: absolute; background: var(--head-color); color: var(--background);
-  border-radius: 50px;
-  font-size: 16px;
-  text-transform: uppercase;
-  top: -20px;
-  right: 20px;
-  line-height: 36px;
-  width: 72px;
-  text-align: center;}
+.tagsd{ 
+    background: var(--head-color);
+    color: var(--background);
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 50px;
+    width: 65px;
+    font-size: 13px;
+    line-height: 33px;
+    position: absolute;
+    top: -17px;
+    right: 20px;
+}
 .fe-list li{
   border: solid 3px #E8E8E8;
   border-radius: 5px;
@@ -2856,14 +2860,17 @@ figure.icons-bg.bg-light {
   border: solid 2px var(--primaycolor);
 }
 article.comon-categorisg{
-     box-shadow: 1px 1px 10px #f1efef;
-    border-radius: 9px;
-    border: solid 1px #e4e4e4;
-    min-height: 133px;
-    padding-top: 26px;
-    display: grid !important;
-    padding-top: 26px;
+    border: 1px solid #e4e4e4;
+    border-radius: 21px;
+    height: 105px;
+    padding: 11px;
+    box-shadow: 1px 1px 10px #f1efef;
 }
+.inside-links h5{
+    font-size: 18px;
+    color: var(--head-color);
+}
+
 article.comon-categorisg h5 a{
   font-size: 18px;
   color: var(--head-color);
@@ -2885,8 +2892,8 @@ article.comon-categorisg figure{
   
 }
 article.comon-categorisg .coun-text{
- color: #908d8d !important;
-    font-size: 16px;
+  color: #908d8d !important;
+  font-size: 14px;
 }
 .about-sections-features01{
   padding: 70px 0;
