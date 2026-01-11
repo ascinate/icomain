@@ -148,6 +148,9 @@ a {
 .btn-search-sder:focus{
   box-shadow: none !important;
 }
+.email-div01 .nsm7Bb-HzV7m-LgbsSe{
+  border: none !important;
+}
 .nav-link{
   cursor: pointer;
   color: var(--tabs-active-color) !important;
