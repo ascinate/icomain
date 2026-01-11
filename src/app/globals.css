@@ -2455,6 +2455,14 @@ button.tags-frees {
 .only-listings01{
   padding-top: 35px !important;
 }
+div.news-colors-div div.interfcae-text{
+  border: solid 1px #f5f5f5 !important;
+  height: 89px;
+}
+.min-cats015 svg{
+  width: 45px;
+  height: 45px;
+}
 
 @media (width >= 992px) {
     
