@@ -52,8 +52,9 @@ export default function Register() {
 
   return (
     <>
-    <main className="float-start w-100">
-        <div className="container">
+    <main className="float-start w-100 register-pages-crm pt-0  pb-0">
+        <div className="container-fluid pe-lg-0">
+           <div className="row gx-lg-0 align-items-start">
             {hiddend && (
               <div className="col-lg-5 mx-auto mb-3">
                 <button onClick={hideVisibl} className="back-tbn01 btn"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"></path></svg> Back </button>
@@ -135,6 +136,7 @@ export default function Register() {
             )}
            
         </div>
+       </div>
     </main>
     <div className="container d-none">
       <h1>Register</h1>
