@@ -125,7 +125,7 @@ export default function SidebarFilter({ onFilterChange, onSizeChange, showCatego
 
               <div className='crm-nes-styles1 d-block w-100'>
                 <h3> Types: </h3>
-                <ul className="options_names cololi-list new-filter-05 p-0 m-0 flex-wrap align-items-center mt-3">
+                <ul className="options_names cololi-list new-filter-05 p-0 m-0  align-items-center mt-3">
                   {filters.colors.map((color, i) => {
                     const id = `color-${i}`
                     return (
