@@ -52,10 +52,10 @@ function NavicationHome() {
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container">
                         <Link className="navbar-brand" href='/'>
-                            <Image loading="lazy" src="/icon-logos.jpg"
+                            <Image loading="lazy" src="/new-logo.svg"
                                 alt="iconsguru"
-                                width={223}
-                                height={53} />
+                                width={137}
+                                height={40} />
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
                             <span className="navbar-toggler-icon"></span>
