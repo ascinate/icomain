@@ -77,6 +77,11 @@ a {
 }
 .nsm7Bb-HzV7m-LgbsSe{
  border: none !important;
+ width: 100%;
+}
+.nsm7Bb-HzV7m-LgbsSe:hover{
+ border: none !important;
+ background: none !important;
 }
 .cmout{
    border-radius: 10px;
