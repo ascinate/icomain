@@ -1680,6 +1680,7 @@ footer.footer-lights015-mains.comon-short-parts hr{
     margin-bottom: 0 !important;
     background: #fff;
     border-radius: 25px;
+	text-transform: capitalize;
 }
 
 .new-filter-05 .cmout .form-check-input:focus{
