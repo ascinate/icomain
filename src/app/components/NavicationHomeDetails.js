@@ -37,7 +37,7 @@ function NavicationHomeDetails() {
             <nav className="navbar navbar-expand-lg navbar-light">
                <div className="container">
                   <Link className="navbar-brand" href='/'>
-                     <Image loading="lazy" src="/icon-logos.jpg"
+                     <Image loading="lazy" src="/new-logo.svg"
                         alt="iconsguru"
                         width={223}
                         height={53} />
