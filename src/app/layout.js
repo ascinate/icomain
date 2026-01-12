@@ -1,9 +1,11 @@
 
-import { Sora, Play, Playfair, Inter, Figtree, Onest} from "next/font/google";
+import { Sora, Play, Playfair, Inter, Figtree, Onest } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
+
 
 
 
@@ -51,7 +53,7 @@ const playfa = Playfair({
 
 const inter = Inter({
   variable: "--font-inter-sans",
-  weight: ['800','700', '500', '300', '400', '200', '600'],
+  weight: ['800', '700', '500', '300', '400', '200', '600'],
   subsets: ['latin'],
 });
 
@@ -69,12 +71,12 @@ export default function RootLayout({ children }) {
 
 
   return (
-    
+
     <html lang="en" className={`${onest.variable}`}>
-      
+
       <body className="names-bgs">
 
-      <style>{`
+        <style>{`
        
          h5.sub-headings{
            font-family: ${play.style.fontFamily};
@@ -103,20 +105,32 @@ export default function RootLayout({ children }) {
            font-family: ${onest.style.fontFamily} !important;
            }
       `}
-      </style>
-         <noscript
-            id="gtm-noscript"
-            dangerouslySetInnerHTML={{
-              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMWJ9TM8"
+        </style>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: "#111",
+              color: "#fff",
+              borderRadius: "12px",
+              padding: "14px 18px",
+              fontSize: "14px",
+            },
+          }}
+        />
+        <noscript
+          id="gtm-noscript"
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMWJ9TM8"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-            }}
-          />
-        <ImportBsJS/>
+          }}
+        />
+        <ImportBsJS />
         {children}
       </body>
 
-     
-     
+
+
     </html>
   );
 }
