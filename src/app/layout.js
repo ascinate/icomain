@@ -3,6 +3,7 @@ import { Sora, Play, Playfair, Inter, Figtree, Onest} from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
+import localFont from "next/font/local";
 
 
 
@@ -12,6 +13,16 @@ const sorasans = Sora({
   subsets: ['latin'],
 });
 
+const basier = localFont({
+  src: [
+    {
+      path: './fonts/BasierSquareMedium.woff',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-monasas',
+});
 
 const onest = Onest({
   variable: "--font-onest-sans",
@@ -77,7 +88,7 @@ export default function RootLayout({ children }) {
           font-family: var(--font-inter-sans), sans-serif !important;
         }
         .navbar-light .navbar-nav .nav-link{
-              font-family: ${onest.style.fontFamily};   
+              font-family: ${basier.style.fontFamily};   
         }
         .why-menu-btn{
             font-family: ${onest.style.fontFamily}; 

@@ -37,10 +37,10 @@ function NavicationHomeDetails() {
             <nav className="navbar navbar-expand-lg navbar-light">
                <div className="container">
                   <Link className="navbar-brand" href='/'>
-                     <Image loading="lazy" src="/new-logo.svg"
+                     <Image loading="lazy" src="/logosicons-logos.svg"
                         alt="iconsgeek"
-                        width={223}
-                        height={53} />
+                        width={130}
+                        height={62} />
                   </Link>
                   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span className="navbar-toggler-icon"></span>

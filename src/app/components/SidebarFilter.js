@@ -1,96 +1,100 @@
-'use client'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import Image from 'next/image';
-import Select from 'react-select';
+"use client";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Image from "next/image";
+import Select from "react-select";
 
-
-
-export default function SidebarFilter({ onFilterChange, onSizeChange, showCategoryFilter = true }) {
+export default function SidebarFilter({
+  onFilterChange,
+  onSizeChange,
+  showCategoryFilter = true,
+}) {
   const [showAll, setShowAll] = useState(false);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const [value, setValue] = useState(35);
-
-
 
   const [filters, setFilters] = useState({
     categories: [],
     colors: [],
     types: [],
-  })
+  });
 
   const [selectedFilters, setSelectedFilters] = useState({
     categories: [],
     colors: [],
     types: [],
-  })
-
-
-
-
+  });
 
   useEffect(() => {
-    axios.get('https://iconsguru.ascinatetech.com/api/sidebar-filters')
-      .then(res => {
-        const data = res.data
+    axios
+      .get("https://iconsguru.ascinatetech.com/api/sidebar-filters")
+      .then((res) => {
+        const data = res.data;
         setFilters({
           categories: Array.isArray(data.categories) ? data.categories : [],
           colors: Array.isArray(data.colors) ? data.colors : [],
           types: Array.isArray(data.types) ? data.types : [],
-        })
+        });
       })
-      .catch(err => console.error('Sidebar filter fetch error:', err))
-      .finally(() => setIsLoading(false))
-  }, [])
+      .catch((err) => console.error("Sidebar filter fetch error:", err))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   useEffect(() => {
     if (onFilterChange) {
-      onFilterChange(selectedFilters)
+      onFilterChange(selectedFilters);
     }
-  }, [selectedFilters])
-
-
-
+  }, [selectedFilters]);
 
   const handleCheckboxChange = (filterType, value) => {
-    setSelectedFilters(prev => {
-      const isChecked = prev[filterType].includes(value)
+    setSelectedFilters((prev) => {
+      const isChecked = prev[filterType].includes(value);
       return {
         ...prev,
         [filterType]: isChecked
-          ? prev[filterType].filter(v => v !== value)
+          ? prev[filterType].filter((v) => v !== value)
           : [...prev[filterType], value],
-      }
-    })
-  }
+      };
+    });
+  };
 
   // select type code
 
-  const typeOptions = filters.types.map(type => ({
+  const typeOptions = filters.types.map((type) => ({
     value: type,
     label: type.trim(),
   }));
 
-  const selectedTypeOptions = selectedFilters.types.map(type => ({
+  const selectedTypeOptions = selectedFilters.types.map((type) => ({
     value: type,
     label: type.trim(),
   }));
+
 
 
   // category selects
-  const categoryOptions = filters.categories.map(cat => ({
+const categoryOptions = [
+  { value: '', label: 'All Categories' },
+  ...filters.categories.map(cat => ({
     value: cat,
-    label: cat,
-  }));
+    label: cat.trim(),
+  })),
+]
 
-  const handleCategorySelect = (e) => {
-    const value = e.target.value
-    setSelectedFilters(prev => ({
-      ...prev,
-      categories: value ? [value] : []
-    }))
-  }
+const handleCategorySelect = (selectedOption) => {
+  setSelectedFilters(prev => ({
+    ...prev,
+    categories: selectedOption?.value
+      ? [selectedOption.value]
+      : []
+  }))
+}
+
+  const selectedCategoryOption =
+  categoryOptions.find(
+    opt => opt.value === (selectedFilters.categories[0] || '')
+  ) || null
 
 
 
@@ -98,9 +102,7 @@ export default function SidebarFilter({ onFilterChange, onSizeChange, showCatego
 
   return (
     <div className="sidebarsd_div d-inline-block w-100 p-0 box">
-
       {/* Categories */}
-
 
       <div className="sub_headings01 d-inline-block w-100 mt-0">
         {/* Show loader if loading */}
@@ -121,35 +123,35 @@ export default function SidebarFilter({ onFilterChange, onSizeChange, showCatego
             {/* Colors */}
 
             <div className="accordion mt-3" id="accordionPanelsStayOpenExample">
-
-
-              <div className='crm-nes-styles1 d-block w-100'>
+              <div className="crm-nes-styles1 d-block w-100">
                 <h3> Types: </h3>
                 <ul className="options_names cololi-list new-filter-05 p-1 m-0  align-items-center mt-3">
                   {filters.colors.map((color, i) => {
-                    const id = `color-${i}`
+                    const id = `color-${i}`;
                     return (
-                      <li className="cmout form-check position-relative" key={i}>
+                      <li
+                        className="cmout form-check position-relative"
+                        key={i}
+                      >
                         <input
                           id={id}
                           type="checkbox"
                           className="form-check-input"
-                          onChange={() => handleCheckboxChange('colors', color)}
+                          onChange={() => handleCheckboxChange("colors", color)}
                           checked={selectedFilters.colors.includes(color)}
                         />
                         <label className="form-check-label" htmlFor={id}>
-
                           {color.trim()}
                         </label>
                       </li>
-                    )
+                    );
                   })}
                 </ul>
               </div>
-              <div className='crm-nes-styles1 d-block w-100'>
-                <div className='d-flex align-items-center justify-content-between w-100'>
+              <div className="crm-nes-styles1 d-block w-100">
+                <div className="d-flex align-items-center justify-content-between w-100">
                   <h3> Size: </h3>
-                  <strong className='small'>{value}</strong>
+                  <strong className="small">{value}</strong>
                 </div>
 
                 <input
@@ -165,51 +167,43 @@ export default function SidebarFilter({ onFilterChange, onSizeChange, showCatego
                     onSizeChange?.(newSize);
                   }}
                 />
-
               </div>
 
-              <div className='crm-nes-styles1 d-flex align-items-center justify-content-between w-100'>
+              <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
                 <h3> Style: </h3>
 
-                <div className='rights-sectionu01'>
-
+                <div className="rights-sectionu01">
                   <Select
                     isMulti
                     options={typeOptions}
                     value={selectedTypeOptions}
                     onChange={(selected) => {
-                      setSelectedFilters(prev => ({
+                      setSelectedFilters((prev) => ({
                         ...prev,
-                        types: selected ? selected.map(item => item.value) : [],
-                      }))
+                        types: selected
+                          ? selected.map((item) => item.value)
+                          : [],
+                      }));
                     }}
                     placeholder="Select.."
                     className="basic-single"
                     classNamePrefix="react-select"
                   />
-
                 </div>
-
               </div>
+              
               {showCategoryFilter && (
                 <>
-                  <div className='crm-nes-styles1 d-flex align-items-center justify-content-between w-100'>
-                    <div className="mt-4">
-                      <select
-                        className="form-select"
-                        value={selectedFilters.categories[0] || ''}
-                        onChange={handleCategorySelect}
-                      >
-                        <option value="">All Categories</option>
-
-                        {filters.categories.map((cat, i) => (
-                          <option key={i} value={cat}>
-                            {cat.trim()}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
+                  <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
+                    <h3> Categories: </h3>
+                    <Select
+                      options={categoryOptions}
+                      value={selectedCategoryOption}
+                      onChange={handleCategorySelect}
+                      placeholder="Select category"
+                      isClearable
+                      classNamePrefix="react-select"
+                    />
                   </div>
                 </>
               )}
@@ -219,5 +213,5 @@ export default function SidebarFilter({ onFilterChange, onSizeChange, showCatego
         )}
       </div>
     </div>
-  )
+  );
 }

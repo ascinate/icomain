@@ -8,8 +8,7 @@ function NavicationHomeSubpage(){
     const mianmenu = [
         { id: 1, title: 'Icons' , link: '/icons'  },
         { id: 2, title: 'Interface Icons' , link: '/interface'  },
-        { id: 3, title: 'Stickers' , link: '/interface'  },
-        { id: 5, title: 'Animated icons' , link: '/interface'  },
+        { id: 3, title: 'Stickers' , link: '/stickers'  },
       ];
  return(
      <>
@@ -17,10 +16,10 @@ function NavicationHomeSubpage(){
        <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid px-0">
                 <Link className="navbar-brand d-lg-none" href='/'>
-                    <Image loading="lazy" src="/icon-logos.jpg"
-                                            alt="iconsguru"
-                                            width={223}
-                                            height={53} />
+                    <Image loading="lazy" src="/logosicons-logos.svg"
+                        alt="iconsgeek"
+                        width={130}
+                        height={62} />
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                    <span className="navbar-toggler-icon"></span>

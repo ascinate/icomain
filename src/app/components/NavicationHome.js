@@ -11,14 +11,13 @@ function NavicationHome() {
     const mianmenu = [
         { id: 1, title: 'Icons', link: '/icons' },
         { id: 2, title: 'Interface Icons', link: '/interface' },
-        { id: 3, title: 'Stickers', link: '/interface' }
+        { id: 3, title: 'Stickers', link: '/stickers' }
     ];
 
     const mobilenmenu = [
         { id: 1, title: 'Icons', link: '/icons' },
         { id: 2, title: 'Interface Icons', link: '/interface' },
-        { id: 3, title: 'Stickers', link: '/interface' },
-        { id: 5, title: 'Animated icons', link: '/interface' },
+        { id: 3, title: 'Stickers', link: '/stickers' },
         { id: 5, title: 'Log in', link: '/login' },
         { id: 6, title: 'Sign up', link: '/register' },
 
@@ -52,10 +51,10 @@ function NavicationHome() {
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container">
                         <Link className="navbar-brand" href='/'>
-                            <Image loading="lazy" src="/new-logo.png"
+                            <Image loading="lazy" src="/logosicons-logos.svg"
                                 alt="iconsgeek"
-                                width={137}
-                                height={40} />
+                                width={130}
+                                height={62} />
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
                             <span className="navbar-toggler-icon"></span>
