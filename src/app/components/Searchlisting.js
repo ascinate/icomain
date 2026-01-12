@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import ModalDeatils from "./ModalDeatils";
+import { useRouter } from "next/navigation";
+
 
 
 export default function Searchlisting() {
@@ -18,6 +20,7 @@ export default function Searchlisting() {
 
   const searchParams = useSearchParams();
   const searchKeyword = searchParams.get("search");
+  const router = useRouter();
 
   const [icons, setIcons] = useState([]);
   const [page, setPage] = useState(1);
@@ -27,45 +30,44 @@ export default function Searchlisting() {
   const [totalIcons, setTotalIcons] = useState(0);
   const [selectedIconId, setSelectedIconId] = useState(null);
   const [isIconActive, setIsIconActive] = useState(false);
+  useEffect(() => {
+    setPage(1);
+  }, [filters, searchKeyword]);
 
-
-  const pagesToShow = Array.from(
-    new Set([1, 2, totalPages].filter(p => p >= 1 && p <= totalPages))
-  );
   const [iconSize, setIconSize] = useState(35);
 
 
   useEffect(() => {
     const fetchIcons = async () => {
       setIsLoading(true);
+
       try {
         const query = new URLSearchParams();
-        query.append("limit", 20);
-        query.append("limit", page === 1 ? 48 : 6);
 
-        if (filters.categories.length) filters.categories.forEach(c => query.append("categories[]", c));
-        if (filters.colors.length) filters.colors.forEach(c => query.append("colors[]", c));
-        if (filters.types.length) filters.types.forEach(t => query.append("types[]", t));
+        query.set("limit", page === 1 ? 48 : 6);
+        query.set("page", page);
 
-        if (searchKeyword) query.append("search", searchKeyword);
+        filters.categories.forEach(c => query.append("categories[]", c));
+        filters.colors.forEach(c => query.append("colors[]", c));
+        filters.types.forEach(t => query.append("types[]", t));
 
-        const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
+        if (searchKeyword) query.set("search", searchKeyword);
 
-        const response = await fetch(finalURL);
-        const data = await response.json();
+        const url = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
+        console.log("API:", url); // <-- watch this in DevTools
 
-        if (data?.icons?.data && Array.isArray(data.icons.data)) {
-          setIcons(prev =>
-            page === 1 ? data.icons.data : [...prev, ...data.icons.data]
-          );
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (Array.isArray(data?.icons?.data)) {
+          setIcons(prev => page === 1 ? data.icons.data : [...prev, ...data.icons.data]);
           setTotalPages(data.icons.last_page || 1);
           setTotalIcons(data.icons.total || 0);
         } else {
-          console.error("❌ Unexpected data.icons format:", data);
           setIcons([]);
         }
-      } catch (error) {
-        console.error("🚨 Error fetching icons:", error);
+      } catch (err) {
+        console.error(err);
         setIcons([]);
       } finally {
         setIsLoading(false);
@@ -73,7 +75,8 @@ export default function Searchlisting() {
     };
 
     fetchIcons();
-  }, [page, filters, searchKeyword]);
+  }, [page, JSON.stringify(filters), searchKeyword]);
+
 
   const applySizeToSvg = (svgRaw, size) => {
     if (!svgRaw) return '';
@@ -99,7 +102,23 @@ export default function Searchlisting() {
                         <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                       </svg>  </span> </h4>
 
-                      <SidebarFilter onFilterChange={setFilters} onSizeChange={setIconSize} showCategoryFilter={false} />
+                      <SidebarFilter
+                        onFilterChange={(newFilters) => {
+
+                       
+                          if (newFilters.categories?.length) {
+                            const slug = newFilters.categories[0]
+                              .toLowerCase()
+                              .replace(/\s+/g, "-");
+
+                            router.push(`/icon/${slug}`);
+                            return;
+                          }
+                          setFilters(newFilters);
+                        }}
+                        onSizeChange={setIconSize}
+                      />
+
                     </div>
                   </aside>
                   <aside className="sidebars-subpages cmb-borad01 p-4 d-none d-inline-lg-block w-100 bd-md015 pt-2 mt-5">

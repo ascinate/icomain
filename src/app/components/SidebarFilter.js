@@ -192,7 +192,7 @@ const handleCategorySelect = (selectedOption) => {
                 </div>
               </div>
               
-              {showCategoryFilter && (
+             
                 <>
                   <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
                     <h3> Categories: </h3>
@@ -206,7 +206,7 @@ const handleCategorySelect = (selectedOption) => {
                     />
                   </div>
                 </>
-              )}
+           
             </div>
             {/* Types */}
           </>
