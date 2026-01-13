@@ -1941,7 +1941,7 @@ span.imgs01 img{
 }
 
 .sub-banners2{
-  background: url(/bg.jpg) no-repeat !important;
+  background: url(/sub-parts015.jpg) no-repeat !important;
   background-size: 100% !important;
   background-position: center;
 }
@@ -1964,11 +1964,29 @@ span.imgs01 img{
 .new-six-cols{
       grid-template-columns: repeat(6, minmax(5rem, 1fr)) !important;
 }
+.about-sections-features01 .row .comons-cardscus h3 span.last2{
+  background: #f2f1fe !important;
+}
+.about-sections-features01 .row .comons-cardscus h3 span.last3{
+  background: #edf5fb !important;
+}
+
+.about-sections-features01 .row .comons-cardscus h3 span.last2 img{
+  position:relative;
+  top: 10px;
+}
+.about-sections-features01 .row .comons-cardscus h3 span.last3 img{
+   position:relative;
+  top: 10px;
+}
 .no-found-div{
   position: absolute;
   left: 0;
   right: 0;
 
+}
+.new-heights{
+      min-height: 205px !important;
 }
 .cololi-list li:last-child{
   display: none;
@@ -2628,15 +2646,19 @@ footer.footer-lights015-mains .ft-scol svg{
 .serach-listings-apge .search-sections-home {
     height: 47px;
     margin: 0 !important;
-    border-radius: 50px !important;
+    border-radius: .5rem !important;
+    padding: 8px 5px;
 }
 .serach-listings-apge .btn-search {
-    height: 47px;
-    border-radius: 0 50px 50px 0 !important;
+    height: 35px;
+    border-radius: .5rem !important;
     padding: 8px 15px 8px 10px !important;
+    width: 28%;
+    text-align: center;
+    justify-content: center;
 }
 .serach-listings-apge .btn-search span{
-  display: none;
+  
 }
 .deatisl-all-page .navbar-collapse{
   width: 46%;

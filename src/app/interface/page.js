@@ -60,6 +60,14 @@ export default function InterfaceIconsPage() {
                     {" "}
                     The largest collection of hand-crafted interface icons available in SVG, PNG, EPS, PSD, and IconFont formats. {" "}
                   </p>
+                  <Link
+                                    href={`/icons/${encodeURIComponent(
+                                      category.toLowerCase()
+                                    )}`}
+                                    className="btn btn-primary btn-mores-btn px-4 py-2"
+                                  >
+                                    Browse Interface Icons
+                                  </Link>
                 </div>
                 {/* <div className="col-lg-6">
                               <Image loading="lazy" src="/category-banner.svg"
@@ -80,8 +88,9 @@ export default function InterfaceIconsPage() {
                             <h2 className="text-left comon-head cmg-heading m-0">
                               Explore Our Interface Icons
                             </h2>
-                            <p> Browse our collection of high-quality interface icons 
-                              for UI/UX design, available in multiple formats like SVG, PNG, EPS, PSD, and IconFont. </p>
+                            <p> Browse our collection of high-quality interface icons for UI/UX design, available in multiple
+                               formats like SVG, PNG, EPS, PSD, and IconFont.  </p>
+                               
 
                             {loading ? (
                               <div className="d-block w-100">
@@ -187,32 +196,37 @@ export default function InterfaceIconsPage() {
               </div>
             </section>
 
-            <section className="float-start about-sections-features01 comon-short-parts w-100">
+            <section className="float-start about-sections-features01 comon-short-parts w-100 pb-0">
                 <aside className="container">
                    <h2 className="comon-head"> Why Choose IconsGuru? </h2>
                     <div className="row row-cols-1 row-cols-lg-3 gx-lg-4 align-items-center mt-4">
                         <div className="col">
-                           <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                           <div className="comons-cardscus new-heights min-heights015 d-inline-block w-100">
                                <div className="text-div015 d-inline-block w-100">
-                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 22a1 1 0 0 1 0-20a10 9 0 0 1 10 9a5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></g></svg> </span> High-Quality </h3>
+                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b315" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg> </span> High-Quality </h3>
                                    <p> All icons are meticulcusly designed to be pixel-perfect. </p>
                                   
                                </div>
                            </div>
                         </div>
                         <div className="col">
-                             <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                             <div className="comons-cardscus new-heights min-heights015 d-inline-block w-100">
                                <div className="text-div015 d-inline-block w-100">
-                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 13v8m-8-6.101A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="m8 17l4-4l4 4"></path></g></svg> </span> Fully Customizable </h3>
+                                   <h3> <span className="last2"> <Image loading="lazy" src="/16534273.png" alt="iconsguru"
+                                    width={35}
+                                    height={35}/> </span> Fully Customizable </h3>
                                    <p> Easily change colors, size and stroke widtts to suit your needs. </p>
+                                   
                                    
                                </div>
                              </div>
                         </div>
                         <div className="col">
-                             <div className="comons-cardscus min-heights015 d-inline-block w-100">
+                             <div className="comons-cardscus new-heights min-heights015 d-inline-block w-100">
                                <div className="text-div015 d-inline-block w-100">
-                                   <h3> <span> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4"></path><circle cx="4" cy="20" r="2"></circle></g></svg> </span> Multiple Formats </h3>
+                                   <h3> <span className="last3"> <Image loading="lazy" src="/3940079.png" alt="iconsguru"
+                                    width={35}
+                                    height={35}/> </span> Multiple Formats </h3>
                                    <p> Download icons in SVG, PNG, EPS, PSD, and IconFont formats. </p>
 
                                </div>
