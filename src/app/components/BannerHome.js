@@ -43,11 +43,17 @@ const handleSearchClick = () => {
    
 
      <section className="float-start w-100 banner-parts01 home-banner-sections d-grid align-content-center">
+      <div className="img-boxk">
+         <Image loading="lazy" src="/3d1-bg.png"
+                                    alt="iconsguru"
+                                    width={275}
+                                    height={231} />
+                                  </div>
      <div className="container">
       <div className="row">
           <div className="col-lg-7">
-              <h5 className="sub-headings">  {totalIcons.toLocaleString()} FREE ICONS </h5>
-              <h2>We Deliver the World’s Best Icons</h2>
+              <h5 className="sub-headings"> <span>  {totalIcons.toLocaleString()}</span> Free Icons </h5>
+              <h2>We deliver the <span className="d-lg-block"> world’s  best icons </span></h2>
               <p className="text-para1"> High-quality icons for UI, apps, and design projects- free and premium. </p>
                 <SerchInputes/>
               
@@ -67,10 +73,10 @@ const handleSearchClick = () => {
       </div>
 
       <figure className="m-0 img-cast015">
-        <Image loading="lazy" src="/banice.png"
+        <Image loading="lazy" src="/banner-images.png"
                                     alt="iconsguru"
-                                    width={522}
-                                    height={503} />
+                                    width={1024}
+                                    height={1024} />
          
       </figure>
          

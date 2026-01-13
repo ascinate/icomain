@@ -45,10 +45,17 @@ export default function InterfaceIconsPage() {
                     <div className="container">
                         <div className="row align-items-center">
                           <div className="col-lg-6">
-                              <h2> Browse High-Quality <br/>
-                              Icons by Category </h2>
-                              <p className="col-lg-8 mt-3"> The largest database of vector icons available for download
-                              SVG, EPS, PSD and BASE 64 formats. </p>
+                              <h2> Discover High-Quality  <br/>
+                              Stickers Icons </h2>
+                              <p className="col-lg-8 mt-3"> The largest collection of hand-crafted interface icons
+                                 available in SVG, PNG, EPS, PSD, and IconFont formats. </p>
+
+                              <Link
+                                  href={`/icons/${encodeURIComponent(category.toLowerCase())}`}
+                                  className="btn browser-btn btn-mores-btn px-4 py-2"
+                                >
+                                Browse Stickers Icons
+                              </Link>
                           </div>
                           {/* <div className="col-lg-6">
                               <Image loading="lazy" src="/category-banner.svg"
@@ -64,6 +71,7 @@ export default function InterfaceIconsPage() {
             <main className="pricing-pages-part float-start w-100">
               <section className="float-start w-100 pt-0">
                 <div className="container">
+                  
 
                   <div className="comon-cate-list trending-icons d-inline-block w-100">
                     <h2 className="text-left comon-head cmg-heading m-0">Stickers Icons</h2>

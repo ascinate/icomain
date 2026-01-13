@@ -1,5 +1,5 @@
 
-import { Sora, Play, Playfair, Inter, Figtree, Onest } from "next/font/google";
+import { Sora, Play, Playfair, Inter, Figtree, Onest, Smooch_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
@@ -15,11 +15,23 @@ const sorasans = Sora({
   subsets: ['latin'],
 });
 
+const smoochsans = Smooch_Sans({
+  variable: "--font-smoochsans-sans",
+  weight: [ '200', '300', '400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+});
+
+const dmsans = DM_Sans({
+  variable: "--font-dmsans-sans",
+  weight: [ '200', '300', '400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+});
+
 const basier = localFont({
   src: [
     {
       path: './fonts/BasierSquareMedium.woff',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
   ],
@@ -72,37 +84,44 @@ export default function RootLayout({ children }) {
 
   return (
 
-    <html lang="en" className={`${onest.variable}`}>
+    <html lang="en" className={`${dmsans.variable}`}>
 
       <body className="names-bgs">
 
         <style>{`
        
          h5.sub-headings{
-           font-family: ${play.style.fontFamily};
+           font-family: ${dmsans.style.fontFamily} !important; 
          }
         p.text-para1{
           font-family: ${playfa.style.fontFamily};
         }
-               
+             
+        .btn-search,
+        .vides-btn{
+          font-family: ${dmsans.style.fontFamily} !important; 
+        }
         .search-listings01 span,
         .spaceing-lefts {
           font-family: var(--font-inter-sans), sans-serif !important;
         }
         .navbar-light .navbar-nav .nav-link{
-              font-family: ${basier.style.fontFamily};   
+              font-family: ${dmsans.style.fontFamily} !important;  
         }
         .why-menu-btn{
-            font-family: ${onest.style.fontFamily}; 
+             font-family: ${dmsans.style.fontFamily} !important; 
         }
         body{
              font-family: ${onest.style.fontFamily} !important;
         }
         .signup-btn10{
-           font-family: ${onest.style.fontFamily} !important;
+         font-family: ${dmsans.style.fontFamily} !important; 
         }
            article.comon-categorisg h5 a{
-           font-family: ${onest.style.fontFamily} !important;
+           font-family: ${basier.style.fontFamily}; 
+           }
+           h1, h2, .banner-parts01 h2, .banner-parts01 h2 span{
+             font-family: ${smoochsans.style.fontFamily} !important;
            }
       `}
         </style>

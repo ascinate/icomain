@@ -24,7 +24,7 @@ async function getTotalIcons() {
 export default async function Home() {
   const totalIcons = await getTotalIcons();
 
-        const icontypes = [    { id: 1, title: 'Arrow' , counting: '144', tag:"", img: '/arrow.svg', link: '/icons/arrow'  },    { id: 2, title: 'Business' , counting: '65', tag:"New", img: '/business.svg', link: '/icons/business'  },    { id: 3, title: 'Device' , counting: '118', tag:"", img: '/device.svg', link: '/icons/device'  },    { id: 4, title: 'Music' , counting: '200', tag:"", img: '/Music.svg', link: '/icons/music'  },    { id: 5, title: 'home' , counting: '49', tag:"", img: '/home.svg', link: '/icons/home'  },    { id: 6, title: 'Interface' , counting: '89', tag:"", img: '/interface.svg', link: '/icons/interface'  }, { id: 7, title: 'Contracts' , counting: '89', tag:"", img: '/Contracts.svg', link: '/icons/contracts'  }, { id: 8, title: 'Delivery' , counting: '89', tag:"", img: '/my-icons.png', link: '/icons/delivery'  },  ];  
+        const icontypes = [    { id: 1, title: 'Arrow' , counting: '144', tag:"", img: '/arrow-s.png', link: '/icons/arrow'  },    { id: 2, title: 'Business' , counting: '65', tag:"New", img: '/business.svg', link: '/icons/business'  },    { id: 3, title: 'Device' , counting: '118', tag:"", img: '/devices-thums.png', link: '/icons/device'  },    { id: 4, title: 'Music' , counting: '200', tag:"", img: '/Music.svg', link: '/icons/music'  },    { id: 5, title: 'home' , counting: '49', tag:"", img: '/home.svg', link: '/icons/home'  },    { id: 6, title: 'Interface' , counting: '89', tag:"", img: '/interface.svg', link: '/icons/interface'  }, { id: 7, title: 'Contracts' , counting: '89', tag:"", img: '/my-cate.png', link: '/icons/contracts'  }, { id: 8, title: 'Delivery' , counting: '89', tag:"", img: '/my-icons.png', link: '/icons/delivery'  },  ];  
     const categorytypes = [    { id: 1, title: 'Thin' , counting: '450', tag:"", img: '/tine1.svg', link: '/icons/thin'  },    { id: 2, title: 'Solid' , counting: '590', tag:"New", img: '/solid1.svg', link: '/icons/solid'  },    { id: 3, title: 'Regular' , counting: '387', tag:"", img: '/regulari.svg', link: '/icons/regular'  }  ];
     const icontypeslist = [    { id: 1, title: 'Arrow' , counting: '144', tag:"", img: '/arrows-button-red-icon.svg', link: '/icons/arrow'  },    { id: 2, title: 'Business' , counting: '65', tag:"New", img: '/businessi1.svg', link: '/icons/business'  },    { id: 3, title: 'Device' , counting: '118', tag:"", img: '/device01.svg', link: '/icons/device'  },    { id: 4, title: 'Music' , counting: '200', tag:"", img: '/mus.svg', link: '/icons/music'  },    { id: 5, title: 'home' , counting: '49', tag:"", img: '/home-color-icon.svg', link: '/icons/home'  },    { id: 6, title: 'Interface' , counting: '89', tag:"", img: '/pen-drawing-icon.svg', link: '/icons/interface'  }, { id: 7, title: 'Agriculture' , counting: '89', tag:"", img: '/18363994.png', link: '/icons/agriculture'  }, { id: 8, title: 'Calender' , counting: '89', tag:"", img: '/16090543.png', link: '/icons/calender'  },  ]; 
 
@@ -90,12 +90,12 @@ export default async function Home() {
 
             <section className="float-start fetures-acountins-sections w-100">
                 <div className="container">
-                  <div className="row">
+                  <div className="row align-items-center">
                      <div className="col-lg-7">
                             <h2 className="comon-head"> Explore Trending Collections </h2>
                      </div>
                      <div className="col-lg-5 d-grid justify-content-end">
-                        <Link href="/icons" className="vides-btn">View All </Link>
+                        <Link href="/icons" className="vides-btn">View All <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg> </Link>
                      </div>
                   </div>
                     
@@ -106,7 +106,7 @@ export default async function Home() {
                                   <div className="col" key={type.id}>
                                     <article className="d-inline-block w-100 comon-types01 position-relative">
                                     <span className="tagsd">{type.tag}</span>
-                                      <figure className="text-center mx-auto d-block mb-1">
+                                      <figure className="text-center mx-auto d-block mb-0">
                                         <Link href={type.link}> <Image loading="lazy" src={type.img}
                                               alt="user"
                                               width={260}
@@ -119,7 +119,7 @@ export default async function Home() {
                                             </Link>
                                           </h5>
                                           <p className="coun-text mt-2 d-block"> 
-                                               {type.counting} Icons with source files
+                                              <span>  {type.counting} </span> Icons with source files
                                           </p>
 
                                            <Link className="videw-btn btn d-flex align-items-center" href={type.link}> 
