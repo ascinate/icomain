@@ -29,6 +29,8 @@ function NavicationHomeSubpage(){
                       <SerchInputes/>
                     </div>
 
+                    
+
                 </div>
                 <div className="right-menus-div01 ms-auto d-flex align-items-center">
                      <ul className="list-right-btn-div mb-0 d-flex align-items-center justify-content-end">

@@ -2660,18 +2660,19 @@ footer.footer-lights015-mains .ft-scol svg{
 .serach-listings-apge .btn-search span{
   
 }
-.deatisl-all-page .navbar-collapse{
-  width: 46%;
+.deatisl-all-page .serach-listings-apge .btn-search span > span{
+  display: none !important;
 }
 .deatisl-all-page .navbar-collapse{
-  width: 46%;
+  width: 25%;
 }
+
 .deatisl-all-page .serach-listings-apge{
-    width: 41%;
+    width:49%;
     margin-left: 35px;
 }
 .deatisl-all-page .right-menus-div01{
-  width: 30%;
+  width: 57%;
 }
 .deatisl-all-page .serach-listings-apge .search-sections-home{
   width: 100%;

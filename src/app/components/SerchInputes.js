@@ -55,7 +55,7 @@ function SerchInputes({ totalIcons }) {
           }}
         />
          <button className="btn btn-search" onClick={handleSearchClick}>
-           <span>  Search icons{" "} </span>
+           <span>  Search <span> icons </span>{" "} </span>
             
           </button>
          </div>
