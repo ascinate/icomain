@@ -3259,13 +3259,17 @@ padding: 10px 30px;
     width: 65%;
 }
 .rights-sectionu01 .css-13cymwt-control{
-  border-radius: 50px;
-  font-size: 15px;
+  border-radius: .5rem;
+  font-size: 14px;
 }
 .rights-sectionu01 .css-13cymwt-control:focus{
   box-shadow: none !important;
 }
 
+.css-13cymwt-control{
+    border-radius: .5rem;
+    font-size: 14px;
+}
 .paginnations .text-shows{
   font-weight: 300;
 }
