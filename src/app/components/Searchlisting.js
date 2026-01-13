@@ -242,7 +242,7 @@ export default function Searchlisting() {
 
                                     <Image
                                       loading="lazy"
-                                      src="/nofound.png"
+                                      src="/no-data.gif"
                                       alt="iconsguru"
                                       width={249}
                                       height={219}

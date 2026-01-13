@@ -282,7 +282,7 @@ export default function CategorySearchPage() {
                                   <figure className="m-0">
                                     <Image
                                       loading="lazy"
-                                      src="/nofound.png"
+                                      src="/no-data.gif"
                                       alt="iconsguru"
                                       width={249}
                                       height={219}
