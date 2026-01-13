@@ -1937,7 +1937,7 @@ span.imgs01 img{
   background-size: cover;
   width: 100%;
   height: 300px;
-  margin-top: 75px !important;
+  margin-top:0 !important;
 }
 
 .sub-banners2{
@@ -3227,6 +3227,7 @@ padding: 10px 30px;
 .new-lisiting{
   display: inline-block !important;
     background: rgb(247, 247, 247);
+    min-height: 100vh;
   
 }
 .new-lisiting main{

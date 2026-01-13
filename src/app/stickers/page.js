@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import NavicationHome from "../components/NavicationHome";
+import NavicationHomeDetails from "../components/NavicationHomeDetails";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import Image from "next/image";
@@ -40,7 +40,7 @@ export default function InterfaceIconsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={`full-bodys ${isIconActive ? "modals-body" : ""}`}>
-          <NavicationHome />
+          <NavicationHomeDetails />
           <section className="sub-banners d-inline-block w-100 float-start">
                     <div className="container">
                         <div className="row align-items-center">
