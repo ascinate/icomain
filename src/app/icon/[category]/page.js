@@ -241,7 +241,7 @@ export default function CategorySearchPage() {
                           </div>
                         </div>
                         <div className="tabsd_divs d-inline-block w-100 mt-4">
-                          <div className="new-icons-bm news-colors-div mt-0">
+                          <div className="new-icons-bm news-colors-div mt-0 position-relative">
                             {isLoading ? (
                               <div className="loading-animations row w-100 show-grids">
                                 {[...Array(18)].map((_, i) => (
