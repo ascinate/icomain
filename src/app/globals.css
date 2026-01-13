@@ -2337,7 +2337,7 @@ background: linear-gradient(190deg, rgba(218, 220, 242, 0.84) 0%, rgba(255, 255,
   z-index: 3;
 }
 .navbar{
-  padding: 0 !important; 
+  padding: 5px 0 !important; 
 }
 .home-pages-sp .banner-parts01 h2 {
     font-weight: 700;

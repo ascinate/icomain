@@ -58,10 +58,10 @@ function Footer(){
                     <div className="col-lg-8">
                         <div className="comon-footers-div01 mb-0">
                             <Link href='/'>
-                                <Image loading="lazy" src="/footer-logo1.png"
+                                <Image loading="lazy" src="/footer-1l.svg"
                                         alt="iconsguru"
-                                        width={114}
-                                        height={18} />
+                                        width={174}
+                                        height={46} />
                             </Link>
                             <p className="text-white ft-paras"> Empowering creativity through icons</p>
                           
