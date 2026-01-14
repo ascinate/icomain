@@ -255,7 +255,7 @@ export default function SidebarFilter({
                       }))
                     }
                   >
-                    Ascending
+                    Ascending(A–Z)
                   </button>
 
                   <button
@@ -271,7 +271,7 @@ export default function SidebarFilter({
                       }))
                     }
                   >
-                    Descending
+                    Descending(Z–A)
                   </button>
                 </div>
               )}
