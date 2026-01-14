@@ -199,32 +199,48 @@ export default function SidebarFilter({
               <>
                 <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
                   <h3> Categories: </h3>
+
                   <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-4">
-                    {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => (
-                      <li className="cmout form-check position-relative" key={i}>
-                        <input
-                          id={`cat-${i}`}
-                          type="checkbox"
-                          className="form-check-input"
-                          onChange={() => handleCheckboxChange('categories', cat)}
-                          checked={selectedFilters.categories.includes(cat)}
-                        />
-                        <label className="form-check-label" htmlFor={`cat-${i}`}>
-                          {cat.trim()}
-                        </label>
-                      </li>
-                    ))}
+
+                    {/* Category radios */}
+                    {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => {
+                      const id = `cat-${i}`;
+                      const isChecked = selectedFilters.categories[0] === cat;
+
+                      return (
+                        <li className="cmout form-check position-relative" key={id}>
+                          <input
+                            id={id}
+                            type="radio"
+                            name="category"
+                            className="form-check-input"
+                            checked={isChecked}
+                            onChange={() =>
+                              setSelectedFilters(prev => ({
+                                ...prev,
+                                categories: [cat],
+                              }))
+                            }
+                          />
+                          <label className="form-check-label" htmlFor={id}>
+                            {cat.trim()}
+                          </label>
+                        </li>
+                      );
+                    })}
+
                     {filters.categories.length > 4 && (
                       <button
                         type="button"
-                        className="btn btn-sm  px-0"
+                        className="btn btn-sm px-0"
                         onClick={() => setShowAll(!showAll)}
                       >
-                        {showAll ? '+ Less' : '+ More'}
+                        {showAll ? "+ Less" : "+ More"}
                       </button>
                     )}
                   </ul>
                 </div>
+
               </>
 
             </div>
@@ -232,7 +248,7 @@ export default function SidebarFilter({
             <div className="crm-nes-styles1 d-inline-block w-100">
               <div
                 className="d-flex align-items-center justify-content-between cursor-pointer"
-                
+
               >
                 <h3 className="mb-0">Advanced:</h3>
                 <button className="btn" onClick={() => setShowSort(prev => !prev)} ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(0,0,0,1)"><path d="M13 12H20L12 20L4 12H11V4H13V12Z"></path></svg>

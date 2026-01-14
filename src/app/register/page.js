@@ -94,22 +94,7 @@ export default function Register() {
                           height={24} />
                       </span>  Continue with Google
                     </button>
-                    <button className="btn btn-comon-socail mx-auto d-flex align-items-center justify-content-center">
-                      <span>
-                        <Image loading="lazy" src="/faceic.svg"
-                          alt="iconsguru"
-                          width={24}
-                          height={24} />
-                      </span>  Continue with Facebook
-                    </button>
-                    <button className="btn btn-comon-socail mx-auto d-flex align-items-center justify-content-center">
-                      <span>
-                        <Image loading="lazy" src="/apple.svg"
-                          alt="iconsguru"
-                          width={24}
-                          height={24} />
-                      </span>  Continue with Apple
-                    </button>
+                   
 
                     <button onClick={toggleVisibility} className="continue-btn mx-auto d-table btn" > Continue with Email </button>
 
