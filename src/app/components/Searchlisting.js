@@ -26,7 +26,8 @@ export default function Searchlisting() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [filters, setFilters] = useState({ categories: [], colors: [], types: [] });
+  const [filters, setFilters] = useState({ categories: [], colors: [], types: [], sort: "" });
+  const [sortOrder, setSortOrder] = useState("");
   const [totalIcons, setTotalIcons] = useState(0);
   const [selectedIconId, setSelectedIconId] = useState(null);
   const [isIconActive, setIsIconActive] = useState(false);
@@ -50,8 +51,13 @@ export default function Searchlisting() {
         filters.categories.forEach(c => query.append("categories[]", c));
         filters.colors.forEach(c => query.append("colors[]", c));
         filters.types.forEach(t => query.append("types[]", t));
+        if (filters.sort) {
+          query.set("sort", filters.sort);
+        }
 
         if (searchKeyword) query.set("search", searchKeyword);
+
+
 
         const url = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
         console.log("API:", url); // <-- watch this in DevTools
@@ -105,7 +111,7 @@ export default function Searchlisting() {
                       <SidebarFilter
                         onFilterChange={(newFilters) => {
 
-                       
+
                           if (newFilters.categories?.length) {
                             const slug = newFilters.categories[0]
                               .toLowerCase()

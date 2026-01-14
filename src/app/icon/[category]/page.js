@@ -29,7 +29,8 @@ export default function CategorySearchPage() {
     categories: isType ? [] : [category],
     colors: [],
     types: isType ? [category] : [],
-    tag: searchParams.get('tag') || ''
+    tag: searchParams.get('tag') || '',
+    sort: ''
   });
   const [iconSize, setIconSize] = useState(35);
   const hideCategoryFilter = !!filters.tag;
@@ -59,6 +60,10 @@ export default function CategorySearchPage() {
           filters.types.forEach(t => query.append("types[]", t));
         if (filters.tag)
           query.append("tag", filters.tag);
+        if (filters.sort) {
+          query.append("sort", filters.sort);
+        }
+
 
         const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
 
@@ -93,10 +98,6 @@ export default function CategorySearchPage() {
   };
 
 
-
-  const iconname = filters.tag ? `${filters.tag}` : `${category}`;
-
-
   return (
     <>
       <Head>
@@ -126,6 +127,7 @@ export default function CategorySearchPage() {
 
                       <SidebarFilter
                         onFilterChange={(newFilters) => {
+                          setPage(1);
                           setFilters((prev) => ({
                             ...prev,
                             ...newFilters,
@@ -139,7 +141,7 @@ export default function CategorySearchPage() {
                           }));
                         }}
                         onSizeChange={setIconSize}
-                        
+
                         showCategoryFilter={!hideCategoryFilter}
                       />
 

@@ -29,7 +29,8 @@ export default function CategorySearchPage() {
     categories: isType ? [] : [category],
     colors: [],
     types: isType ? [category] : [],
-    tag: searchParams.get('tag') || ''
+    tag: searchParams.get('tag') || '',
+    sort: ''
   });
   const hideCategoryFilter = !!filters.tag; 
    const handleToggle = () => setIsToggled((prev) => !prev);
@@ -57,6 +58,9 @@ export default function CategorySearchPage() {
           filters.types.forEach(t => query.append("types[]", t));
         if (filters.tag)
           query.append("tag", filters.tag);
+        if(filters.sort){
+          query.append("sort", filters.sort)
+        };
 
         const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
 
@@ -122,6 +126,7 @@ export default function CategorySearchPage() {
                       </h4>
                       <SidebarFilter
                         onFilterChange={(newFilters) => {
+                          setPage(1);
                           setFilters((prev) => ({
                             ...prev,
                             ...newFilters,
