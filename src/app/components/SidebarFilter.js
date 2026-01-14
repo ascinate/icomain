@@ -74,27 +74,27 @@ export default function SidebarFilter({
 
 
   // category selects
-const categoryOptions = [
-  { value: '', label: 'All Categories' },
-  ...filters.categories.map(cat => ({
-    value: cat,
-    label: cat.trim(),
-  })),
-]
+  const categoryOptions = [
+    { value: '', label: 'All Categories' },
+    ...filters.categories.map(cat => ({
+      value: cat,
+      label: cat.trim(),
+    })),
+  ]
 
-const handleCategorySelect = (selectedOption) => {
-  setSelectedFilters(prev => ({
-    ...prev,
-    categories: selectedOption?.value
-      ? [selectedOption.value]
-      : []
-  }))
-}
+  const handleCategorySelect = (selectedOption) => {
+    setSelectedFilters(prev => ({
+      ...prev,
+      categories: selectedOption?.value
+        ? [selectedOption.value]
+        : []
+    }))
+  }
 
   const selectedCategoryOption =
-  categoryOptions.find(
-    opt => opt.value === (selectedFilters.categories[0] || '')
-  ) || null
+    categoryOptions.find(
+      opt => opt.value === (selectedFilters.categories[0] || '')
+    ) || null
 
 
 
@@ -181,7 +181,7 @@ const handleCategorySelect = (selectedOption) => {
                       setSelectedFilters((prev) => ({
                         ...prev,
                         types: selected
-                          ? selected.map((item) => item.value)
+                          ? selected.map((item) => item.value)   
                           : [],
                       }));
                     }}
@@ -191,22 +191,39 @@ const handleCategorySelect = (selectedOption) => {
                   />
                 </div>
               </div>
-              
-             
-                <>
-                  <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
-                    <h3> Categories: </h3>
-                    <Select
-                      options={categoryOptions}
-                      value={selectedCategoryOption}
-                      onChange={handleCategorySelect}
-                      placeholder="Select category"
-                      isClearable
-                      classNamePrefix="react-select"
-                    />
-                  </div>
-                </>
-           
+
+
+              <>
+                <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
+                  <h3> Categories: </h3>
+                  <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-4">
+                  {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => (
+                    <li className="cmout form-check position-relative" key={i}>
+                      <input
+                        id={`cat-${i}`}
+                        type="checkbox"
+                        className="form-check-input"
+                        onChange={() => handleCheckboxChange('categories', cat)}
+                        checked={selectedFilters.categories.includes(cat)}
+                      />
+                      <label className="form-check-label" htmlFor={`cat-${i}`}>
+                        {cat.trim()}
+                      </label>
+                    </li>
+                  ))}
+                  {filters.categories.length > 4 && (
+                  <button
+                    type="button"
+                    className="btn btn-sm  px-0"
+                    onClick={() => setShowAll(!showAll)}
+                  >
+                    {showAll ? '+ Less' : '+ More'}
+                  </button>
+                )}
+                </ul>
+                </div>
+              </>
+
             </div>
             {/* Types */}
           </>
