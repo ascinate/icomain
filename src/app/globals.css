@@ -1719,11 +1719,12 @@ footer.footer-lights015-mains.comon-short-parts hr{
     margin-bottom: 10px !important;
     display: flex;
     align-items: center;
-    padding-left: 25px !important;
+    padding-left: 15px !important;
+    margin-right: 9px;
     
 }
 .new-filter-05 .cmout .form-check-label{
-      margin-right: 0;
+    margin-right: 0;
     cursor: pointer;
     transition: all .5s;
     font-weight: 400;
@@ -1731,9 +1732,10 @@ footer.footer-lights015-mains.comon-short-parts hr{
     font-size: 14px;
     color: #6a7380 !important;
     padding: 7px 22px !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 15px !important;
     background: #fff;
-    border-radius: 25px;
+    border: solid 1px #e0e1e4;
+    border-radius: 0.5rem;
 	text-transform: capitalize;
 }
 
@@ -2296,6 +2298,7 @@ footer hr{
   top:0;
   transition: all 0.5s;
   border-radius: 12px;
+  box-shadow: #00000014 1px 12px 43px;
 
 }
 .signup-btn10{
@@ -2500,6 +2503,7 @@ button.btn.btn-list015 {
   display: grid;
   grid-template-columns: repeat(10, minmax(5rem, 1fr));
   gap: 1.4rem;
+  align-content: start;
 }
 .icons-list{
 
@@ -3327,12 +3331,7 @@ padding: 10px 30px;
   animation: pulse 1.5s infinite ease-in-out;
 } */
 .new-filter-05{
-    border: solid 1px #dcdcdc;
-    background: #f7f7f7;
     display: flex;
-    border-radius: 26px;
-    padding: 5px 5px !important;
-    justify-content: space-between;
 }
 .crm-nes-styles1 .new-filter-05 li{
   padding-left: 0 !important;
@@ -3356,9 +3355,9 @@ padding: 10px 30px;
     font-weight: 400;
     position: relative;
     font-size: 16px;
-    color: #6a7380 !important;
+    color: #3f454d !important;
     padding: 7px 21px !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 15px !important;
     background: #fff;
     border-radius: 25px;
 }

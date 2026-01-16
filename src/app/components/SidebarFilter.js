@@ -128,7 +128,7 @@ export default function SidebarFilter({
             <div className="accordion mt-3" id="accordionPanelsStayOpenExample">
               <div className="crm-nes-styles1 d-block w-100">
                 <h3> Types: </h3>
-                <ul className="options_names cololi-list new-filter-05 p-1 m-0  align-items-center mt-3">
+                <ul className="options_names cololi-list new-filter-05 p-0 m-0  align-items-center mt-3">
                   {filters.colors.map((color, i) => {
                     const id = `color-${i}`;
                     return (
@@ -172,10 +172,10 @@ export default function SidebarFilter({
                 />
               </div>
 
-              <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
+              <div className="crm-nes-styles1 align-items-center justify-content-between w-100">
                 <h3> Style: </h3>
 
-                <div className="rights-sectionu01">
+                <div className="rights-sectionu01 w-100 mt-3">
                   <Select
                     isMulti
                     options={typeOptions}
@@ -189,7 +189,7 @@ export default function SidebarFilter({
                       }));
                     }}
                     placeholder="Select.."
-                    className="basic-single"
+                    className="basic-single w-100"
                     classNamePrefix="react-select"
                   />
                 </div>
@@ -197,10 +197,10 @@ export default function SidebarFilter({
 
 
               <>
-                <div className="crm-nes-styles1 d-flex align-items-center justify-content-between w-100">
+                <div className="crm-nes-styles1 align-items-center justify-content-between w-100">
                   <h3> Categories: </h3>
 
-                  <ul className="options_names p-0 m-0 new-filter-05 d-flex flex-wrap align-items-center mt-4">
+                  <ul className="options_names p-0 m-0 new-filter-05 w-100 d-flex flex-wrap align-items-center mt-4">
 
                     {/* Category radios */}
                     {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => {
