@@ -127,7 +127,7 @@ export default function SidebarFilter({
 
             <div className="accordion mt-3" id="accordionPanelsStayOpenExample">
               <div className="crm-nes-styles1 d-block w-100">
-                <h3> Types: </h3>
+                <h3> Style: </h3>
                 <ul className="options_names cololi-list new-filter-05 p-0 m-0  align-items-center mt-3">
                   {filters.colors.map((color, i) => {
                     const id = `color-${i}`;
@@ -173,7 +173,7 @@ export default function SidebarFilter({
               </div>
 
               <div className="crm-nes-styles1 align-items-center justify-content-between w-100">
-                <h3> Style: </h3>
+                <h3> Types: </h3>
 
                 <div className="rights-sectionu01 w-100 mt-3">
                   <Select
