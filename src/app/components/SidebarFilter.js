@@ -260,9 +260,9 @@ export default function SidebarFilter({
                 <div className="d-flex gap-2 mt-3">
                   <button
                     type="button"
-                    className={`btn btn-sm ${selectedFilters.sort === "asc"
+                    className={`btn news-ads015-ans ${selectedFilters.sort === "asc"
                       ? "btn-outline-success active"
-                      : "btn-outline-secondary"
+                      : ""
                       }`}
                     onClick={() =>
                       setSelectedFilters(prev => ({
@@ -276,9 +276,9 @@ export default function SidebarFilter({
 
                   <button
                     type="button"
-                    className={`btn btn-sm ${selectedFilters.sort === "desc"
+                    className={`btn news-ads015-ans ${selectedFilters.sort === "desc"
                       ? "btn-outline-success active"
-                      : "btn-outline-secondary"
+                      : ""
                       }`}
                     onClick={() =>
                       setSelectedFilters(prev => ({
