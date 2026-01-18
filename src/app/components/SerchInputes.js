@@ -99,7 +99,7 @@ export default function SearchInputes({ totalIcons }) {
               }}
             >
               <img
-                src={icon.icon_svg}
+                src={`data:image/svg+xml;utf8,${encodeURIComponent(icon.icon_svg)}`}
                 alt={icon.icon_name}
                 width={22}
                 height={22}
