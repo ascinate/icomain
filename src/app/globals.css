@@ -2379,7 +2379,7 @@ footer hr{
     padding-bottom: 0;
 }
 .home-banner-sections{
-  overflow: hidden;
+
   position: relative;
 background: #dadcf2;
 background: linear-gradient(190deg, rgba(218, 220, 242, 0.84) 0%, rgba(255, 255, 255, 1) 49%);
