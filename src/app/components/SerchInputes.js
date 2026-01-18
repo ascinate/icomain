@@ -1,67 +1,124 @@
-'use client';
-import Link from "next/link";
-import { AutoComplete } from 'primereact/autocomplete';
-import { useRouter } from 'next/navigation';
-import { useState } from "react";
-function SerchInputes({ totalIcons }) {
-  const [value, setValue] = useState('');
-  const [items, setItems] = useState([]);
+'use client'
 
-  const router = useRouter();
+import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
-  const search = async (event) => {
-    const query = event.query;
+export default function SearchInputes({ totalIcons }) {
+  const [value, setValue] = useState('')
+  const [items, setItems] = useState([])
+  const [active, setActive] = useState(false)
 
-    if (query.length > 1) {
-      try {
-        const res = await fetch(`https://iconsguru.ascinatetech.com/api/icons/search?query=${encodeURIComponent(query)}`);
-        const data = await res.json();
-        const names = data.data.map(icon => icon.icon_name);
-        setItems(names);
-      } catch (err) {
-        console.error('Autocomplete fetch error:', err);
+  const inputRef = useRef(null)
+  const targetDivRef = useRef(null)
+  const router = useRouter()
+
+  // Fetch search results
+  const searchIcons = async (query) => {
+    if (query.length < 2) {
+      setItems([])
+      return
+    }
+
+    try {
+      const res = await fetch(
+        `https://iconsguru.ascinatetech.com/api/icons/search?query=${encodeURIComponent(query)}`
+      )
+      const data = await res.json()
+      setItems(data.data || [])
+    } catch (err) {
+      console.error('Search error:', err)
+    }
+  }
+
+  // Outside click close
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        inputRef.current &&
+        !inputRef.current.contains(event.target) &&
+        targetDivRef.current &&
+        !targetDivRef.current.contains(event.target)
+      ) {
+        setActive(false)
       }
     }
-  };
 
-
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const handleSearchClick = () => {
     if (value.trim()) {
-      router.push(`/details?search=${encodeURIComponent(value.trim())}`);
+      router.push(`/details?search=${encodeURIComponent(value.trim())}`)
+      setActive(false)
     }
-  };
+  }
 
   return (
-   
+    <div className="position-relative col-lg-11">
 
-     <>
-         
-         <div className="search-sections-home home-search08 position-relative col-lg-8 mx-auto d-flex justify-content-between align-items-center bg-white">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgb(227, 227, 227)">
-              <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
-            </svg> <AutoComplete
-        value={value}
-        placeholder="What you are looking for?"
-        suggestions={items}
-        completeMethod={search}
-        onChange={(e) => setValue(e.value)}
-        className="form-control w-full"
-        loading={false}
-         onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              handleSearchClick();
-            }
+      {/* Search Input */}
+      <div className="search-sections-home d-flex align-items-center bg-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="#ccc"
+        >
+          <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168Z" />
+        </svg>
+
+        <input
+          ref={inputRef}
+          type="text"
+          value={value}
+          placeholder="What you are looking for?"
+          className="form-control border-0"
+          onFocus={() => setActive(true)}
+          onChange={(e) => {
+            setValue(e.target.value)
+            searchIcons(e.target.value)
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleSearchClick()
           }}
         />
-         <button className="btn btn-search" onClick={handleSearchClick}>
-           <span>  Search <span> icons </span>{" "} </span>
-            
-          </button>
-         </div>
-   </>     
-  );
+
+        <button className="btn btn-search" onClick={handleSearchClick}>
+          Search <span>icons</span>
+        </button>
+      </div>
+
+      {/* Search Result Box */}
+      {active && items.length > 0 && (
+        <div
+          ref={targetDivRef}
+          className="search-result-box"
+        >
+          {items.map((icon) => (
+            <div
+              key={icon.id}
+              className="search-item"
+              onClick={() => {
+                setValue(icon.icon_name)
+                router.push(`/details?search=${encodeURIComponent(icon.icon_name)}`)
+                setActive(false)
+              }}
+            >
+              <img
+                src={icon.icon_svg}
+                alt={icon.icon_name}
+                width={22}
+                height={22}
+              />
+              <span>{icon.icon_name}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+
+    </div>
+  )
 }
-
-export default SerchInputes;
-
