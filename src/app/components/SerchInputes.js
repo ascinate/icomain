@@ -98,12 +98,11 @@ export default function SearchInputes({ totalIcons }) {
                 setActive(false)
               }}
             >
-              <img
-                src={`data:image/svg+xml;utf8,${encodeURIComponent(icon.icon_svg)}`}
-                alt={icon.icon_name}
-                width={22}
-                height={22}
+              <span
+                className="icon-preview"
+                dangerouslySetInnerHTML={{ __html: icon.icon_svg }}
               />
+
               <span>{icon.icon_name}</span>
             </div>
           ))}
