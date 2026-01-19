@@ -74,8 +74,8 @@ export default function Register() {
                 <Link href="/" className="d-block text-center w-100 mb-3">
                   <Image loading="lazy" src="/mains-logo.svg"
                     alt="iconsguru"
-                    width={223}
-                    height={53} />
+                    width={136}
+                    height={43} />
                 </Link>
                 {hiddend && (
                   <div className="col-lg-5 mx-auto mb-3">
@@ -94,7 +94,7 @@ export default function Register() {
                           height={24} />
                       </span>  Continue with Google
                     </button>
-                   
+
 
                     <button onClick={toggleVisibility} className="continue-btn mx-auto d-table btn" > Continue with Email </button>
 
