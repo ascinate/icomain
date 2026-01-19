@@ -3478,6 +3478,9 @@ padding: 10px 30px;
     grid-template-columns: repeat(7, minmax(5rem, 1fr));
     gap: 1.2rem;
   }
+.home-menus .navbar-nav .nav-link{
+  font-size: 14px;
+}
 }
 @media(max-width:1180px){
   .news-colors-div {
@@ -3549,4 +3552,5 @@ padding: 10px 30px;
 .deatisl-all-page .btn-search span{
 display: none;
 }
+
 
