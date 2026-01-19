@@ -72,7 +72,7 @@ export default function Register() {
             <div className="col-lg-4">
               <div className="coninues-div015 d-grid align-content-center w-100">
                 <Link href="/" className="d-block text-center w-100 mb-3">
-                  <Image loading="lazy" src="/icon-logos.jpg"
+                  <Image loading="lazy" src="/mains-logo.svg"
                     alt="iconsguru"
                     width={223}
                     height={53} />
