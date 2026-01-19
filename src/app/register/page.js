@@ -74,8 +74,8 @@ export default function Register() {
                 <Link href="/" className="d-block text-center w-100 mb-3">
                   <Image loading="lazy" src="/mains-logo.svg"
                     alt="iconsguru"
-                    width={136}
-                    height={43} />
+                    width={200}
+                    height={108} />
                 </Link>
                 {hiddend && (
                   <div className="col-lg-5 mx-auto mb-3">

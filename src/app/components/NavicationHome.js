@@ -51,8 +51,8 @@ function NavicationHome() {
                         <Link className="navbar-brand" href='/'>
                             <Image loading="lazy" src="/mains-logo.svg"
                                 alt="iconsgeek"
-                                width={200}
-                                height={108} />
+                                width={136}
+                                height={43} />
                         </Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
                             <span className="navbar-toggler-icon"></span>
