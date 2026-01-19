@@ -412,7 +412,7 @@ a {
 .favi-icons ul{ list-style-type: none; padding: 0; margin: 0; }
 .favi-icons ul li{ margin-right: 10px;  }
 .btn-search{ background: var(--primaycolor) !important; color: var(--background) !important; display: flex !important;
-  align-items: center; padding: 8px 25px !important; border-radius:0.5rem !important; width: 29%;  transition: all 0.5s; height: 47px; }
+  align-items: center; padding: 8px 25px !important; border-radius:0.5rem !important; width: 18%;  transition: all 0.5s; height: 47px; }
 .btn-search:hover{background: var(--foreground) !important;}
 .btn-search:focus{box-shadow: none !important;}
 .search-sections-home{ border-radius: 0.5rem !important; height: 60px; border: solid 2px #E8E8E8; margin-top: 20px; padding: 8px; }
@@ -759,7 +759,7 @@ tbody, td, tfoot, th, thead, tr{
 .comon-types01 figure a{
   display: inline-block;
   width: 100%;
-  height: 280px;
+  height: 230px;
   overflow: hidden;
 }
 .home-banner-sections .container .col-lg-7{
@@ -865,7 +865,7 @@ tbody, td, tfoot, th, thead, tr{
 .comon-types01 img{
    width: 100% !important;
    height: 100%;
-   object-fit: cover;
+   object-fit: content;
    object-position: top;
 }
 .comon-types01 .icon-list-name{

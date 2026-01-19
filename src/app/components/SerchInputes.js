@@ -78,7 +78,7 @@ export default function SearchInputes({ totalIcons }) {
         />
 
         <button className="btn btn-search" onClick={handleSearchClick}>
-          Search <span>icons</span>
+          Search
         </button>
       </div>
 
