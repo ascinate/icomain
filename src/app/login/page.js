@@ -1,5 +1,5 @@
 "use client"
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import NavicationHome from "../components/NavicationHome";
 import Link from "next/link";
 import Form from "next/form";
@@ -18,14 +18,14 @@ function Login() {
     const [isVisible, setIsVisible] = useState(true);
     const [hiddend, setHiddend] = useState(false);
 
-   useEffect(() => {
-    const token = localStorage.getItem("access_token");
-    const user = localStorage.getItem("user");
-    if (token && user) {
-      setMessage("You are already logged in.");
-      router.push("/");
-    }
-  }, []);
+    useEffect(() => {
+        const token = localStorage.getItem("access_token");
+        const user = localStorage.getItem("user");
+        if (token && user) {
+            setMessage("You are already logged in.");
+            router.push("/");
+        }
+    }, []);
     const hideVisiblLogin = () => {
         setIsVisible(prevState => !prevState);
         setHiddend(prevState => !prevState);
@@ -142,10 +142,10 @@ function Login() {
                         <div className="col-lg-4">
                             <div className="coninues-div015 d-grid align-content-center w-100">
                                 <Link href="/" className="d-block text-center w-100 mb-3">
-                                    <Image loading="lazy" src="/icon-logos.jpg"
+                                    <Image loading="lazy" src="/mains-logo.svg"
                                         alt="iconsguru"
-                                        width={223}
-                                        height={53} />
+                                        width={200}
+                                        height={108} />
                                 </Link>
                                 {hiddend && (
                                     <div className="col-lg-11 mx-auto mb-3">
@@ -164,7 +164,7 @@ function Login() {
                                                     height={24} />
                                             </span>  Continue with Google
                                         </button>
-                                      
+
 
                                         <button onClick={toggleVisibility} className="continue-btn mx-auto d-table btn" > Continue with Email </button>
 
