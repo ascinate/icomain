@@ -3502,6 +3502,9 @@ padding: 10px 30px;
 		font-size: 12px;
 		padding: 0 8px !important;
 	}
+	.btn-search{
+		width:26%;
+	}
 	
 }
 @media(max-width:992px){
