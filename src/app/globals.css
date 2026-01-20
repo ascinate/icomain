@@ -1787,8 +1787,10 @@ span.imgs01 img{
   margin-top: 25px !important;
 }
 .new-filter-05 .form-check .form-check-input{
-  position: relative;
-  top:-2px !important;
+    position: absolute;
+    top: -2px !important;
+    left: 0;
+    right: 0;
 }
 .filters-btn h4{
     font-size: 16px;
