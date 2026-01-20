@@ -169,7 +169,7 @@ export default function ModalDeatils({ id , onClose }) {
 
                             <div className="main-details-pages01">
                                 <div className="row m-0 gx-lg-5">
-                                    <div className="col-lg-7 position-relative p-0">
+                                    <div className="col-lg-7 col-md-6 position-relative p-0">
                                         <div className="blox-icons-div01 position-relative"  style={{ backgroundColor: isLightColor(color) ? "#000000" : "transparent",}}>
                                             <div
                                                 className="d-table mx-auto"
@@ -209,7 +209,7 @@ export default function ModalDeatils({ id , onClose }) {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="col-lg-5 ps-lg-5">
+                                    <div className="col-lg-5 col-md-6 ps-lg-5">
                                         <div className="rights-text-div015">
                                             <h4 className="cions-titels">{icon.icon_name} </h4>
                                             <div className="d-flex mb-3 group-div015 align-items-stretch mt-3">
@@ -240,7 +240,7 @@ export default function ModalDeatils({ id , onClose }) {
                                                 </div>
                                             </div>
 
-                                            <div className="row row-cols-1 gx-lg-2 row-cols-lg-3 justify-content-between align-items-center">
+                                            <div className="row row-cols-3 gx-lg-2 justify-content-between align-items-center">
                                                 <Link href="/register" className="btn"> 
                                                 <div className="col">
                                                     <button type="button" className="btn btn-addtocollections">
@@ -353,7 +353,7 @@ export default function ModalDeatils({ id , onClose }) {
                                 <div className="styles-icons-div  comon-rows d-block w-100">
                                     <h4 className="sub-titels-h1">Related Icons with the same style</h4>
                                     <div className="relatesd t-ind-icons d-block w-100">
-                                        <div className="row row-cols-1 row-cols-lg-6 gy-2 gy-lg-3">
+                                        <div className="row row-cols-3 row-cols-md-5 row-cols-sm-4 row-cols-lg-6 gy-2 gy-lg-3">
                                             {relatedIcons.map((rel) => (
                                                 <article key={rel.Id} className="col">
                                                     <button
