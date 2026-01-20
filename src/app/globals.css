@@ -3508,6 +3508,12 @@ padding: 10px 30px;
 	.videw-btn{
 		font-size: 14px !important;
 	}
+	article.comon-categorisg .coun-text {
+    font-size: 12px;
+    }
+	.copy-text1 {
+    font-size: 13px;
+    }
 	
 }
 @media(max-width:992px){
