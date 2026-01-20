@@ -30,11 +30,11 @@ function NavicationHomeDetails() {
       router.push("/");
    };
 
-    const mianmenu = [
-        { id: 1, title: 'Icons' , link: '/icons'  },
-        { id: 2, title: 'Interface Icons' , link: '/interface'  },
-        { id: 3, title: 'Stickers' , link: '/stickers'  },
-      ];
+   const mianmenu = [
+      { id: 1, title: 'Icons', link: '/icons' },
+      { id: 2, title: 'Interface Icons', link: '/interface' },
+      { id: 3, title: 'Stickers', link: '/stickers' },
+   ];
 
 
    return (
@@ -52,22 +52,19 @@ function NavicationHomeDetails() {
                      <span className="navbar-toggler-icon"></span>
                   </button>
 
-
-                  <ul className="navbar-nav lefts-colous10 ms-3 mb-2 mb-lg-0">
-                     {mianmenu.map((page) => (
-                        <li className="nav-item" key={page.id}>
+                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul className="navbar-nav lefts-colous10 ms-3 mb-2 mb-lg-0">
+                        {mianmenu.map((page) => (
+                           <li className="nav-item" key={page.id}>
                               <Link href={page.link} className="nav-link"> {page.title} </Link>
-                        </li>
-                     ))}
-                  </ul>
-
-                  
-
-                           
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
 
                   <div className="right-menus-div01 ms-auto d-none d-lg-flex align-items-center justify-content-end">
                      <div className="serach-listings-apge d-none d-lg-block">
-                           <SerchInputes />
+                        <SerchInputes />
                      </div>
                      <ul className="list-right-btn-div d-flex align-items-center mb-0 justify-content-end">
 
@@ -85,7 +82,7 @@ function NavicationHomeDetails() {
                               <li>
                                  <button
                                     onClick={handleLogout}
-                                   className="nav-link  why-menu-btn"
+                                    className="nav-link  why-menu-btn"
                                  >
                                     Logout
                                  </button>
