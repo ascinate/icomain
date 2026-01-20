@@ -2752,6 +2752,9 @@ footer.footer-lights015-mains .ft-scol svg{
   overflow: hidden;
   height: 100vh;
 }
+.crm-nes-styles1 .btn-outline-success.active{
+	color:#fff !important;
+}
 @media (width >= 576px) {
     .cre-modals-details01 .modal-dialog {
         max-width: 1160px;
