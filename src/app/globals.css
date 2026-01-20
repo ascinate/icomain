@@ -3459,7 +3459,7 @@ padding: 10px 30px;
           font-size: 14px;
         }
 
-@media(max-width:1400px){
+@media(width <= 1400px){
   .news-colors-div {
     display: grid;
     grid-template-columns: repeat(8, minmax(5rem, 1fr));
