@@ -3459,12 +3459,15 @@ padding: 10px 30px;
           font-size: 14px;
         }
 
-@media(max-width:1366px){
+@media(max-width:1400px){
   .news-colors-div {
     display: grid;
     grid-template-columns: repeat(8, minmax(5rem, 1fr));
     gap: 1.2rem;
   }
+  .home-menus .navbar-nav .nav-link{
+  font-size: 14px;
+}
   .related-iconstext .btn-mores-tex{
     font-size: 12px !important;
   }
@@ -3478,9 +3481,7 @@ padding: 10px 30px;
     grid-template-columns: repeat(7, minmax(5rem, 1fr));
     gap: 1.2rem;
   }
-.home-menus .navbar-nav .nav-link{
-  font-size: 14px;
-}
+
 }
 @media(max-width:1180px){
   .news-colors-div {
