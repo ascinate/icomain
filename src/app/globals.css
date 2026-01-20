@@ -2752,7 +2752,7 @@ footer.footer-lights015-mains .ft-scol svg{
   overflow: hidden;
   height: 100vh;
 }
-.crm-nes-styles1 .btn-outline-success.active{
+.crm-nes-styles1 button.btn-outline-success.news-ads015-ans.active{
 	color:#fff !important;
 }
 @media (width >= 576px) {
