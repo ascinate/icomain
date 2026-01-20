@@ -3505,6 +3505,9 @@ padding: 10px 30px;
 	.btn-search{
 		width:26%;
 	}
+	.videw-btn{
+		font-size: 14px !important;
+	}
 	
 }
 @media(max-width:992px){
