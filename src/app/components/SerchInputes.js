@@ -65,7 +65,7 @@ export default function SearchInputes({ totalIcons }) {
           ref={inputRef}
           type="text"
           value={value}
-          placeholder="What you are looking for?"
+          placeholder="Keyword.."
           className="form-control border-0"
           onFocus={() => setActive(true)}
           onChange={(e) => {
