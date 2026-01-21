@@ -44,10 +44,7 @@ export default async function Home() {
           }}
         />
 
-        <title>Free Icons, Vector Icons - SVG, PNG, WEBP</title>
-        <meta name="description" content="Download free, high-quality SVG icons for your website or app. IconsGuru provides a comprehensive library of free and premium icons that you can instantly download and customize to any size. Perfect for designers, developers, and creatives looking for high-quality, scalable icons to enhance their projects. Discover icons that fit your design needs seamlessly." />
-        <meta name="keywords" content="vector icons, UI icons, free svg icons, free svg download, free icon download, icon sets, icon download, icon png, svg icons, free vector icons, vector free, interface icons" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3151409433055188" crossorigin="anonymous"></script>
         <link rel="canonical" href="https://iconsguru.com/icons" />
         <link rel="icon" href="/favicon.ico" />

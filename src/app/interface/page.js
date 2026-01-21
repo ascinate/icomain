@@ -82,8 +82,8 @@ export default function InterfaceIconsPage() {
           <main className="pricing-pages-part interface-bgs float-start w-100">
             <section className="float-start w-100 pt-0">
               <div className="container">
-                <div className="row row-cols-1 row-cols-lg-2 gx-lg-5">
-                    <div className="col">
+                <div className="row gx-lg- gx-lg-5">
+                    <div className="col-lg-7">
                          <div className="comon-cate-list trending-icons d-inline-block w-100">
                             <h2 className="text-left comon-head cmg-heading m-0">
                               Explore Our Interface Icons
@@ -183,7 +183,7 @@ export default function InterfaceIconsPage() {
                          </div>
                     </div>
 
-                    <div className="col">
+                    <div className="col-lg-5">
                       <div className="rights-images01">
                        <Image loading="lazy" src="/ig.png"
                                     alt="iconsguru"

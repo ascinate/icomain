@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ImportBsJS from "../app/components/ImportBsJS";
 import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 
 
@@ -85,6 +86,12 @@ export default function RootLayout({ children }) {
   return (
 
     <html lang="en" className={`${dmsans.variable}`}>
+      <Head>
+        <title>Free Icons, Vector Icons - SVG, PNG, WEBP</title>
+        <meta name="description" content="Download free, high-quality SVG icons for your website or app. IconsGuru provides a comprehensive library of free and premium icons that you can instantly download and customize to any size. Perfect for designers, developers, and creatives looking for high-quality, scalable icons to enhance their projects. Discover icons that fit your design needs seamlessly." />
+        <meta name="keywords" content="vector icons, UI icons, free svg icons, free svg download, free icon download, icon sets, icon download, icon png, svg icons, free vector icons, vector free, interface icons" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
       <body className="names-bgs">
 

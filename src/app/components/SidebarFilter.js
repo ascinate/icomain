@@ -258,11 +258,11 @@ export default function SidebarFilter({
               </div>
 
               {showSort && (
-                <div className="d-flex gap-2 mt-3">
+                <div className="groups-div gap-2 mt-3">
                   <button
                     type="button"
                     className={`btn news-ads015-ans ${selectedFilters.sort === "asc"
-                      ? "btn-outline-success active"
+                      ? "active"
                       : ""
                       }`}
                     onClick={() =>
@@ -277,8 +277,8 @@ export default function SidebarFilter({
 
                   <button
                     type="button"
-                    className={`btn news-ads015-ans ${selectedFilters.sort === "desc"
-                      ? "btn-outline-success active"
+                    className={`btn news-ads015-ans ms-2 ${selectedFilters.sort === "desc"
+                      ? "active"
                       : ""
                       }`}
                     onClick={() =>
