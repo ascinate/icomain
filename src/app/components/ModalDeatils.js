@@ -330,7 +330,7 @@ export default function ModalDeatils({ id , onClose }) {
                                                                     width={33}
                                                                     height={34} />
                                                             </figure>
-                                                            <p> <strong> IconsGuru </strong>
+                                                            <p> <strong> IconsGeek </strong>
                                                                 <span className="d-block">
                                                                     <strong> 7,830 </strong> FREE ICONS
                                                                 </span>
