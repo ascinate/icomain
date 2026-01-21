@@ -200,7 +200,8 @@ export default function SidebarFilter({
                 <div className="crm-nes-styles1 align-items-center justify-content-between w-100">
                   <h3> Categories: </h3>
 
-                  <ul className="options_names p-0 m-0 new-filter-05 w-100 d-flex flex-wrap align-items-center mt-4">
+                  <ul className={`options_names p-0 m-0 new-filter-05 categori-div w-100 d-flex flex-wrap align-items-center mt-4 ${
+                    showAll ? "expanded" : "" }`}>
 
                     {/* Category radios */}
                     {(showAll ? filters.categories : filters.categories.slice(0, 4)).map((cat, i) => {
