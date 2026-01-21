@@ -71,13 +71,13 @@ function Footer(){
                                     <h5 className="text-white"> Company </h5>
                                     <ul className="p-0 m-0 mt-3">
                                         <li>
-                                            <Link href='/about' className="trust01">About</Link>
+                                            <Link href='https://ascinatetech.com/about' target="_blank" className="trust01">About</Link>
                                         </li>
                                         <li>
-                                            <Link href='/career' className="trust01">Careers</Link>
+                                            <Link href='https://ascinatetech.com/careers' target="_blank" className="trust01">Careers</Link>
                                         </li>
                                         <li>
-                                            <Link href='/blog' className="trust01">Blog</Link>
+                                            <Link href='https://ascinatetech.com/blog' target="_blank" className="trust01">Blog</Link>
                                         </li>
                                     </ul>
                                  </div>
@@ -105,13 +105,16 @@ function Footer(){
                                     <h5 className="text-white"> Community </h5>
                                     <ul className="p-0 m-0 mt-3">
                                         <li>
-                                            <Link href='/terms' className="trust01">Discord</Link>
+                                            <Link href='https://www.facebook.com/profile.php?id=61586573832038' target="_blank" className="trust01">Facebook</Link>
                                         </li>
                                         <li>
-                                            <Link href='/terms' className="trust01">Dribbble</Link>
+                                            <Link href='https://www.instagram.com/icons_geek/' target="_blank" className="trust01">Instagram</Link>
                                         </li>
                                         <li>
-                                            <Link href='/terms' className="trust01">Twitter</Link>
+                                            <Link href='https://x.com/home' className="trust01" target="_blank">Twitter</Link>
+                                        </li>
+                                        <li>
+                                            <Link href='https://www.linkedin.com/in/icons-geek-b6b1963a7/' target="_blank" className="trust01">LinkedIn</Link>
                                         </li>
                                     </ul>
                                  </div>
@@ -150,7 +153,7 @@ function Footer(){
                 
                 <div className="row row-cols-1 row-cols-lg-2 g-lg-0">
                    
-                   <div className="col "> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsguru.com | All Rights Reserved. <Link href="https://ascinatetech.com/" className="links-btn01"> Ascinate Technology Project. </Link>  </p> </div>
+                   <div className="col "> <p className="text-white copy-text1 copt-lisk"> &copy; {new Date().getFullYear()} iconsgeek.com | All Rights Reserved. <Link href="https://ascinatetech.com/" className="links-btn01"> Ascinate Technology Project. </Link>  </p> </div>
                    <div className="col d-grid justify-content-lg-end">
                       <ul className="d-flex align-items-center copy-text1 p-0 m-0 copt-lisk">
                         <li>
