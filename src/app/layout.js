@@ -7,9 +7,6 @@ import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
 
-
-
-
 const sorasans = Sora({
   variable: "--font-sora-sans",
   weight: ['300', '400', '500', '600', '700'],
@@ -81,8 +78,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-
-
   return (
 
     <html lang="en" className={`${dmsans.variable}`}>
@@ -151,6 +146,19 @@ export default function RootLayout({ children }) {
               height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
+
+  <script
+  id="ga4-script"
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2CHSDT1GF7');
+    `,
+  }}
+/>
+          
         <ImportBsJS />
         {children}
       </body>
