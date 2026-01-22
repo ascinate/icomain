@@ -1739,7 +1739,7 @@ footer.footer-lights015-mains.comon-short-parts hr{
     position: relative;
     font-size: 13px !important;
     color: #6a7380 !important;
-    padding: 7px 22px !important;
+    padding: 7px 13px !important;
     margin-bottom: 0 !important;
     background: #fff;
     border: solid 1px #e0e1e4;
@@ -2758,6 +2758,22 @@ footer.footer-lights015-mains .ft-scol svg{
   overflow: hidden;
   height: 100vh;
 }
+.all-close015{
+  background-color: var(--primaycolor) !important;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 50px;
+  position: absolute;
+    left: 0;
+    top: 15px;
+}
+.filters01-btn{
+  border: solid 1px #f4f4f4 !important; 
+  padding: 5px 15px;
+  border-radius: 0.5rem;
+  background: var(--background) !important;
+}
 @media (width >= 576px) {
     .cre-modals-details01 .modal-dialog {
         max-width: 1160px;
@@ -3504,6 +3520,7 @@ padding: 10px 30px;
           font-size: 14px;
         }
 
+  
 @media(width <= 1400px){
   .news-colors-div {
     display: grid;
@@ -3611,6 +3628,16 @@ padding: 10px 30px;
   }
   .deatisl-all-page .serach-listings-apge{
     margin-left: 0 !important;
+  }
+  .related-iconstext{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .totals-sections-mains01 .main-divs{
+    padding-right: 0 !important;
+  }
+  .totals-sections-mains01 .main-divs .tabsd_divs{
+    padding-left: 0 !important;
   }
 }
 @media(width <= 560px){

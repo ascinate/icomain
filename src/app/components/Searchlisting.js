@@ -101,30 +101,60 @@ export default function Searchlisting() {
             <div className="container">
               <div className="row align-items-start">
                 <div className="col-lg-3 slil">
-                  <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
 
-                    <div className="slider-filtersr-div">
-                      <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
+                  <div className="d-none d-lg-block">
+                    <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
+                      
+                        <div className="slider-filtersr-div">
+                          <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
 
-                      <SidebarFilter
-                        onFilterChange={(newFilters) => {
+                          <SidebarFilter
+                            onFilterChange={(newFilters) => {
 
 
-                          if (newFilters.categories?.length) {
-                            const slug = newFilters.categories[0]
-                              .toLowerCase()
-                              .replace(/\s+/g, "-");
+                              if (newFilters.categories?.length) {
+                                const slug = newFilters.categories[0]
+                                  .toLowerCase()
+                                  .replace(/\s+/g, "-");
 
-                            router.push(`/icon/${slug}`);
-                            return;
-                          }
-                          setFilters(newFilters);
-                        }}
-                        onSizeChange={setIconSize}
-                      />
+                                router.push(`/icon/${slug}`);
+                                return;
+                              }
+                              setFilters(newFilters);
+                            }}
+                            onSizeChange={setIconSize}
+                          />
 
-                    </div>
-                  </aside>
+                        </div>
+                     
+                    </aside>
+                  </div>
+                  <div className="d-block d-lg-none">
+                     <div className="slider-filtersr-div offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample">
+                      <button type="button" class="btn-close all-close015 text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                         <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
+                              <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
+
+                                <SidebarFilter
+                                  onFilterChange={(newFilters) => {
+
+
+                                    if (newFilters.categories?.length) {
+                                      const slug = newFilters.categories[0]
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-");
+
+                                      router.push(`/icon/${slug}`);
+                                      return;
+                                    }
+                                    setFilters(newFilters);
+                                  }}
+                                  onSizeChange={setIconSize}
+                                />
+                          </aside>
+                      </div>
+                  </div>
+
                   <aside className="sidebars-subpages cmb-borad01 p-4 d-none d-inline-lg-block w-100 bd-md015 pt-2 mt-5">
                     <Link href="/" >
                       <div className="sm-logs mt-3 text-center">
@@ -154,17 +184,23 @@ export default function Searchlisting() {
                       <div className="main-divs g-col-6 pt-0">
 
 
+                        
+                       <div className="d-flex align-items-center mb-4">
+                          <div className="names-fileters d-inline-block d-md-none">
+                              <button className="btn filters01-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M7 3V6H3V8H7V11H9V3H7ZM11 8H21V6H11V8ZM17 13V16H21V18H17V21H15V13H17ZM13 18H3V16H13V18Z"></path></svg> </span>   Filter </button>
+                          </div>
+                          <h2 className="search-listings01 d-flex align-items-center mb-0">
+                            <span>
+                              <button onClick={handleToggle} className="btn px-0 me-3">
 
-                        <h2 className="search-listings01 d-flex align-items-center mb-4">
-                          <span>
-                            <button onClick={handleToggle} className="btn px-0 me-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M22.0003 13.0001L22.0004 11.0002L5.82845 11.0002L9.77817 7.05044L8.36396 5.63623L2 12.0002L8.36396 18.3642L9.77817 16.9499L5.8284 13.0002L22.0003 13.0001Z"></path></svg>
 
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M22.0003 13.0001L22.0004 11.0002L5.82845 11.0002L9.77817 7.05044L8.36396 5.63623L2 12.0002L8.36396 18.3642L9.77817 16.9499L5.8284 13.0002L22.0003 13.0001Z"></path></svg>
-
-                            </button>
-                            Showing <strong className="serch-data">{totalIcons}</strong>
-                          </span>
-                          {searchKeyword ? `${searchKeyword}` : "All Icons"}</h2>
+                              </button>
+                              Showing <strong className="serch-data">{totalIcons}</strong>
+                            </span>
+                            {searchKeyword ? `${searchKeyword}` : "All Icons"}
+                          </h2>
+                        </div>
 
 
 

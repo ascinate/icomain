@@ -135,6 +135,7 @@ export default function SidebarFilter({
                       <li
                         className="cmout form-check position-relative"
                         key={i}
+                        data-bs-dismiss="offcanvas"
                       >
                         <input
                           id={id}
@@ -209,7 +210,7 @@ export default function SidebarFilter({
                       const isChecked = selectedFilters.categories[0] === cat;
 
                       return (
-                        <li className="cmout form-check position-relative" key={id}>
+                        <li className="cmout form-check position-relative" key={id} data-bs-dismiss="offcanvas">
                           <input
                             id={id}
                             type="radio"
@@ -271,6 +272,7 @@ export default function SidebarFilter({
                         sort: prev.sort === "asc" ? "" : "asc",
                       }))
                     }
+                    data-bs-dismiss="offcanvas"
                   >
                     Ascending(A–Z)
                   </button>
@@ -287,6 +289,7 @@ export default function SidebarFilter({
                         sort: prev.sort === "desc" ? "" : "desc",
                       }))
                     }
+                    data-bs-dismiss="offcanvas"
                   >
                     Descending(Z–A)
                   </button>
