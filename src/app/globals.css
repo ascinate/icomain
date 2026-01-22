@@ -1328,6 +1328,7 @@ footer hr{
   font-weight: 700 !important;
   font-size: 2rem !important;
   margin-left: 8px !important;
+  text-transform: capitalize;
 }
 .register-pages-crm{
   padding-top: 120px;
