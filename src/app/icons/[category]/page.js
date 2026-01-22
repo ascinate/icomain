@@ -170,17 +170,8 @@ export default function CategorySearchPage() {
                   <div className="rights-sections-sub no-border">
                     <main className="listing-pages floate-start w-100 mb-5">
                       <div className="main-divs g-col-6 pt-0">
-                        <p className="spaceing-lefts">
-                          <button onClick={handleToggle} className="btn px-0 me-3">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(0,0,0,1)"><path d="M22.0003 13.0001L22.0004 11.0002L5.82845 11.0002L9.77817 7.05044L8.36396 5.63623L2 12.0002L8.36396 18.3642L9.77817 16.9499L5.8284 13.0002L22.0003 13.0001Z"></path></svg>
-
-                          </button>
-                          Showing{" "}
-                          <strong className="serch-data">
-                            {totalIcons} {displayCategory}
-                          </strong>
-                        </p>
+                       
+                        
 
                         <div className="related-iconstext">
                           <div className="d-flex align-items-center">

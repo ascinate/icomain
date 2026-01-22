@@ -3639,6 +3639,9 @@ padding: 10px 30px;
   .totals-sections-mains01 .main-divs .tabsd_divs{
     padding-left: 0 !important;
   }
+  .spaceing-lefts{
+    padding-left: 0 !important;
+  }
 }
 @media(width <= 560px){
   .news-colors-div {
