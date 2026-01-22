@@ -3565,7 +3565,7 @@ padding: 10px 30px;
     }
 	
 }
-@media(max-width:992px){
+@media(width <= 992px){
   .news-colors-div {
     display: grid;
     grid-template-columns: repeat(5, minmax(5rem, 1fr));
@@ -3585,7 +3585,7 @@ padding: 10px 30px;
     display: none !important;
   }
 }
-@media(max-width:768px){
+@media(width <= 768px){
   .news-colors-div {
     display: grid;
     grid-template-columns: repeat(5, minmax(5rem, 1fr));
@@ -3603,9 +3603,14 @@ padding: 10px 30px;
   .comons-cardscus{
      margin-bottom: 15px;
   }
- 
+  .register-pages-crm .full-img{
+    display: none !important;
+  }
+  .btn-search {
+        width: 17%;
+  }
 }
-@media(max-width:560px){
+@media(width <= 560px){
   .news-colors-div {
     display: grid;
     grid-template-columns: repeat(2, minmax(5rem, 1fr));
@@ -3616,6 +3621,9 @@ padding: 10px 30px;
     font-size: 34px !important;
  }
 
+ .btn-search {
+        width: 33%;
+  }
  
 
 }
