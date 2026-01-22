@@ -3609,6 +3609,9 @@ padding: 10px 30px;
   .btn-search {
         width: 17%;
   }
+  .deatisl-all-page .serach-listings-apge{
+    margin-left: 0 !important;
+  }
 }
 @media(width <= 560px){
   .news-colors-div {
