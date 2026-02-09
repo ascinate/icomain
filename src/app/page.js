@@ -21,12 +21,66 @@ async function getTotalIcons() {
   }
 }
 
+async function getIconCount({ category }) {
+  try {
+    const query = new URLSearchParams();
+    query.append("page", "1");
+    query.append("limit", "1");
+
+    if (category) query.append("categories[]", category);
+
+    const res = await fetch(
+      `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`,
+      { next: { revalidate: 60 } }
+    );
+
+    const data = await res.json();
+    return data?.icons?.total ?? 0;
+  } catch (err) {
+    console.error("Home category count error:", err);
+    return 0;
+  }
+}
+
+
 export default async function Home() {
   const totalIcons = await getTotalIcons();
+  const [
+    arrow,
+    business,
+    device,
+    music,
+    home,
+    interfaceCount,
+    contracts,
+    delivery,
+    agriculture,
+    calender
+  ] = await Promise.all([
+    getIconCount({ category: "arrow" }),
+    getIconCount({ category: "business" }),
+    getIconCount({ category: "device" }),
+    getIconCount({ category: "music" }),
+    getIconCount({ category: "home" }),
+    getIconCount({ category: "interface" }),
+    getIconCount({ category: "contracts" }),
+    getIconCount({ category: "delivery" }),
+    getIconCount({ category: "agriculture" }),
+    getIconCount({ category: "calender" }),
+  ]);
 
-  const icontypes = [{ id: 1, title: 'Arrow', counting: '144', tag: "", img: '/arrow.svg', link: '/icons/arrow' }, { id: 2, title: 'Business', counting: '65', tag: "New", img: '/business.svg', link: '/icons/business' }, { id: 3, title: 'Device', counting: '118', tag: "", img: '/device.svg', link: '/icons/device' }, { id: 4, title: 'Music', counting: '200', tag: "", img: '/Music.svg', link: '/icons/music' }, { id: 5, title: 'home', counting: '49', tag: "", img: '/home.svg', link: '/icons/home' }, { id: 6, title: 'Interface', counting: '89', tag: "", img: '/interface.svg', link: '/icons/interface' }, { id: 7, title: 'Contracts', counting: '89', tag: "", img: '/Contracts.svg', link: '/icons/contracts' }, { id: 8, title: 'Delivery', counting: '89', tag: "", img: '/delivery.svg', link: '/icons/delivery' },];
-  const categorytypes = [{ id: 1, title: 'Thin', counting: '450', tag: "", img: '/tine1.svg', link: '/icons/thin' }, { id: 2, title: 'Solid', counting: '590', tag: "New", img: '/solid1.svg', link: '/icons/solid' }, { id: 3, title: 'Regular', counting: '387', tag: "", img: '/regulari.svg', link: '/icons/regular' }];
-  const icontypeslist = [{ id: 1, title: 'Arrow', counting: '144', tag: "", img: '/arrows-button-red-icon.svg', link: '/icons/arrow' }, { id: 2, title: 'Business', counting: '65', tag: "New", img: '/businessi1.svg', link: '/icons/business' }, { id: 3, title: 'Device', counting: '118', tag: "", img: '/device01.svg', link: '/icons/device' }, { id: 4, title: 'Music', counting: '200', tag: "", img: '/mus.svg', link: '/icons/music' }, { id: 5, title: 'home', counting: '49', tag: "", img: '/home-color-icon.svg', link: '/icons/home' }, { id: 6, title: 'Interface', counting: '89', tag: "", img: '/pen-drawing-icon.svg', link: '/icons/interface' }, { id: 7, title: 'Agriculture', counting: '89', tag: "", img: '/18363994.png', link: '/icons/agriculture' }, { id: 8, title: 'Calender', counting: '89', tag: "", img: '/16090543.png', link: '/icons/calender' },];
+  const icontypes = [
+  { id: 1, title: "Arrow", counting: arrow, img: "/arrow.svg", link: "/icons/arrow" },
+  { id: 2, title: "Business", counting: business, tag: "New", img: "/business.svg", link: "/icons/business" },
+  { id: 3, title: "Device", counting: device, img: "/device.svg", link: "/icons/device" },
+  { id: 4, title: "Music", counting: music, img: "/Music.svg", link: "/icons/music" },
+  { id: 5, title: "Home", counting: home, img: "/home.svg", link: "/icons/home" },
+  { id: 6, title: "Interface", counting: interfaceCount, img: "/interface.svg", link: "/icons/interface" },
+  { id: 7, title: "Contracts", counting: contracts, img: "/Contracts.svg", link: "/icons/contracts" },
+  { id: 8, title: "Delivery", counting: delivery, img: "/delivery.svg", link: "/icons/delivery" },
+];
+
+  const icontypeslist = [{ id: 1, title: 'Arrow', counting: arrow, tag: "", img: '/arrows-button-red-icon.svg', link: '/icons/arrow' }, { id: 2, title: 'Business', counting: business, tag: "New", img: '/businessi1.svg', link: '/icons/business' }, { id: 3, title: 'Device', counting: device, tag: "", img: '/device01.svg', link: '/icons/device' }, { id: 4, title: 'Music', counting: music, tag: "", img: '/mus.svg', link: '/icons/music' }, { id: 5, title: 'home', counting: home, tag: "", img: '/home-color-icon.svg', link: '/icons/home' }, { id: 6, title: 'Interface', counting: interfaceCount, tag: "", img: '/pen-drawing-icon.svg', link: '/icons/interface' }, { id: 7, title: 'Agriculture', counting: agriculture, tag: "", img: '/18363994.png', link: '/icons/agriculture' }, { id: 8, title: 'Calender', counting: calender, tag: "", img: '/16090543.png', link: '/icons/calender' },];
 
 
   return (
