@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.iconsguru.com
+Host: https://www.iconsgeek.com
 
 # Sitemaps
-Sitemap: https://www.iconsguru.com/sitemap.xml
+Sitemap: https://www.iconsgeek.com/sitemap.xml
