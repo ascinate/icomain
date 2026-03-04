@@ -51,8 +51,7 @@ export default function ModalDeatils({ id, onClose }) {
 
         fetchRelatedIcons();
     }, [selectedId]);
-
-    const applyColorAndSize = (svgRaw) => {
+        const applyColorAndSize = (svgRaw) => {
         let svg = svgRaw;
 
         if (color) {
@@ -149,6 +148,7 @@ export default function ModalDeatils({ id, onClose }) {
             console.error("Download count error:", err);
         }
     };
+
 
     useEffect(() => {
         if (id) setSelectedId(id);

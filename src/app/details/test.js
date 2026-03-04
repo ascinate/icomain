@@ -2,13 +2,13 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 
 export default function ModalDeatils({ id, onClose }) {
     const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+
     const [selectedId, setSelectedId] = useState(id);
     const [icon, setIcon] = useState(null);
     const [relatedIcons, setRelatedIcons] = useState([]);
@@ -366,11 +366,11 @@ export default function ModalDeatils({ id, onClose }) {
                                                         onClick={() => {
                                                             setSelectedId(rel.Id);
 
-                                                            const params = new URLSearchParams(searchParams.toString());
-                                                            params.set("icon", rel.Id);
+                                                            const basePath = pathname.split("/").slice(0, 3).join("/");
+                                                            const newUrl = `${basePath}/${rel.slug}`;
 
-                                                            router.push(`${pathname}?${params.toString()}`, { scroll: false });
-                                                        }} 
+                                                            window.history.pushState({}, "", newUrl);
+                                                        }}
                                                     >
                                                         {rel.type === "Animated" ? (
                                                             <img

@@ -91,6 +91,23 @@ export default function CategorySearchPage() {
     fetchIcons();
   }, [page, filters]);
 
+    useEffect(() => {
+    const path = window.location.pathname;
+    const parts = path.split("/");
+
+    // /icons/category/slug
+    if (parts.length === 4) {
+      const slug = parts[3];
+
+      const iconFromList = icons.find((i) => i.slug === slug);
+
+      if (iconFromList) {
+        setSelectedIconId(iconFromList.Id);
+        setIsIconActive(true);
+      }
+    }
+  }, [icons]);
+
   const applySizeToSvg = (svgRaw, size) => {
     if (!svgRaw) return '';
 
