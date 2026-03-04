@@ -5,10 +5,12 @@ import SidebarFilter from "@/app/components/SidebarFilter";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import NavicationHomeDetails from "@/app/components/NavicationHomeDetails";
 import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
+  const router = useRouter();
   const [selectedIconId, setSelectedIconId] = useState(null);
   const [isToggled, setIsToggled] = useState(false);
   const params = useParams();
@@ -143,9 +145,6 @@ export default function CategorySearchPage() {
 
                           showCategoryFilter={!hideCategoryFilter}
                         />
-
-
-
                       </div>
                     </aside>
                   </div>
@@ -306,7 +305,9 @@ export default function CategorySearchPage() {
                                   <div
                                     key={icon.Id}
                                     onClick={() => {
+                                      setSelectedIconId(icon.Id);
                                       setIsIconActive(true);
+                                      router.push(`/icon/${category}?icon=${icon.Id}`, { scroll: false });
                                     }}
                                     className="svg-item position-relative"
 
@@ -415,9 +416,14 @@ export default function CategorySearchPage() {
         </div>
 
         {/* Modal */}
-        <ModalDeatils id={selectedIconId ?? null} onClose={() => {
-          setIsIconActive(false);
-        }} />
+        <ModalDeatils
+          id={selectedIconId ?? null}
+          onClose={() => {
+            setIsIconActive(false);
+            setSelectedIconId(null);
+            router.push(`/icon/${category}`, { scroll: false });
+          }}
+        />
       </div>
     </>
   );

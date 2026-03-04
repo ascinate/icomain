@@ -1,15 +1,17 @@
 "use client";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import SidebarFilter from "@/app/components/SidebarFilter";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams,useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import NavicationHomeDetails from "@/app/components/NavicationHomeDetails";
 import ModalDeatils from "@/app/components/ModalDeatils";
 
 export default function CategorySearchPage() {
-    const [selectedIconId, setSelectedIconId] = useState(null);
+  const router = useRouter();
+  const [selectedIconId, setSelectedIconId] = useState(null);
   const [isToggled, setIsToggled] = useState(false);
   const params = useParams();
   const searchParams = useSearchParams();
@@ -23,7 +25,7 @@ export default function CategorySearchPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [totalIcons, setTotalIcons] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-    const [isIconActive, setIsIconActive] = useState(false);
+  const [isIconActive, setIsIconActive] = useState(false);
 
   const [filters, setFilters] = useState({
     categories: isType ? [] : [category],
@@ -32,15 +34,15 @@ export default function CategorySearchPage() {
     tag: searchParams.get('tag') || '',
     sort: ''
   });
-  const hideCategoryFilter = !!filters.tag; 
-   const handleToggle = () => setIsToggled((prev) => !prev);
-   const displayCategory =
-  filters.tag
-    ? filters.tag
-    : filters.categories.length > 0
-      ? filters.categories[0]
-      : category;
- const [iconSize, setIconSize] = useState(35);
+  const hideCategoryFilter = !!filters.tag;
+  const handleToggle = () => setIsToggled((prev) => !prev);
+  const displayCategory =
+    filters.tag
+      ? filters.tag
+      : filters.categories.length > 0
+        ? filters.categories[0]
+        : category;
+  const [iconSize, setIconSize] = useState(35);
 
   useEffect(() => {
     const fetchIcons = async () => {
@@ -58,7 +60,7 @@ export default function CategorySearchPage() {
           filters.types.forEach(t => query.append("types[]", t));
         if (filters.tag)
           query.append("tag", filters.tag);
-        if(filters.sort){
+        if (filters.sort) {
           query.append("sort", filters.sort)
         };
 
@@ -85,8 +87,19 @@ export default function CategorySearchPage() {
 
     fetchIcons();
   }, [page, filters]);
+  
+   useEffect(() => {
+    const iconId = searchParams.get("icon");
 
-    const applySizeToSvg = (svgRaw, size) => {
+    if (iconId) {
+      setSelectedIconId(iconId);
+      setIsIconActive(true);
+    }
+  }, [searchParams]);
+
+
+
+  const applySizeToSvg = (svgRaw, size) => {
     if (!svgRaw) return '';
 
     return svgRaw
@@ -170,8 +183,8 @@ export default function CategorySearchPage() {
                   <div className="rights-sections-sub no-border">
                     <main className="listing-pages floate-start w-100 mb-5">
                       <div className="main-divs g-col-6 pt-0">
-                       
-                        
+
+
 
                         <div className="related-iconstext">
                           <div className="d-flex align-items-center">
@@ -246,7 +259,9 @@ export default function CategorySearchPage() {
                                   <div
                                     key={icon.Id}
                                     onClick={() => {
+                                      setSelectedIconId(icon.Id);
                                       setIsIconActive(true);
+                                      router.push(`/icons/${category}?icon=${icon.Id}`, { scroll: false });
                                     }}
                                     className="svg-item position-relative"
 
@@ -262,7 +277,7 @@ export default function CategorySearchPage() {
                                           style={{ width: "100%", height: "100%" }}
                                         />
                                       ) : (
-                                         <span
+                                        <span
                                           dangerouslySetInnerHTML={{
                                             __html: applySizeToSvg(icon.icon_svg, iconSize),
                                           }}
@@ -353,9 +368,14 @@ export default function CategorySearchPage() {
         </div>
 
         {/* Modal */}
-        <ModalDeatils id={selectedIconId ?? null} onClose={() => {
-          setIsIconActive(false);
-        }} />
+        <ModalDeatils
+          id={selectedIconId ?? null}
+          onClose={() => {
+            setIsIconActive(false);
+            setSelectedIconId(null);
+            router.push(`/icons/${category}`, { scroll: false });
+          }}
+        />
       </div>
     </>
   );
