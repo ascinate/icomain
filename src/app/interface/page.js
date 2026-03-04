@@ -69,12 +69,7 @@ export default function InterfaceIconsPage() {
                                     Browse Interface Icons
                                   </Link>
                 </div>
-                {/* <div className="col-lg-6">
-                              <Image loading="lazy" src="/category-banner.svg"
-                                    alt="iconsguru"
-                                    width={511}
-                                    height={299} />
-                          </div> */}
+
               </div>
             </div>
           </section>
@@ -89,7 +84,7 @@ export default function InterfaceIconsPage() {
                               Explore Our Interface Icons
                             </h2>
                             <p> Browse our collection of high-quality interface icons for UI/UX design, available in multiple
-                               formats like SVG, PNG, EPS, PSD, and IconFont.  </p>
+                               formats like SVG, PNG, PSD, and IconFont.  </p>
                                
 
                             {loading ? (
