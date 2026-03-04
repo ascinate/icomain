@@ -307,7 +307,8 @@ export default function CategorySearchPage() {
                                     onClick={() => {
                                       setSelectedIconId(icon.Id);
                                       setIsIconActive(true);
-                                      router.push(`/icon/${category}?icon=${icon.Id}`, { scroll: false });
+                                      const newUrl = `/icon/${category}/${icon.slug}`;
+                                      window.history.pushState({}, "", newUrl);
                                     }}
                                     className="svg-item position-relative"
 

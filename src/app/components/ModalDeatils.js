@@ -366,10 +366,8 @@ export default function ModalDeatils({ id, onClose }) {
                                                         onClick={() => {
                                                             setSelectedId(rel.Id);
 
-                                                            const params = new URLSearchParams(window.location.search);
-                                                            params.set("icon", rel.Id);
-
-                                                            const newUrl = `${pathname}?${params.toString()}`;
+                                                            const basePath = pathname.split("/").slice(0, 3).join("/");
+                                                            const newUrl = `${basePath}/${rel.slug}`;
 
                                                             window.history.pushState({}, "", newUrl);
                                                         }}

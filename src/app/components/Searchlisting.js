@@ -104,55 +104,55 @@ export default function Searchlisting() {
 
                   <div className="d-none d-lg-block">
                     <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
-                      
-                        <div className="slider-filtersr-div">
-                          <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
 
-                          <SidebarFilter
-                            onFilterChange={(newFilters) => {
+                      <div className="slider-filtersr-div">
+                        <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
+
+                        <SidebarFilter
+                          onFilterChange={(newFilters) => {
 
 
-                              if (newFilters.categories?.length) {
-                                const slug = newFilters.categories[0]
-                                  .toLowerCase()
-                                  .replace(/\s+/g, "-");
+                            if (newFilters.categories?.length) {
+                              const slug = newFilters.categories[0]
+                                .toLowerCase()
+                                .replace(/\s+/g, "-");
 
-                                router.push(`/icon/${slug}`);
-                                return;
-                              }
-                              setFilters(newFilters);
-                            }}
-                            onSizeChange={setIconSize}
-                          />
+                              router.push(`/icon/${slug}`);
+                              return;
+                            }
+                            setFilters(newFilters);
+                          }}
+                          onSizeChange={setIconSize}
+                        />
 
-                        </div>
-                     
+                      </div>
+
                     </aside>
                   </div>
                   <div className="d-block d-lg-none">
-                     <div className="slider-filtersr-div offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample">
+                    <div className="slider-filtersr-div offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample">
                       <button type="button" class="btn-close all-close015 text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                         <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
-                              <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
+                      <aside className="sidebars-subpages p-4 d-inline-block w-100 pt-2">
+                        <h4 className="ms-0 filters-text w-100"> Filter <span className='arose reste'>  Reset </span> </h4>
 
-                                <SidebarFilter
-                                  onFilterChange={(newFilters) => {
+                        <SidebarFilter
+                          onFilterChange={(newFilters) => {
 
 
-                                    if (newFilters.categories?.length) {
-                                      const slug = newFilters.categories[0]
-                                        .toLowerCase()
-                                        .replace(/\s+/g, "-");
+                            if (newFilters.categories?.length) {
+                              const slug = newFilters.categories[0]
+                                .toLowerCase()
+                                .replace(/\s+/g, "-");
 
-                                      router.push(`/icon/${slug}`);
-                                      return;
-                                    }
-                                    setFilters(newFilters);
-                                  }}
-                                  onSizeChange={setIconSize}
-                                />
-                          </aside>
-                      </div>
+                              router.push(`/icon/${slug}`);
+                              return;
+                            }
+                            setFilters(newFilters);
+                          }}
+                          onSizeChange={setIconSize}
+                        />
+                      </aside>
+                    </div>
                   </div>
 
                   <aside className="sidebars-subpages cmb-borad01 p-4 d-none d-inline-lg-block w-100 bd-md015 pt-2 mt-5">
@@ -184,10 +184,10 @@ export default function Searchlisting() {
                       <div className="main-divs g-col-6 pt-0">
 
 
-                        
-                       <div className="d-flex align-items-center mb-4">
+
+                        <div className="d-flex align-items-center mb-4">
                           <div className="names-fileters d-inline-block d-md-none">
-                              <button className="btn filters01-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M7 3V6H3V8H7V11H9V3H7ZM11 8H21V6H11V8ZM17 13V16H21V18H17V21H15V13H17ZM13 18H3V16H13V18Z"></path></svg> </span>   Filter </button>
+                            <button className="btn filters01-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(0,0,0,1)"><path d="M7 3V6H3V8H7V11H9V3H7ZM11 8H21V6H11V8ZM17 13V16H21V18H17V21H15V13H17ZM13 18H3V16H13V18Z"></path></svg> </span>   Filter </button>
                           </div>
                           <h2 className="search-listings01 d-flex align-items-center mb-0">
                             <span>
@@ -367,9 +367,14 @@ export default function Searchlisting() {
 
         </div>
 
-        <ModalDeatils id={selectedIconId ?? null} onClose={() => {
-          setIsIconActive(false);
-        }} />
+        <ModalDeatils
+          id={selectedIconId}
+          onClose={() => {
+            window.history.replaceState({}, "", "/details");
+            setIsIconActive(false);
+            setSelectedIconId(null);
+          }}
+        />
       </div>
 
     </>

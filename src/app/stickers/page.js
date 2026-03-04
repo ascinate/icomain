@@ -127,7 +127,11 @@ export default function InterfaceIconsPage() {
                                 <div
                                   key={icon.Id}
                                   onClick={() => {
+                                    setSelectedIconId(icon.Id);
                                     setIsIconActive(true);
+
+                                    const newUrl = `/icons/stickers/${icon.slug}`;
+                                    window.history.pushState({}, "", newUrl);
                                   }}
                                   className="svg-item position-relative interfcae-text"
                                 >
@@ -284,7 +288,9 @@ export default function InterfaceIconsPage() {
         <ModalDeatils
           id={selectedIconId ?? null}
           onClose={() => {
+            window.history.replaceState({}, "", "/stickers");
             setIsIconActive(false);
+            setSelectedIconId(null);
           }}
         />
 

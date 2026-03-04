@@ -87,15 +87,6 @@ export default function CategorySearchPage() {
 
     fetchIcons();
   }, [page, filters]);
-  
-   useEffect(() => {
-    const iconId = searchParams.get("icon");
-
-    if (iconId) {
-      setSelectedIconId(iconId);
-      setIsIconActive(true);
-    }
-  }, [searchParams]);
 
 
 
@@ -261,7 +252,8 @@ export default function CategorySearchPage() {
                                     onClick={() => {
                                       setSelectedIconId(icon.Id);
                                       setIsIconActive(true);
-                                      router.push(`/icons/${category}?icon=${icon.Id}`, { scroll: false });
+                                      const newUrl = `/icons/${category}/${icon.slug}`;
+                                      window.history.pushState({}, "", newUrl);
                                     }}
                                     className="svg-item position-relative"
 
