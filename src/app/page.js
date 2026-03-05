@@ -10,7 +10,7 @@ import Script from 'next/script';
 
 async function getTotalIcons() {
   try {
-    const res = await fetch(`https://iconsguru.ascinatetech.com/api/icons/total-count`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icons/total-count`, {
       next: { revalidate: 60 },
     });
     const data = await res.json();
@@ -30,7 +30,7 @@ async function getIconCount({ category }) {
     if (category) query.append("categories[]", category);
 
     const res = await fetch(
-      `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/icons?${query.toString()}`,
       { next: { revalidate: 60 } }
     );
 
