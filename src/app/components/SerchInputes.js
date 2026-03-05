@@ -21,7 +21,7 @@ export default function SearchInputes({ totalIcons }) {
 
     try {
       const res = await fetch(
-        `https://iconsguru.ascinatetech.com/api/icons/search?query=${encodeURIComponent(query)}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/icons/search?query=${encodeURIComponent(query)}`
       )
       const data = await res.json()
       setItems(data.data || [])

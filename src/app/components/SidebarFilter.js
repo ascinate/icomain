@@ -31,7 +31,7 @@ export default function SidebarFilter({
 
   useEffect(() => {
     axios
-      .get("https://iconsguru.ascinatetech.com/api/sidebar-filters")
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/sidebar-filters`)
       .then((res) => {
         const data = res.data;
         setFilters({

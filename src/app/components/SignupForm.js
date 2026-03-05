@@ -15,7 +15,7 @@ function SignupForm(){
         setMessage("Registering...");
     
         try {
-          const response = await fetch("https://iconsguru.ascinatetech.com/api/register", {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -25,7 +25,7 @@ export default function ModalDeatils({ id, onClose }) {
 
         const fetchIcon = async () => {
             try {
-                const res = await fetch(`https://iconsguru.ascinatetech.com/api/icon/${selectedId}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon/${selectedId}`);
                 const data = await res.json();
                 if (data && data.icons) setIcon(data.icons);
             } catch (error) {
@@ -41,7 +41,7 @@ export default function ModalDeatils({ id, onClose }) {
 
         const fetchRelatedIcons = async () => {
             try {
-                const res = await fetch(`https://iconsguru.ascinatetech.com/api/related-icons/${selectedId}`);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/related-icons/${selectedId}`);
                 const data = await res.json();
                 setRelatedIcons(data.icons || []);
             } catch (err) {
@@ -105,7 +105,7 @@ export default function ModalDeatils({ id, onClose }) {
             URL.revokeObjectURL(url);
 
             try {
-                await fetch(`https://iconsguru.ascinatetech.com/api/icon-download/${icon.Id}`, {
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
                     method: 'POST',
                 });
             } catch (err) {
@@ -120,7 +120,7 @@ export default function ModalDeatils({ id, onClose }) {
 
     const handleDownloadSVG = async () => {
         try {
-            await fetch(`https://iconsguru.ascinatetech.com/api/icon-download/${icon.Id}`, {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
                 method: 'POST',
             });
 
@@ -141,7 +141,7 @@ export default function ModalDeatils({ id, onClose }) {
         setTimeout(() => setShowToast(false), 2000);
 
         try {
-            await fetch(`https://iconsguru.ascinatetech.com/api/icon-download/${icon.Id}`, {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
                 method: 'POST',
             });
         } catch (err) {

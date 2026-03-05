@@ -54,14 +54,8 @@ export default function Searchlisting() {
         if (filters.sort) {
           query.set("sort", filters.sort);
         }
-
         if (searchKeyword) query.set("search", searchKeyword);
-
-
-
-        const url = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
-        console.log("API:", url); // <-- watch this in DevTools
-
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/api/icons?${query.toString()}`;
         const res = await fetch(url);
         const data = await res.json();
 

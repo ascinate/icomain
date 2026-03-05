@@ -64,7 +64,7 @@ export default function CategorySearchPage() {
           query.append("sort", filters.sort)
         };
 
-        const finalURL = `https://iconsguru.ascinatetech.com/api/icons?${query.toString()}`;
+        const finalURL = `${process.env.NEXT_PUBLIC_API_URL}/api/icons?${query.toString()}`;
 
         const response = await fetch(finalURL);
         const data = await response.json();
@@ -198,49 +198,49 @@ export default function CategorySearchPage() {
                             <p className="m-0"> Related: </p>
                             <ul className="d-flex ms-2 align-items-center flex-wrap mb-0 p-0">
                               <li>
-                                <Link href="/icon/Communication" className="btn-mores-tex">
+                                <Link href="/icon/communication" className="btn-mores-tex">
                                   {" "}
                                   Communication{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Coding" className="btn-mores-tex">
+                                <Link href="/icon/code" className="btn-mores-tex">
                                   {" "}
-                                  Coding{" "}
+                                  Code{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Data" className="btn-mores-tex">
+                                <Link href="/icon/data" className="btn-mores-tex">
                                   {" "}
                                   Data{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Pet" className="btn-mores-tex">
+                                <Link href="/icon/pet" className="btn-mores-tex">
                                   {" "}
                                   Pet{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Recruitment" className="btn-mores-tex">
+                                <Link href="/icon/recruitment" className="btn-mores-tex">
                                   {" "}
                                   Recruitment{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/User" className="btn-mores-tex">
+                                <Link href="/icon/user" className="btn-mores-tex">
                                   {" "}
                                   User{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Wearables" className="btn-mores-tex">
+                                <Link href="/icon/wearables" className="btn-mores-tex">
                                   {" "}
                                   Wearables{" "}
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/icon/Weather" className="btn-mores-tex">
+                                <Link href="/icon/weather" className="btn-mores-tex">
                                   {" "}
                                   Weather{" "}
                                 </Link>

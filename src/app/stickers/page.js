@@ -18,7 +18,7 @@ export default function InterfaceIconsPage() {
     const fetchInterfaceIcons = async () => {
       try {
         const res = await fetch(
-          "https://iconsguru.ascinatetech.com/api/icons/stickers",
+          `${process.env.NEXT_PUBLIC_API_URL}/api/icons/stickers`,
         );
         const json = await res.json();
         if (json.status && Array.isArray(json.data)) {
