@@ -22,6 +22,7 @@ export default function ModalDeatils({ id, onClose }) {
 
     useEffect(() => {
         if (!selectedId) return;
+        setIcon(null);
 
         const fetchIcon = async () => {
             try {
@@ -217,7 +218,7 @@ export default function ModalDeatils({ id, onClose }) {
                                         <div className="rights-text-div015">
                                             <h4 className="cions-titels">{icon.icon_name} </h4>
                                             <div className="d-flex mb-3 group-div015 align-items-stretch mt-3">
-                                                <button type="button" className="btn btn-coun-downalod">
+                                                <button type="button" className="btn btn-coun-downalod" onClick={() => svgToCanvasDownload("jpg")}>
                                                     Free Download
                                                 </button>
                                                 <div className="dropdown">

@@ -190,7 +190,7 @@ export default function InterfaceIconsPage() {
             </section>
             <section className="float-start about-sections-features01 comon-short-parts w-100 pb-0">
               <aside className="container">
-                <h2 className="comon-head"> Why Choose IconsGuru? </h2>
+                <h2 className="comon-head"> Why Choose IconsGeek? </h2>
                 <div className="row row-cols-1 row-cols-lg-3 gx-lg-4 align-items-center mt-4">
                   <div className="col">
                     <div className="comons-cardscus new-heights min-heights015 d-inline-block w-100">
