@@ -104,6 +104,18 @@ export default function CategorySearchPage() {
     }
   }, [icons]);
 
+    useEffect(() => {
+    const handleBackButton = () => {
+      setSelectedIconId(null);
+      setIsIconActive(false);
+    };
+
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, []);
 
 
   const applySizeToSvg = (svgRaw, size) => {
@@ -269,7 +281,7 @@ export default function CategorySearchPage() {
                                       setSelectedIconId(icon.Id);
                                       setIsIconActive(true);
                                       const newUrl = `/icons/${category}/${icon.slug}`;
-                                      window.history.pushState({}, "", newUrl);
+                                      window.history.pushState({ modal: true }, "", newUrl);
                                     }}
                                     className="svg-item position-relative"
 

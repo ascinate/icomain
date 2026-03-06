@@ -34,6 +34,19 @@ export default function InterfaceIconsPage() {
     fetchInterfaceIcons();
   }, []);
 
+    useEffect(() => {
+  const handlePopState = () => {
+    setIsIconActive(false);
+    setSelectedIconId(null);
+  };
+
+  window.addEventListener("popstate", handlePopState);
+
+  return () => {
+    window.removeEventListener("popstate", handlePopState);
+  };
+}, []);
+
   return (
     <>
       <Head>
@@ -288,7 +301,7 @@ export default function InterfaceIconsPage() {
         <ModalDeatils
           id={selectedIconId ?? null}
           onClose={() => {
-            window.history.replaceState({}, "", "/stickers");
+            window.history.back();
             setIsIconActive(false);
             setSelectedIconId(null);
           }}
