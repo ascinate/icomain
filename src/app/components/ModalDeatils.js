@@ -84,6 +84,26 @@ export default function ModalDeatils({ id, onClose }) {
         return luminance > 200;
     };
 
+    const trackDownload = async () => {
+        const token = localStorage.getItem("access_token");
+
+        try {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+                },
+            });
+
+            if (!res.ok) {
+                console.error("Download tracking failed:", res.status);
+            }
+        } catch (err) {
+            console.error("Download count error:", err);
+        }
+    };
+
     const svgToCanvasDownload = (type = "png") => {
         const finalSvg = applyColorAndSize(icon.icon_svg);
         const blob = new Blob([finalSvg], { type: "image/svg+xml;charset=utf-8" });
@@ -105,13 +125,7 @@ export default function ModalDeatils({ id, onClose }) {
 
             URL.revokeObjectURL(url);
 
-            try {
-                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
-                    method: 'POST',
-                });
-            } catch (err) {
-                console.error("Download count error:", err);
-            }
+            await trackDownload();
         };
 
         img.src = url;
@@ -121,9 +135,7 @@ export default function ModalDeatils({ id, onClose }) {
 
     const handleDownloadSVG = async () => {
         try {
-            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
-                method: 'POST',
-            });
+            await trackDownload();
 
             const svg = applyColorAndSize(icon.icon_svg);
             const blob = new Blob([svg], { type: "image/svg+xml" });
@@ -141,13 +153,7 @@ export default function ModalDeatils({ id, onClose }) {
         setShowToast(true);
         setTimeout(() => setShowToast(false), 2000);
 
-        try {
-            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/icon-download/${icon.Id}`, {
-                method: 'POST',
-            });
-        } catch (err) {
-            console.error("Download count error:", err);
-        }
+        await trackDownload();
     };
 
 
